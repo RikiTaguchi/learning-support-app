@@ -1,0 +1,275 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.detail-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.detail-form:first-child {
+    margin-top: 10px;
+}
+
+.detail-form:last-child {
+    margin-bottom: 10px;
+}
+
+.detail-form form {
+    width: 100%;
+}
+
+.detail-form-title {
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-block-1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.form-block-1 input {
+    width: 72%;
+    height: 30px;
+    border: solid;
+    border-width: 1px;
+    border-color: gray;
+    border-radius: 5px;
+}
+
+.form-block-1 textarea {
+    width: 72%;
+    height: 60px;
+    border: solid;
+    border-width: 1px;
+    border-color: gray;
+    border-radius: 5px;
+}
+
+.form-block-1 button {
+    width: 23%;
+    height: 30px;
+    color: white;
+    background-color: lightseagreen;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5%;
+}
+
+.form-block-2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.form-block-2 table {
+    width: 100%;
+}
+
+.form-block-2 table tr {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.form-block-2 table tr:first-child {
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: lighter;
+    color: lightseagreen;
+}
+
+.form-block-2 table tr:nth-child(2) {
+    margin-bottom: 30px;
+}
+
+.form-block-2 table tr:first-child th:not(:first-child):not(:last-child):nth-child(even) {
+    width: 30%;
+    margin-right: 1%;
+    font-weight: normal;
+}
+
+.form-block-2 table tr:first-child th:not(:first-child):not(:last-child):nth-child(odd) {
+    width: 30%;
+    margin-left: 1%;
+    font-weight: normal;
+}
+
+.form-block-2 table tr:first-child th:first-child {
+    width: 10%;
+}
+
+.form-block-2 table tr:first-child th:last-child {
+    width: 23%;
+    margin-left: 5%;
+}
+
+.form-td-title {
+    width: 10%;
+    text-align: left;
+    font-size: 15px;
+    color: lightseagreen;
+}
+
+.form-td-element:nth-child(odd) {
+    width: 30%;
+    margin-right: 1%;
+}
+
+.form-td-element:nth-child(even) {
+    width: 30%;
+    margin-left: 1%;
+}
+
+.form-td-element input {
+    width: 100%;
+    height: 30px;
+    border: solid;
+    border-width: 1px;
+    border-color: gray;
+    border-radius: 5px;
+}
+
+.form-td-last {
+    width: 23%;
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.form-button-add {
+    width: 100%;
+    height: 30px;
+    color: white;
+    background-color: lightseagreen;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-button-change {
+    width: 48%;
+    height: 30px;
+    color: white;
+    background-color: lightseagreen;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-right: 2%;
+}
+
+.form-button-delete {
+    width: 48%;
+    height: 30px;
+    color: white;
+    background-color: lightseagreen;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-left: 2%;
+}
+
+.form-delete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-delete button {
+    width: 30%;
+    height: 30px;
+    color: white;
+    background-color: lightseagreen;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .detail-form {
+        width: 95%;
+        margin-top: 15px;
+    }
+    
+    .detail-form-title {
+        font-size: 15px;
+    }
+    
+    .form-block-1 {
+        margin-top: 5px;
+    }
+    
+    .form-block-1 input {
+        height: 25px;
+        font-size: 15px;
+    }
+    
+    .form-block-1 textarea {
+        height: 55px;
+    }
+    
+    .form-block-1 button {
+        height: 25px;
+        font-size: 12px;
+    }
+    
+    .form-block-2 table tr {
+        height: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .form-block-2 table tr:first-child {
+        font-size: 12px;
+    }
+    
+    .form-block-2 table tr:nth-child(2) {
+        margin-bottom: 30px;
+    }
+    
+    .form-td-title {
+        font-size: 12px;
+    }
+    
+    .form-td-element input {
+        height: 25px;
+    }
+    
+    .form-button-add {
+        height: 25px;
+        font-size: 12px;
+    }
+    
+    .form-button-change {
+        height: 25px;
+        font-size: 10px;
+    }
+    
+    .form-button-delete {
+        height: 25px;
+        font-size: 10px;
+    }
+    
+    .form-delete button {
+        width: 45%;
+        height: 25px;
+        font-size: 12px;
+    }
+}

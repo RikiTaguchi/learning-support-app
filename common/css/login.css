@@ -1,0 +1,16 @@
+.main-block-title {
+    font-size: 30px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .main-block-title {
+        font-size: 25px;
+    }
+
+    .main-block-announce {
+        font-size: 15px;
+    }
+}

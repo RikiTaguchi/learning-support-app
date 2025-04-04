@@ -1,0 +1,369 @@
+/* countdown */
+.countdown-block1 {
+    display: flex;
+    margin-top: 10px;
+    color: black;
+    align-items: flex-end;
+}
+
+.countdown-block2 {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.countdown-text1 {
+    font-size: 30px;
+    font-weight: bold;
+    display: block;
+    margin-right: 2px;
+}
+
+.countdown-text2 {
+    font-size: 15px;
+    display: block;
+    margin-left: 2px;
+}
+
+.countdown-text3 {
+    font-size: 20px;
+}
+
+.countdown-text4 {
+    color: lightseagreen;
+    font-size: 80px;
+    font-weight: bold;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.countdown-text5 {
+    font-size: 20px;
+}
+
+/* notice */
+.notice-list {
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notice-list-block {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.notice-list-block:first-child {
+    margin-top: 5px;
+}
+
+.notice-list-block:last-child {
+    margin-bottom: 0;
+}
+
+.notice-list-subblock {
+    display: flex;
+    align-items: center;
+}
+
+.notice-subtitle {
+    display: block;
+    width: 61.25%;
+    margin-left: 1.25%;
+    margin-right: 2.5%;
+    font-size: 18px;
+}
+
+.notice-date {
+    display: block;
+    width: 20%;
+    font-size: 12px;
+    color: lightseagreen;
+    text-align: center;
+}
+
+.notice-button-root {
+    display: block;
+    width: 10%;
+    height: 20px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    background-color: lightseagreen;
+    color: white;
+    font-size: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.notice-line {
+    display: block;
+    border: none;
+    width: 100%;
+    height: 1.25px;
+    background-color: lightgray;
+}
+
+.notice-detail-root {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 2.5%;
+    padding: 10px;
+    width: 95%;
+    height: 90px;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgb(76, 76, 78);
+    background-color: rgb(240, 240, 240);
+    overflow: scroll;
+    display: none;
+}
+
+/* feedback */
+.feedback-table {
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.feedback-table tr {
+    height: 40px;
+}
+
+.feedback-table th,
+.feedback-table td {
+    font-size: 20px;
+    background-color: transparent;
+    border-top: none;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    border-color: lightgray;
+}
+
+.feedback-table th {
+    width: 250px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.feedback-table-number {
+    width: 50px;
+    text-align: right;
+}
+
+.feedback-table-button {
+    width: 50px;
+    text-align: right;
+}
+
+.feedback-table-button:last-child {
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+.feedback-table-button form button {
+    width: 40px;
+    height: 20px;
+    color: white;
+    background-color: lightseagreen;
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+/* mybook */
+.mybook-table {
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.mybook-table tr {
+    height: 40px;
+}
+
+.mybook-table th,
+.mybook-table td {
+    font-size: 20px;
+    background-color: transparent;
+    border-top: none;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    border-color: lightgray;
+}
+
+.mybook-table th {
+    width: 200px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.mybook-table td {
+    width: 100px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.mybook-table td form button {
+    width: 40px;
+    height: 20px;
+    color: white;
+    background-color: lightseagreen;
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    /* countdown */
+    .countdown-block1 {
+        margin-top: 5px;
+    }
+
+    .countdown-block2 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .countdown-text1 {
+        font-size: 20px;
+    }
+    
+    .countdown-text2 {
+        font-size: 12px;
+    }
+    
+    .countdown-text3 {
+        font-size: 15px;
+    }
+    
+    .countdown-text4 {
+        font-size: 60px;
+    }
+    
+    .countdown-text5 {
+        font-size: 15px;
+    }
+
+    /* notice */
+    .notice-list {
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+    
+    .notice-subtitle {
+        width: 62.5%;
+        margin-left: 2.5%;
+        font-size: 15px;
+    }
+    
+    .notice-date {
+        font-size: 10px;
+    }
+    
+    .notice-button-root {
+        width: 10%;
+        height: 20px;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        font-size: 10px;
+    }
+    
+    .notice-detail-root {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 2.5%;
+        padding: 10px;
+        width: 95%;
+        height: 90px;
+        font-size: 12px;
+    }
+
+    /* feedback */
+    .feedback-table {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+    
+    .feedback-table tr {
+        height: 40px;
+    }
+    
+    .feedback-table th,
+    .feedback-table td {
+        font-size: 15px;
+    }
+    
+    .feedback-table th {
+        width: 55%;
+    }
+    
+    .feedback-table-number {
+        width: 15%;
+    }
+    
+    .feedback-table-button {
+        width: 15%;
+        padding-left: 10px;
+        padding-right: 0;
+    }
+
+    .feedback-table-button:last-child {
+        padding-left: 0;
+        padding-right: 10px;
+    }
+    
+    .feedback-table-button form button {
+        width: 80%;
+        height: 20px;
+        font-size: 10px;
+    }
+
+    /* mybook */
+    .mybook-table {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+    
+    .mybook-table tr {
+        height: 40px;
+    }
+    
+    .mybook-table th,
+    .mybook-table td {
+        font-size: 15px;
+    }
+    
+    .mybook-table th {
+        width: 70%;
+    }
+    
+    .mybook-table td {
+        width: 30%;
+    }
+    
+    .mybook-table td form button {
+        width: 80%;
+        height: 20px;
+        font-size: 10px;
+    }
+}

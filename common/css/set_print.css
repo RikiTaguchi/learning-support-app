@@ -1,0 +1,44 @@
+/* header */
+header {
+    display: none;
+}
+
+/* main */
+.main-inner {
+    width: 100%;
+    font-size: 25px;
+}
+
+.main-inner-title {
+    display: block;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+.main-inner-word,
+.main-inner-word-change {
+    margin-top: 60px;
+    margin-left: 30px;
+    line-height: 1.5;
+}
+
+.main-inner-word-change {
+    break-after: always;
+    break-inside: avoid;
+}
+
+.main-inner-word-sub,
+.main-inner-word-change-sub {
+    font-size: 15px;
+    margin-top: 30px;
+    margin-left: 30px;
+    line-height: 1.2;
+    break-inside: avoid;
+}
+
+.main-inner p:nth-child(2) {
+    margin-top: 25px;
+    margin-left: 30px;
+    line-height: 1.5;
+}

@@ -1,0 +1,362 @@
+.time_area {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: lightseagreen;
+    height: 25px;
+    margin-top: 15px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.time_area2 {
+    display: none;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: lightseagreen;
+    height: 25px;
+    margin-top: 15px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.question_panel {
+    position: relative;
+    margin-top: 15px;
+}
+
+.question_subpanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.question_title {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.question_area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input_area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 30px;
+    position: relative;
+}
+
+.input_area_inner {
+    display: flex;
+    align-items: center;
+}
+
+.input_box_button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 99;
+    color: transparent;
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+}
+
+.effect_area {
+    position: absolute;
+    display: block;
+    width: 250px;
+    height: 100px;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img_correct,
+.img_incorrect,
+.img_pass {
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+}
+
+.keyboard_area {
+    display: flex;
+    flex-wrap: wrap;
+    width: 240px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button_element {
+    display: block;
+    width: 70px;
+    height: 45px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px gray;
+    background-color: lightseagreen;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.button_area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button_b {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    width: 70px;
+    height: 45px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px gray;
+    background-color: lightseagreen;
+    color: white;
+    text-align: center;
+}
+
+.button_n {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    width: 70px;
+    height: 45px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px gray;
+    background-color: lightseagreen;
+    color: white;
+    text-align: center;
+}
+
+.button_r {
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    width: 70px;
+    height: 45px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px gray;
+    background-color: lightseagreen;
+    color: white;
+    text-align: center;
+}
+
+.check_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button_p {
+    display: block;
+    width: 70px;
+    height: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px gray;
+    background-color: lightseagreen;
+    color: white;
+}
+
+.button_a {
+    display: block;
+    width: 70px;
+    height: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px gray;
+    background-color: lightseagreen;
+    color: white;
+}
+
+.form_next_area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button_c {
+    display: block;
+    width: 70px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px gray;
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.result_area {
+    flex-direction: column;
+    align-items: center;
+}
+
+.button_l {
+    display: block;
+    width: 70px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px gray;
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.back_area {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.back_button {
+    display: block;
+    width: 120px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px gray;
+    background-color: lightseagreen;
+    color: white;
+}
+
+.input_box_block {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #e6ffff;
+    border: solid;
+    border-width: thin;
+    border-radius: 5px;
+    border-color: #e6ffff;
+    color: black;
+    box-shadow: 1px 1px 1px 1px gray;
+}
+
+.input_box {
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.input_box_sign {
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.input_box_set {
+    display: flex;
+    align-items: center;
+    color: transparent;
+    width: 1px;
+}
+
+.input_box_display {
+    display: none;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .time_area {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    
+    .time_area2 {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .question_panel {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .question_subpanel {
+        width: 100%;
+    }
+
+    .question_title {
+        font-size: 15px;
+    }
+
+    .question_area {
+        font-size: 25px;
+    }
+
+    .input_area {
+        font-size: 25px;
+    }
+
+    .effect_area {
+        width: 70%;
+        top: 0;
+    }
+}

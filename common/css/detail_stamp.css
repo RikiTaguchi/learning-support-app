@@ -1,0 +1,223 @@
+.main-stamp-area {
+    width: 65%;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.main-stamp-table {
+    width: 100%;
+}
+
+.main-stamp-table tr {
+    width: 100%;
+}
+
+.main-stamp-table tr td {
+    position: relative;
+    width: 30%;
+}
+
+.main-stamp-table tr td:first-child {
+    margin-left: 5%;
+}
+
+.main-stamp-table tr td:last-child {
+    margin-right: 5%;
+}
+
+.main-stamp-back {
+    position: absolute;
+    margin: 5%;
+    width: 90%;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: rgba(128, 128, 128, 0.5);
+    border-width: thin;
+}
+
+.main-stamp-back p {
+    display: block;
+    font-size: 20px;
+    color: gray;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.main-stamp-button {
+    display: block;
+    margin: 5%;
+    width: 90%;
+    aspect-ratio: 1/1;
+    border: none;
+    background: transparent;
+    position: relative;
+}
+
+.main-stamp {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+.main-stamp-page-count {
+    margin-top: 10px;
+    color: lightseagreen;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main-stamp-slide {
+    width: 20%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.main-stamp-slide-left {
+    width: 45%;
+    height: 25px;
+    margin-right: 5%;
+}
+
+.main-stamp-slide-right {
+    width: 45%;
+    height: 25px;
+    margin-left: 5%;
+}
+
+.slide-button-left,
+.slide-button-right {
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: lightseagreen;
+    border: none;
+    border-radius: 5px;
+}
+
+.main-form-qr {
+    width: 30%;
+    height: 40px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.main-form-qr-button {
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: lightseagreen;
+    border: none;
+    border-radius: 5px;
+}
+
+.main-stamp-info {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+    width: 350px;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgb(76, 76, 78);
+}
+
+.main-stamp-info-img {
+    width: 60%;
+    margin-top: 30px;
+    border-radius: 50%;
+}
+
+.main-stamp-info-title {
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+    margin-top: 30px;
+}
+
+.main-stamp-info-date {
+    color: black;
+    font-size: 15px;
+    display: block;
+    margin-top: 15px;
+}
+
+.main-stamp-info form {
+    width: 40%;
+    margin-top: 30px;
+}
+
+.main-stamp-delete-button {
+    width: 100%;
+    height: 30px;
+    background-color: lightseagreen;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.main-stamp-info-button {
+    width: 40%;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: lightseagreen;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+    .main-stamp-area {
+        width: 95%;
+        margin-top: 10px;
+    }
+    
+    .main-stamp-back p {
+        font-size: 15px;
+    }
+    
+    .main-stamp-slide {
+        width: 30%;
+    }
+    
+    .main-form-qr {
+        width: 50%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .main-form-qr-button {
+        font-size: 12px;
+    }
+
+    .main-stamp-info {
+        width: 60%;
+    }
+
+    .main-stamp-info-title {
+        font-size: 20px;
+    }
+    
+    .main-stamp-info-date {
+        font-size: 12px;
+    }
+}
