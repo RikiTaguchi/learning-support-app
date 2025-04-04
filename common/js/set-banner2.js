@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
     };
 
     const displayBanner = {
-        translate: ['0 -100%', '0 20%', '0 20%', '0 20%', '0 20%', '0 20%', '0 -100%'],
+        translate: ['0 0', '0 100%', '0 100%', '0 100%', '0 100%', '0 100%', '0 0'],
         opacity: [0, 1, 1, 1, 1, 1, 0],
     };
 

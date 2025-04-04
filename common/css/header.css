@@ -121,6 +121,7 @@
 .main-banner {
     position: absolute;
     opacity: 0;
+    top: 0;
     left: 5%;
     right: 5%;
     background: white;
