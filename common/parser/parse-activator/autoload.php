@@ -9,7 +9,7 @@ spl_autoload_register(function ($class) {
     $prefixes = array(
         "{$ns}\\" => array(
             // __DIR__ . '/src/' . $ns,
-            './parser/src/' . $ns,
+            '../common/parser/src/' . $ns,
         ),
     );
 
