@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 
 $type = $_POST['type'];
 $level = $_POST['level'];
@@ -54,6 +55,7 @@ $finish_time_s = $_POST['finish_time_s'];
         <link href = "../common/css/math_result.css" rel = "stylesheet">
         <script type = "text/javascript" asyncsrc = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=MML_SVG"></script>
         <script src = "../common/js/toggle-menu.js"></script>
+        <script src = "../common/js/set-banner.js"></script>
     </head>
     <body>
         <header class = "header">

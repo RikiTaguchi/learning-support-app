@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 
 $edit_type = $_POST['edit_type'];
 try {
@@ -16,7 +17,7 @@ try {
     $user_countdown_title = $result['countdown_title'];
     $user_countdown_date = strtotime($result['countdown_date']);
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
 
@@ -35,7 +36,7 @@ if ($edit_type == 'reset') {
         $dbh = null;
         header('Location: countdown_set.php', true, 307);
     } catch (PDOException $e) {
-        header('Location: error.php?type=2', true, 307);
+        header('Location: login.php', true, 307);
         exit;
     }
 } else {
@@ -61,6 +62,6 @@ if ($edit_type == 'reset') {
         $dbh = null;
         header('Location: index.php', true, 307);
     } catch (PDOException $e) {
-        header('Location: error.php?type=2', true, 307);
+        header('Location: login.php', true, 307);
     }
 }

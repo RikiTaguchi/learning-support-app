@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 
 try {
     $book_id = $_POST['book_id'];
@@ -37,11 +38,9 @@ try {
 
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
-
-include('./banner.php');
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +73,6 @@ include('./banner.php');
                         echo '<input class = "info_account" type = "text" name = "table_id" value = "' . $table_id . '">';
                         echo '<input class = "info_account" type = "text" name = "book_name" value = "' . $book_name . '">';
                         echo '<input class = "info_account" type = "text" name = "book_id" value = "' . $book_id . '">';
-                        echo '<input class = "info-banner" type = "text" name = "info_banner" value = "update" style = "display: none;">';
                         echo '<div class = "form-block-1">';
                             echo '<input type = "text" name = "new_book_name" value = "' . $book_name . '" required>';
                             echo '<button type = "submit" name = "submit"><p>更新</p></button>';
@@ -90,7 +88,6 @@ include('./banner.php');
                         echo '<input class = "info_account" type = "text" name = "table_id" value = "' . $table_id . '">';
                         echo '<input class = "info_account" type = "text" name = "book_name" value = "' . $book_name . '">';
                         echo '<input class = "info_account" type = "text" name = "book_id" value = "' . $book_id . '">';
-                        echo '<input class = "info-banner" type = "text" name = "info_banner" value = "update" style = "display: none;">';
                         echo '<div class = "form-block-1">';
                             echo '<textarea name = "new_memo" required>' . $result2['memo'] . '</textarea>';
                             echo '<button type = "submit" name = "submit"><p>更新</p></button>';
@@ -119,7 +116,6 @@ include('./banner.php');
                                     echo '<td class = "form-td-element"><input type = "text" name = "new_word" required></td>';
                                     echo '<td class = "form-td-element"><input type = "text" name = "new_answer" required></td>';
                                     echo '<td class = "form-td-last">';
-                                        echo '<input class = "info-banner" type = "text" name = "info_banner" value = "add-data" style = "display: none;">';
                                         echo '<button class = "form-button-add" type = "submit" name = "submit" value = "add"><p>追加</p></button>';
                                     echo '</td>';
                                 echo '</form>';
@@ -145,7 +141,6 @@ include('./banner.php');
                                                 <input type = "text" name = "new_answer" value = "' . $row['answer'] . '" required>
                                             </td>
                                             <td class = "form-td-last">
-                                                <input class = "info-banner" type = "text" name = "info_banner" value = "update" style = "display: none;">
                                                 <button class = "form-button-change" type = "submit" name = "submit" value = "change">
                                                     <p>更新</p>
                                                 </button>
@@ -170,7 +165,6 @@ include('./banner.php');
                             <input class = "info_account" type = "text" name = "table_id" value = "' . $table_id . '">
                             <input class = "info_account" type = "text" name = "book_name" value = "' . $book_name . '">
                             <input class = "info_account" type = "text" name = "book_id" value = "' . $book_id . '">
-                            <input class = "info-banner" type = "text" name = "info_banner" value = "delete" style = "display: none;">
                             <button type = "submit" name = "submit" value = "delete_all">
                                 <p>
                                     この単語帳を削除

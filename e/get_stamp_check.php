@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 
 $director_table_id = $_GET['table_id'];
 $img_id = $_GET['img_id'];
@@ -13,7 +14,7 @@ if ($img_extention != '' && $img_extention_0 == '') {
 } else if ($img_extention == '' && $img_extention_0 != '') {
     $info_param = '?table_id=' . $director_table_id . '&img_id=' . $img_id . '&img_extention_0=' . $img_extention_0;
 } else {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
 
@@ -50,12 +51,12 @@ try {
             }
         }
         if ($check_account == true) {
-            header('Location: error.php?type=1', true, 307);
+            header('Location: login.php', true, 307);
         } else {
-            header('Location: error.php?type=0', true, 307);
+            header('Location: login.php', true, 307);
         }
     }
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }

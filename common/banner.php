@@ -43,20 +43,5 @@ if ($banner != '') {
         $banner_msg = '';
     }
 } else {
-    $banner = $_POST['info_banner'];
-    if ($banner == 'login') {
-        $banner_msg = 'ようこそ、' . $user_name . 'さん。';
-    } else if ($banner == 'update') {
-        $banner_msg = '更新が完了しました。';
-    } else if ($banner == 'new-book') {
-        $banner_msg = '作成が完了しました。';
-    } else if ($banner == 'delete') {
-        $banner_msg = '削除が完了しました。';
-    } else if ($banner == 'add-data') {
-        $banner_msg = '追加が完了しました。';
-    } else if ($banner == 'new-account') {
-        $banner_msg = '登録が完了しました。';
-    } else {
-        $banner_msg = '';
-    }
+    $banner_msg = '';
 }

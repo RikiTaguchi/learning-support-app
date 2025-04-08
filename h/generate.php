@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 include('../common/parser/parse-activator/autoload.php'); // 構文解析器のセットアップ
 
 // 特に加工処理をしないタグ
@@ -171,7 +172,7 @@ try {
     // 関数を呼び出して解析結果を処理
     $results = processParseResults($parse_results, $breakLineAfter, $breakLineAndIndent, $tags);
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
 ?>
@@ -188,6 +189,7 @@ try {
         <link href = "../common/css/generate.css" rel = "stylesheet">
         <script src = "../common/js/toggle-menu.js"></script>
         <script src = "../common/js/toggle-structure.js"></script>
+        <script src = "../common/js/set-banner.js"></script>
     </head>
     <body>
         <header class = "header">

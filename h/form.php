@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 include('./source_book.php');
 
 try {
@@ -24,11 +25,9 @@ try {
     
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
-
-include('../common/banner.php');
 ?>
 
 <!DOCTYPE html>

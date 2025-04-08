@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 
 $img_title_new = $_POST['stamp_title'];
 $date_limit_new = $_POST['date_limit'];
@@ -52,10 +53,10 @@ if ($stamp_number === 0) {
         $stmt->execute();
         $dbh = null;
 
-        header('Location: info_stamp.php?banner=34', true, 307);
+        header('Location: info_stamp.php', true, 307);
         exit;
     } catch (PDOException $e) {
-        header('Location: error.php?type=24', true, 307);
+        header('Location: login.php', true, 307);
         exit;
     }
 } else {
@@ -112,11 +113,11 @@ if ($stamp_number === 0) {
             $stmt->execute();
             $dbh = null;
         } catch (PDOException $e) {
-            header('Location: error.php?type=24', true, 307);
+            header('Location: login.php', true, 307);
             exit;
         }
     }
 
-    header('Location: info_stamp.php?banner=34', true, 307);
+    header('Location: info_stamp.php', true, 307);
     exit;
 }

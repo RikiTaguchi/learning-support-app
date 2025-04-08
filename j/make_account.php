@@ -1,3 +1,10 @@
+<?php
+include('../common/get_info.php');
+include('../common/db_info.php');
+include('../common/function.php');
+include('../common/banner.php');
+?>
+
 <!DOCTYPE html>
 <html>
     <head lang = "ja">
@@ -9,7 +16,7 @@
         <link href = "../common/css/body.css" rel = "stylesheet">
         <link href = "../common/css/form.css" rel = "stylesheet">
         <link href = "../common/css/make_account.css" rel = "stylesheet">
-        <script src = "../common/js/set-banner3.js"></script>
+        <script src = "../common/js/set-banner.js"></script>
     </head>
     <body>
         <header class = "header">
@@ -18,13 +25,14 @@
                     <img src = "../common/images/logo-1.png" alt = "ロゴ画像">
                 </a>
             </div>
-            <div class = "main-banner"><p class = "main-banner-text"></p></div>
+            <div class = "main-banner">
+                <p class = "main-banner-text"><?php echo $banner_msg; ?></p>
+            </div>
         </header>
         <main class = "main">
             <div class = "main-block">
                 <p class = "main-block-title">新規登録</p>
                 <form class = "form" method = "post" action = "make_account_check.php">
-                    <input class = "info-banner" type = "text" name = "info_banner" value = "new-account" style = "display: none;">
                     <div class = "form-content-3">
                         <span>ユーザーネーム</span>
                         <input class = "form-user" type = "text" name = "user_name" required>

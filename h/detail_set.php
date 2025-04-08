@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 
 $table_id = $_POST['table_id'];
 $book_name = $_POST['book_name'];
@@ -112,6 +113,6 @@ try {
     $dbh = null;
     header('Location: detail.php', true, 307);
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }

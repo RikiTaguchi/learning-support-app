@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 
 include('./math_function.php');
 include('./math_info1.php');
@@ -36,7 +37,7 @@ $answer = $info[3];
 $answer_text = $info[4];
 
 if (strval($question_number) < 1 || strval($question_number) > 100) {
-    header('Location: error.php?type=40', true, 307);
+    header('Location: form10.php', true, 307);
     exit;
 }
 
@@ -68,8 +69,9 @@ $feedback_text = $question_text . 'E' . $answer_text . 'E' . $question_count;
         <link href = "../common/css/math_question.css" rel = "stylesheet">
         <script type = "text/javascript" asyncsrc = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=MML_SVG"></script>
         <script src = "../common/js/toggle-menu.js"></script>
-        <script src = "../common/js/set_input.js"></script>
-        <script src = "../common/js/count_time.js"></script>
+        <script src = "../common/js/set-input.js"></script>
+        <script src = "../common/js/count-time.js"></script>
+        <script src = "../common/js/set-banner.js"></script>
     </head>
     <body>
         <header class = "header">

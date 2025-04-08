@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 include('./source_book.php');
 
 $account_type = 'h';
@@ -22,7 +23,7 @@ try {
     $user_countdown_date = strtotime($result['countdown_date']);
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
 
@@ -40,7 +41,7 @@ try {
         $notice[] = $row;
     }
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
 
@@ -80,11 +81,9 @@ try {
 
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
-
-include('../common/banner.php');
 ?>
 
 <!DOCTYPE html>
@@ -251,7 +250,6 @@ include('../common/banner.php');
                                     <input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">
                                     <input class = "info_account" type = "text" name = "book_id" value = "' . $book_id_list[$i] . '">
                                     <input class = "info_account" type = "text" name = "delete_all" value = "all">
-                                    <input class = "info-banner" type = "text" name = "info_banner" value = "delete" style = "display: none;">
                                     <button type = "submit">
                                         <p>削除</p>
                                     </button>

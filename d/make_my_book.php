@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 include('./source_book.php');
 
 $new_book_name = $_POST['new_book_name'];
@@ -36,7 +37,7 @@ if ($state == 'new') {
                 if ($row == null) {
                     break;
                 } else if (($new_book_name == $row['book_name'] && $table_id == $row['table_id']) || in_array($new_book_name, $book_name_list)) {
-                    header('Location: error.php?type=11', true, 307);
+                    header('Location: form4.php', true, 307);
                     exit;
                 }
             }
@@ -70,7 +71,7 @@ if ($state == 'new') {
 
         $dbh = null;
     } catch (PDOException $e) {
-        header('Location: error.php?type=2', true, 307);
+        header('Location: login.php', true, 307);
         exit;
     }
 } else if ($state == 'add') {
@@ -110,12 +111,10 @@ if ($state == 'new') {
 
         $dbh = null;
     } catch (PDOException $e) {
-        header('Location: error.php?type=2', true, 307);
+        header('Location: login.php', true, 307);
         exit;
     }
 }
-
-include('./banner.php');
 ?>
 
 <!DOCTYPE html>
@@ -147,7 +146,6 @@ include('./banner.php');
                     echo '<input class = "info_account" type = "text" name = "new_book_name" value = "' . $new_book_name . '">';
                     echo '<input class = "info_account" type = "text" name = "book_id" value = "' . $book_id . '">';
                     ?>
-                    <input class = "info-banner" type = "text" name = "info_banner" value = "add-data" style = "display: none;">
                     <div class = "form-content">
                         <span>Word</span>
                         <input type = "text" name = "question" required>
@@ -166,7 +164,6 @@ include('./banner.php');
                     echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                     echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
                     ?>
-                    <input class = "info-banner" type = "text" name = "info_banner" value = "new-book" style = "display: none;">
                     <div class = "form-content">
                         <div class = "form-content-submit"><input type = "submit" value = "作成完了"></div>
                     </div>

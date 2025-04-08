@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
@@ -15,7 +16,7 @@ try {
     $user_countdown_title = $result['countdown_title'];
     $user_countdown_date = strtotime($result['countdown_date']);
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
 ?>
@@ -31,6 +32,7 @@ try {
         <link href = "../common/css/header.css" rel = "stylesheet">
         <link href = "../common/css/body.css" rel = "stylesheet">
         <script src = "../common/js/toggle-menu.js"></script>
+        <script src = "../common/js/set-banner.js"></script>
     </head>
     <body>
         <header class = "header">
@@ -45,7 +47,6 @@ try {
                     echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                     echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
                     ?>
-                    <input class = "info-banner" type = "text" name = "info_banner" value = "update" style = "display: none;">
                     <div class = "form-content-3">
                         <span>タイトル</span>
                         <input type = "text" name = "user_title" value = "<?php echo $user_countdown_title ?>">
@@ -64,7 +65,6 @@ try {
                     echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                     echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
                     ?>
-                    <input class = "info-banner" type = "text" name = "info_banner" value = "update" style = "display: none;">
                     <div class = "form-content">
                         <div class = "form-content-submit"><button type = "submit" name = "edit_type" value = "reset">リセット</button></div>
                     </div>

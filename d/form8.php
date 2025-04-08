@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
@@ -39,11 +40,9 @@ try {
 
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
-
-include('../common/banner.php');
 ?>
 
 <!DOCTYPE html>
@@ -59,6 +58,7 @@ include('../common/banner.php');
         <link href = "../common/css/form_stamp.css" rel = "stylesheet">
         <script src = "../common/js/toggle-menu.js"></script>
         <script src = "../common/js/set-stamp2.js"></script>
+        <script src = "../common/js/set-banner.js"></script>
     </head>
     <body>
         <header class = "header">

@@ -1,3 +1,10 @@
+<?php
+include('../common/get_info.php');
+include('../common/db_info.php');
+include('../common/function.php');
+include('../common/banner.php');
+?>
+
 <!DOCTYPE html>
 <html>
     <head lang = "ja">
@@ -9,9 +16,9 @@
         <link href = "../common/css/body.css" rel = "stylesheet">
         <link href = "../common/css/form.css" rel = "stylesheet">
         <link href = "../common/css/login.css" rel = "stylesheet">
-        <script src = "../common/js/set-banner2.js"></script>
         <script src = "../common/js/set-cookie.js"></script>
         <script src = "../common/js/change-form.js"></script>
+        <script src = "../common/js/set-banner.js"></script>
     </head>
     <body>
         <header class = "header">
@@ -20,13 +27,14 @@
                     <img src = "../common/images/logo-1.png" alt = "ロゴ画像">
                 </a>
             </div>
-            <div class = "main-banner"><p class = "main-banner-text"></p></div>
+            <div class = "main-banner">
+                <p class = "main-banner-text"><?php echo $banner_msg; ?></p>
+            </div>
         </header>
         <main class = "main">
             <div class = "main-block">
                 <p class = "main-block-title">ログイン</p>
                 <form class = "form" method = "post" action = "login_check.php">
-                    <input class = "info-banner" type = "text" name = "info_banner" value = "login" style = "display: none;">
                     <div class = "form-content-3">
                         <span>ログインID</span>
                         <input class = "form-login" type = "text" name = "login_id" required>

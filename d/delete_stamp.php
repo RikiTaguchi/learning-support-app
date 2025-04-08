@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
@@ -22,9 +23,9 @@ try {
     $stmt->execute();
     $dbh = null;
 
-    header('Location: info_stamp.php?banner=35', true, 307);
+    header('Location: info_stamp.php', true, 307);
     exit;
 } catch (PDOException $e) {
-    header('Location: error.php?type=24', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }

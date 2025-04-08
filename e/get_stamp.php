@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
@@ -14,7 +15,7 @@ try {
     $user_table_id = $result['table_id'];
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
 
@@ -24,12 +25,7 @@ $img_extention_list = [];
 $img_probability_list = [];
 
 if ($login_id == '' || $user_pass == '') {
-    if ($_GET['img_extention_0'] == '') {
-        $url = 'Location: login.php?banner=41&table_id=' . $director_table_id . '&img_id=' . $img_id . '&img_extention=' . $_GET['img_extention'];
-    } else {
-        $url = 'Location: login.php?banner=41&table_id=' . $director_table_id . '&img_id=' . $img_id . '&img_extention_0=' . $_GET['img_extention_0'];
-    }
-    header($url, true, 307);
+    header('login.php', true, 307);
     exit;
 }
 
@@ -48,7 +44,7 @@ if ($_GET['img_extention_0'] != '') {
         }
         $dbh = null;
     } catch (PDOException $e) {
-        header('Location: error.php?type=2', true, 307);
+        header('Location: login.php', true, 307);
         exit;
     }
 }
@@ -97,7 +93,7 @@ try {
 
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
 
@@ -127,13 +123,13 @@ if (($date_limit - $date_today) / (60 * 60 * 24) >= 0) {
 
         $dbh = null;
 
-        header('Location: detail_stamp.php?banner=8', true, 307);
+        header('Location: detail_stamp.php', true, 307);
         exit;
     } catch (PDOException $e) {
-        header('Location: error.php?type=2', true, 307);
+        header('Location: login.php', true, 307);
         exit;
     }
 } else {
-    header('Location: detail_stamp.php?banner=21', true, 307);
+    header('Location: detail_stamp.php', true, 307);
     exit;
 }

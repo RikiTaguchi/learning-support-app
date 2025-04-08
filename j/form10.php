@@ -2,7 +2,6 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
-
 include('../common/banner.php');
 ?>
 

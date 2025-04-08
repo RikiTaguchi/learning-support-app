@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 
 $stamp_list = [];
 
@@ -35,7 +36,7 @@ try {
 
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
 
@@ -66,8 +67,6 @@ if ($stamp_page_position == $stamp_page_max) {
 } else {
     $add_count = 9;
 }
-
-include('../common/banner.php');
 ?>
 
 <!DOCTYPE html>

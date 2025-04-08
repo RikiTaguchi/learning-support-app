@@ -59,7 +59,7 @@ else if (isset($login_id)) {
         $table_id = $result['table_id'];
 
         if ($book_id == '') {
-            header('Location: error.php?type=12', true, 307);
+            header('Location: index.php', true, 307);
             exit;
         }
 
@@ -83,7 +83,7 @@ else if (isset($login_id)) {
 
         $dbh = null;
     } catch (PDOException $e) {
-        header('Location: error.php?type=2', true, 307);
+        header('Location: login.php', true, 307);
         exit;
     }
 }

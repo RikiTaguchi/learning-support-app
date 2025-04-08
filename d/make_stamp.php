@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 
 // 基本情報の取得
 $img_title = $_POST['stamp_title'];
@@ -63,7 +64,7 @@ if ($page_count == 0) {
     
         $dbh = null;
     } catch (PDOException $e) {
-        header('Location: error.php?type=24', true, 307);
+        header('Location: login.php', true, 307);
         exit;
     }
 } else {
@@ -137,7 +138,7 @@ if ($page_count == 0) {
     
         $dbh = null;
     } catch (PDOException $e) {
-        header('Location: error.php?type=24', true, 307);
+        header('Location: login.php', true, 307);
         exit;
     }
 }
@@ -154,6 +155,7 @@ if ($page_count == 0) {
         <link href = "../common/css/body.css" rel = "stylesheet">
         <link href = "../common/css/make_stamp.css" rel = "stylesheet">
         <script src = "../common/js/toggle-menu.js"></script>
+        <script src = "../common/js/set-banner.js"></script>
     </head>
     <body>
         <header class = "header">

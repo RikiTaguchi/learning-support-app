@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 include('./source_book.php');
 
 $book_name = $_POST['book_name'];
@@ -45,7 +46,7 @@ try {
 
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
 
@@ -82,7 +83,7 @@ try {
     }
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
 ?>
@@ -99,6 +100,7 @@ try {
     <script src = "../common/js/toggle-menu.js"></script>
     <script src = "../common/js/change-answer.js"></script>
     <script src = "../common/js/toggle-feedback2.js"></script>
+    <script src = "../common/js/set-banner.js"></script>
 </head>
 <body>
     <header class = "header">

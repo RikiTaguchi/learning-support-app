@@ -2,6 +2,7 @@
 include('../common/get_info.php');
 include('../common/db_info.php');
 include('../common/function.php');
+include('../common/banner.php');
 
 $account_type = 'h';
 
@@ -35,12 +36,12 @@ try {
             }
         }
         if ($check_account == true) {
-            header('Location: error.php?type=1', true, 307);
+            header('Location: login.php', true, 307);
         } else {
-            header('Location: error.php?type=0', true, 307);
+            header('Location: login.php', true, 307);
         }
     }
 } catch (PDOException $e) {
-    header('Location: error.php?type=2', true, 307);
+    header('Location: login.php', true, 307);
     exit;
 }
