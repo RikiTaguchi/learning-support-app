@@ -58,7 +58,7 @@ try {
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     foreach ($number as $n) {
-        if (array_search($book_id, $book_id_list) == false) {
+        if (array_search($book_id, $book_id_list) === false) {
             $sql = 'SELECT * FROM info_my_book_data WHERE table_id = :table_id AND book_id = :book_id AND question_number = :question_number';
             $stmt = $dbh->prepare($sql);
             $stmt->bindParam(':table_id', $table_id, PDO::PARAM_INT);

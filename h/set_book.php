@@ -57,7 +57,7 @@ else if ($_POST['book_id'] == '11') {
 else if ($_POST['book_id'] == '12') {
     $book_name = 'みるみる古文単語300';
     $book_id = 'kobun300';
-    $limit = 300;
+    $limit = 330;
 }
 else if ($_POST['book_id'] == '13') {
     $book_name = '古文単語315';

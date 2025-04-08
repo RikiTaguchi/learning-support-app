@@ -84,7 +84,7 @@ include('../common/banner.php');
         <script src = "../common/js/set-banner.js"></script>
         <script src = "../common/js/check-submit.js"></script>
         <?php if ($banner == '8') { ?>
-            <script src = "../common/js/set-stamp.js"></script>
+            <script src = "../common/js/get-stamp.js"></script>
         <?php } ?>
         <script>
             window.addEventListener('load', () => {
@@ -156,9 +156,9 @@ include('../common/banner.php');
                                 if ($i < count($stamp_list)) {
                                     echo '<div class = "main-stamp-back" style = "border: none;"><p style = "display: none;">' . (string)($i + 1) . '</p></div>';
                                     if ($stamp_list[$i][5] == 'none') {
-                                        echo '<button class = "main-stamp-button' . (string)$i . ' main-stamp-button"><img class = "main-stamp" src = "../d/images_stamp/' . $stamp_list[$i][0] . '_' . $stamp_list[$i][1] . '.' . $stamp_list[$i][2] . '?version=' . uniqid()  . '"></button>';
+                                        echo '<button class = "main-stamp-button' . (string)$i . ' main-stamp-button"><img class = "main-stamp" src = "../common/stamp/' . $stamp_list[$i][0] . '_' . $stamp_list[$i][1] . '.' . $stamp_list[$i][2] . '?version=' . uniqid()  . '"></button>';
                                     } else {
-                                        echo '<button class = "main-stamp-button' . (string)$i . ' main-stamp-button"><img class = "main-stamp" src = "../d/images_stamp/' . $stamp_list[$i][0] . '_' . $stamp_list[$i][1] . '_' . $stamp_list[$i][5] . '.' . $stamp_list[$i][2] . '?version=' . uniqid()  . '"></button>';
+                                        echo '<button class = "main-stamp-button' . (string)$i . ' main-stamp-button"><img class = "main-stamp" src = "../common/stamp/' . $stamp_list[$i][0] . '_' . $stamp_list[$i][1] . '_' . $stamp_list[$i][5] . '.' . $stamp_list[$i][2] . '?version=' . uniqid()  . '"></button>';
                                     }
                                 } else {
                                     echo '<div class = "main-stamp-back"><p>' . (string)($i + 1) . '</p></div>';
@@ -176,9 +176,9 @@ include('../common/banner.php');
                     for ($i = 9 * $stamp_page_position; $i < (9 * $stamp_page_position) + $add_count; $i += 1) {
                         echo '<div class = "main-stamp-info' . (string)$i . ' main-stamp-info" style = "display: none">';
                             if ($stamp_list[$i][5] == 'none') {
-                                echo '<img class = "main-stamp-info-img" src = "../d/images_stamp/' . $stamp_list[$i][0] . '_' . $stamp_list[$i][1] . '.' . $stamp_list[$i][2] . '?version=' . uniqid() . '">';
+                                echo '<img class = "main-stamp-info-img" src = "../common/stamp/' . $stamp_list[$i][0] . '_' . $stamp_list[$i][1] . '.' . $stamp_list[$i][2] . '?version=' . uniqid() . '">';
                             } else {
-                                echo '<img class = "main-stamp-info-img" src = "../d/images_stamp/' . $stamp_list[$i][0] . '_' . $stamp_list[$i][1] . '_' . $stamp_list[$i][5] . '.' . $stamp_list[$i][2] . '?version=' . uniqid() . '">';
+                                echo '<img class = "main-stamp-info-img" src = "../common/stamp/' . $stamp_list[$i][0] . '_' . $stamp_list[$i][1] . '_' . $stamp_list[$i][5] . '.' . $stamp_list[$i][2] . '?version=' . uniqid() . '">';
                             }
                             echo '<p class = "main-stamp-info-title">' . $stamp_list[$i][3] . '</p>';
                             echo '<p class = "main-stamp-info-date">取得日：' . $stamp_list[$i][4] . '</p>';

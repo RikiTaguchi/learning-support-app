@@ -59,7 +59,7 @@ include('../common/banner.php');
         <link href = "../common/css/body.css" rel = "stylesheet">
         <script src = "../common/js/toggle-menu.js"></script>
         <script src = "../common/js/set-banner.js"></script>
-        <script src = "./js/check-submit.js"></script>
+        <script src = "../common/js/check-submit.js"></script>
 		<script>
             const button = new Array(<?php echo (string)count($notice); ?>);
             const detail = new Array(<?php echo (string)count($notice); ?>);

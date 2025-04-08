@@ -83,7 +83,7 @@ const checkImage = () => {
          let imgName = tableId + '_' + imgId + '.' + imgExtention;
          previewButton.style.display = 'flex';
          previewBackButton.style.display = 'block';
-         previewImage.src = '../d/images_stamp/' + imgName;
+         previewImage.src = '../common/stamp/' + imgName;
          previewSubmit.action = code.data;
          cameraBackButton.style.display = 'none';
          previewImage0.style.display = 'none';

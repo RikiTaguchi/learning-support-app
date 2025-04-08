@@ -40,6 +40,18 @@
     border-radius: 5px;
 }
 
+.form-content button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 30px;
+    border: solid;
+    border-width: 1px;
+    border-color: gray;
+    border-radius: 5px;
+}
+
 .form-content select {
     display: flex;
     align-items: center;

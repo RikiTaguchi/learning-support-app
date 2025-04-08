@@ -1,0 +1,321 @@
+.main-block-title {
+    margin-bottom: 15px;
+}
+
+.stamp-row {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.stamp-title {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.stamp-button-detail {
+    width: 80px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: lightseagreen;
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.stamp-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+.stamp-block-limit {
+    font-size: 15px;
+    margin-top: 25px;
+}
+
+.stamp-block-img {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin-top: 15px;
+}
+
+.stamp-block-img img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.stamp-block-img div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stamp-block-img div img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.stamp-block-img div p {
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.stamp-button-qr {
+    width: 45%;
+    height: 30px;
+    padding: 2px;
+    border: none;
+    border-radius: 5px;
+    background-color: lightseagreen;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.stamp-block-form {
+    width: 45%;
+    height: 30px;
+    margin-top: 15px;
+}
+
+.stamp-button-edit {
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    border: none;
+    border-radius: 5px;
+    background-color: lightseagreen;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.stamp-button-delete {
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    border: none;
+    border-radius: 5px;
+    background-color: lightseagreen;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.stamp-line {
+    width: 300px;
+    margin-top: 15px;
+}
+
+.stamp-block-left {
+    width: 15%;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    margin-left: -15%;
+    text-align: left;
+}
+
+.stamp-block-right {
+    width: 15%;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    margin-right: -15%;
+    text-align: right;
+}
+
+.stamp-count {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    justify-content: center;
+    width: 60%;
+    height: 10px;
+}
+
+.count-block {
+    width: 16%;
+    height: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+    border: none;
+    border-radius: 5px;
+}
+
+.qr-block {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgb(76, 76, 78);
+}
+
+.qr-back {
+    position: relative;
+    width: 90%;
+    aspect-ratio: 1/1;
+    margin-top: 15px;
+}
+
+.qr-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.qr-icon {
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.qr-icon img {
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+}
+
+.qr-download {
+    width: 40%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightseagreen;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.qr-close {
+    width: 40%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightseagreen;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .main-block-title {
+        margin-bottom: 10px;
+    }
+    
+    .stamp-row {
+        width: 80%;
+        margin-top: 10px;
+    }
+    
+    .stamp-title {
+        font-size: 15px;
+    }
+    
+    .stamp-button-detail {
+        width: 30%;
+        font-size: 10px;
+    }
+    
+    .stamp-block {
+        width: 70%;
+    }
+    
+    .stamp-block-limit {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+    
+    .stamp-block-img div p {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+    
+    .stamp-button-qr {
+        height: 25px;
+        font-size: 10px;
+        margin-top: 15px;
+    }
+    
+    .stamp-block-form {
+        height: 25px;
+        margin-top: 10px;
+    }
+    
+    .stamp-button-edit {
+        font-size: 10px;
+    }
+    
+    .stamp-button-delete {
+        font-size: 10px;
+    }
+    
+    .stamp-line {
+        width: 80%;
+        margin-top: 10px;
+    }
+    
+    .stamp-block-left {
+        width: 20%;
+        margin-left: -20%;
+    }
+    
+    .stamp-block-right {
+        width: 20%;
+        margin-right: -20%;
+    }
+    
+    .stamp-count {
+        width: 70%;
+    }
+    
+    .qr-block {
+        width: 80%;
+    }
+    
+    .qr-download {
+        height: 25px;
+        font-size: 12px;
+    }
+    
+    .qr-close {
+        height: 25px;
+        font-size: 12px;
+    }
+}
