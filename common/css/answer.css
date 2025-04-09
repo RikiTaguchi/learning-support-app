@@ -40,6 +40,10 @@
     border: none;
 }
 
+.header-logo img {
+    width: 100%;
+}
+
 .header-inner-menu {
     text-align: center;
     margin-left: 30px;
