@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -18,10 +18,11 @@ try {
         $user_name = $result['user_name'];
         $dbh = null;
 
+        // cookieの保存
         setcookie('login_id', $login_id, time() + (60 * 60 * 24 * 60));
         setcookie('user_pass', $user_pass, time() + (60 * 60 * 24 * 60));
 
-        header('Location: index.php', true, 307);
+        header('Location: index.php?banner=0', true, 307);
         exit;
     } else {
         $sql = 'SELECT * FROM info_account';
@@ -36,12 +37,12 @@ try {
             }
         }
         if ($check_account == true) {
-            header('Location: login.php', true, 307);
+            header('Location: login.php?banner=3', true, 307);
         } else {
-            header('Location: login.php', true, 307);
+            header('Location: login.php?banner=2', true, 307);
         }
     }
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }

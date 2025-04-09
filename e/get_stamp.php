@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -15,7 +15,7 @@ try {
     $user_table_id = $result['table_id'];
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 
@@ -25,7 +25,12 @@ $img_extention_list = [];
 $img_probability_list = [];
 
 if ($login_id == '' || $user_pass == '') {
-    header('login.php', true, 307);
+    if ($_GET['img_extention_0'] == '') {
+        $redirect_url = 'login.php?table_id=' . $director_table_id . '&img_id=' . $img_id . '&img_extention=' . $_GET['img_extention'] . '&banner=17';
+    } else {
+        $redirect_url = 'login.php?table_id=' . $director_table_id . '&img_id=' . $img_id . '&img_extention_0=' . $_GET['img_extention_0'] . '&banner=17';
+    }
+    header($redirect_url, true, 307);
     exit;
 }
 
@@ -44,7 +49,7 @@ if ($_GET['img_extention_0'] != '') {
         }
         $dbh = null;
     } catch (PDOException $e) {
-        header('Location: login.php', true, 307);
+        header('Location: login.php?banner=9', true, 307);
         exit;
     }
 }
@@ -93,7 +98,7 @@ try {
 
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 
@@ -123,13 +128,13 @@ if (($date_limit - $date_today) / (60 * 60 * 24) >= 0) {
 
         $dbh = null;
 
-        header('Location: detail_stamp.php', true, 307);
+        header('Location: detail_stamp.php?banner=15', true, 307);
         exit;
     } catch (PDOException $e) {
-        header('Location: login.php', true, 307);
+        header('Location: login.php?banner=9', true, 307);
         exit;
     }
 } else {
-    header('Location: detail_stamp.php', true, 307);
+    header('Location: detail_stamp.php?banner=16', true, 307);
     exit;
 }

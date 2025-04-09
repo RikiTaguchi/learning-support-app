@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 include('./set_book.php');
@@ -12,10 +12,10 @@ $questions_num = $_POST['questions_num'];
 $order = $_POST['order'];
 
 if (check_form($_POST['book_id'], $start, $end, $questions_num, $limit) == 1) {
-    header('Location: form.php', true, 307);
+    header('Location: form.php?banner=21', true, 307);
     exit;
 } else if (check_form($_POST['book_id'], $start, $end, $questions_num, $limit) == 2) {
-    header('Location: form.php', true, 307);
+    header('Location: form.php?banner=22', true, 307);
     exit;
 }
 
@@ -50,7 +50,7 @@ else if ($order == 2) {
     }
 }
 else {
-    header('Location: index.php', true, 307);
+    header('Location: index.php?banner=9', true, 307);
     exit;
 }
 
@@ -86,7 +86,7 @@ try {
     }
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 ?>

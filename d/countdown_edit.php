@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -17,7 +17,7 @@ try {
     $user_countdown_title = $result['countdown_title'];
     $user_countdown_date = strtotime($result['countdown_date']);
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 
@@ -34,9 +34,9 @@ if ($edit_type == 'reset') {
         $stmt->bindParam(':login_id', $login_id, PDO::PARAM_STR);
         $stmt->execute();
         $dbh = null;
-        header('Location: countdown_set.php', true, 307);
+        header('Location: countdown_set.php?banner=8', true, 307);
     } catch (PDOException $e) {
-        header('Location: login.php', true, 307);
+        header('Location: login.php?banner=9', true, 307);
         exit;
     }
 } else {
@@ -60,8 +60,8 @@ if ($edit_type == 'reset') {
         $stmt->bindParam(':login_id', $login_id, PDO::PARAM_STR);
         $stmt->execute();
         $dbh = null;
-        header('Location: index.php', true, 307);
+        header('Location: index.php?banner=8', true, 307);
     } catch (PDOException $e) {
-        header('Location: login.php', true, 307);
+        header('Location: login.php?banner=9', true, 307);
     }
 }

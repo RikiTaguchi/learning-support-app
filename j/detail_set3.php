@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -31,11 +31,11 @@ try {
 
     if ($check_book_name == true) {
         $dbh = null;
-        if ($_POST['info_banner'] == 'update') {
-            header('Location: detail.php', true, 307);
+        if ($_POST['submit'] == 'update') {
+            header('Location: detail.php?banner=14', true, 307);
             exit;
         } else {
-            header('Location: form4.php', true, 307);
+            header('Location: form4.php?banner=13', true, 307);
             exit;
         }
     } else {
@@ -48,9 +48,9 @@ try {
         $stmt->bindParam(':book_name_pre', $book_name, PDO::PARAM_STR);
         $stmt->execute();
         $dbh = null;
-        header('Location: detail.php', true, 307);
+        header('Location: detail.php?banner=8', true, 307);
     }
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }

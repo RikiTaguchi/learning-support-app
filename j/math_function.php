@@ -2,13 +2,13 @@
 function set_question($type, $level) {
     if ($type == 'n' || $level == 'n') {
         if ($type == 'n') {
-            header('Location: form10.php', true, 307);
+            header('Location: form10.php?banner=18', true, 307);
             exit;
         } else if ($level == 'n') {
-            header('Location: form10.php', true, 307);
+            header('Location: form10.php?banner=19', true, 307);
             exit;
         } else {
-            header('Location: index.php', true, 307);
+            header('Location: index.php?banner=9', true, 307);
             exit;
         }
     } else if ($type == '1') {
@@ -54,7 +54,7 @@ function set_question($type, $level) {
         $input = write6($level, $answer);
         $feedback_data = feedback6($level, $answer);
     } else {
-        header('Location: index.php', true, 307);
+        header('Location: index.php?banner=9', true, 307);
         exit;
     }
     return [$title, $question, $input, $answer, $feedback_data];

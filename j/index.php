@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 include('./source_book.php');
@@ -23,7 +23,7 @@ try {
     $user_countdown_date = strtotime($result['countdown_date']);
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 
@@ -41,7 +41,7 @@ try {
         $notice[] = $row;
     }
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 
@@ -81,7 +81,7 @@ try {
 
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 ?>

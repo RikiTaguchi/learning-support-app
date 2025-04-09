@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -85,10 +85,10 @@ try {
         $stmt->bindParam(':book_id', $book_id, PDO::PARAM_STR);
         $stmt->execute();
         $dbh = null;
-        header('Location: index.php', true, 307);
+        header('Location: index.php?banner=7', true, 307);
     } else { // エラー
         $dbh = null;
-        header('Location: index.php', true, 307);
+        header('Location: index.php?banner=9', true, 307);
     }
 
     // インデックスの修正
@@ -111,8 +111,8 @@ try {
     }
 
     $dbh = null;
-    header('Location: detail.php', true, 307);
+    header('Location: detail.php?banner=8', true, 307);
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }

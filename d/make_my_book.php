@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 include('./source_book.php');
@@ -37,7 +37,7 @@ if ($state == 'new') {
                 if ($row == null) {
                     break;
                 } else if (($new_book_name == $row['book_name'] && $table_id == $row['table_id']) || in_array($new_book_name, $book_name_list)) {
-                    header('Location: form4.php', true, 307);
+                    header('Location: form4.php?banner=13', true, 307);
                     exit;
                 }
             }
@@ -71,7 +71,7 @@ if ($state == 'new') {
 
         $dbh = null;
     } catch (PDOException $e) {
-        header('Location: login.php', true, 307);
+        header('Location: login.php?banner=9', true, 307);
         exit;
     }
 } else if ($state == 'add') {
@@ -111,7 +111,7 @@ if ($state == 'new') {
 
         $dbh = null;
     } catch (PDOException $e) {
-        header('Location: login.php', true, 307);
+        header('Location: login.php?banner=9', true, 307);
         exit;
     }
 }

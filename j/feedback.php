@@ -1,13 +1,13 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 include('./set_book.php');
 include('./source_book.php');
 
 if ($_POST['book_id'] == '' || $_POST['book_id'] == 'n') {
-    header('Location: login.php0', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 
@@ -43,7 +43,7 @@ if ($_POST['next_number'] == '') {
 
         $dbh = null;
     } catch (PDOException $e) {
-        header('Location: login.php', true, 307);
+        header('Location: login.php?banner=9', true, 307);
         exit;
     }
 }
@@ -80,7 +80,7 @@ else if ($order == 2) {
     }
 }
 else {
-    header('Location: index.php', true, 307);
+    header('Location: index.php?banner=9', true, 307);
     exit;
 }
 
@@ -111,7 +111,7 @@ try {
 
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 
@@ -144,7 +144,7 @@ try {
     }
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 ?>
@@ -162,13 +162,11 @@ try {
     <script src = "../common/js/toggle-panel.js"></script>
     <script src = "../common/js/slide-panel.js"></script>
     <script src = "../common/js/change-question.js"></script>
-    <script src = "../common/js/toggle-feedback2.js"></script>
     <script src = "../common/js/set-banner.js"></script>
 </head>
 <body>
     <header class = "header">
         <?php include('./header.php'); ?>
-        <div class = "main-notice-feedback"><p class = "main-notice-feedback-text"></p></div>
     </header>
     <main>
         <div class = "main-block">

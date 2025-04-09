@@ -68,12 +68,12 @@ const checkImage = () => {
    if (code) {
       drawRect(code.location);
       // AWS本番環境用
-      const pattern1 = /^https:\/\/wordsystemforlearning.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
-      const pattern2 = /^https:\/\/wordsystemforlearning.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
+      // const pattern1 = /^https:\/\/wordsystemforlearning.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
+      // const pattern2 = /^https:\/\/wordsystemforlearning.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
       
       // ローカル環境用
-      // const pattern1 = /^http:\/\/localhost\/learning-support-app\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
-      // const pattern2 = /^http:\/\/localhost\/learning-support-app\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
+      const pattern1 = /^http:\/\/localhost\/learning-support-app\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
+      const pattern2 = /^http:\/\/localhost\/learning-support-app\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
       
       if (pattern1.test(code.data) === true && previewButton.style.display === 'none' && previewBackButton.style.display === 'none') {
          let infoQR = (code.data).split('?')[1].split('&');

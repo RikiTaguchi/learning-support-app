@@ -89,7 +89,7 @@ else if (isset($login_id)) {
         $table_id = $result['table_id'];
 
         if ($book_id == '') {
-            header('Location: index.php', true, 307);
+            header('Location: index.php?banner=9', true, 307);
             exit;
         }
 
@@ -113,7 +113,7 @@ else if (isset($login_id)) {
 
         $dbh = null;
     } catch (PDOException $e) {
-        header('Location: login.php', true, 307);
+        header('Location: login.php?banner=9', true, 307);
         exit;
     }
 }

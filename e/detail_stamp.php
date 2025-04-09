@@ -1,8 +1,13 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
+
+if ($login_id == '' || $user_pass == '' || $user_name == '') {
+    header('Location: login.php?banner=9', true, 307);
+    exit;
+}
 
 $stamp_list = [];
 
@@ -36,7 +41,7 @@ try {
 
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 
@@ -80,9 +85,9 @@ if ($stamp_page_position == $stamp_page_max) {
         <link href = "../common/css/body.css" rel = "stylesheet">
         <link href = "../common/css/detail_stamp.css" rel = "stylesheet">
         <script src = "../common/js/toggle-menu.js"></script>
-        <script src = "../common/js/set-banner.js"></script>
         <script src = "../common/js/check-submit.js"></script>
-        <?php if ($banner == '8') { ?>
+        <script src = "../common/js/set-banner.js"></script>
+        <?php if ($banner === '15') { ?>
             <script src = "../common/js/get-stamp.js"></script>
         <?php } ?>
         <script>
@@ -139,7 +144,7 @@ if ($stamp_page_position == $stamp_page_max) {
             <div class = "main-block">
                 <p class = "main-stamp-detail-check" style = "display: none;">none</p>
                 <?php
-                if ($banner == '8') {
+                if ($banner === '15') {
                     echo '<p class = "main-stamp-detail-get" style = "display: none;">new</p>';
                 } else {
                     echo '<p class = "main-stamp-detail-get" style = "display: none;">none</p>';

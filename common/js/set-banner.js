@@ -14,6 +14,11 @@ window.addEventListener('load', () => {
     };
 
     if (bannerMessage.textContent !== '') {
+        // バナー通知の表示
         bannerArea.animate(displayBanner, options);
+
+        // パラメータの削除
+        const url = window.location.origin + window.location.pathname;
+        history.replaceState(null, '', url);
     }
 });

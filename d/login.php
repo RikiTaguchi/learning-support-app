@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 ?>
@@ -17,7 +17,6 @@ include('../common/banner.php');
         <link href = "../common/css/form.css" rel = "stylesheet">
         <link href = "../common/css/login.css" rel = "stylesheet">
         <script src = "../common/js/set-cookie.js"></script>
-        <script src = "../common/js/change-form.js"></script>
         <script src = "../common/js/set-banner.js"></script>
     </head>
     <body>

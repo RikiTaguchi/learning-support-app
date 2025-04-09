@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -18,7 +18,7 @@ try {
     // 既存アカウントとのログインID重複をチェック
     if ($result != false) {
         $dbh = null;
-        header('Location: make_account.php', true, 307);
+        header('Location: make_account.php?banner=4', true, 307);
         exit;
     }
 
@@ -56,9 +56,9 @@ try {
     setcookie('login_id', $login_id, time() + (60 * 60 * 24 * 60));
     setcookie('user_pass', $user_pass, time() + (60 * 60 * 24 * 60));
 
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=6', true, 307);
 
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }

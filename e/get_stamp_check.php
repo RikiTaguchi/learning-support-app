@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -14,7 +14,7 @@ if ($img_extention != '' && $img_extention_0 == '') {
 } else if ($img_extention == '' && $img_extention_0 != '') {
     $info_param = '?table_id=' . $director_table_id . '&img_id=' . $img_id . '&img_extention_0=' . $img_extention_0;
 } else {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 
@@ -30,10 +30,9 @@ try {
         $user_name = $result['user_name'];
         $dbh = null;
 
-        if ($login_id != '000000') {
-            setcookie('login_id', $login_id, time() + (60 * 60 * 24 * 60));
-            setcookie('user_pass', $user_pass, time() + (60 * 60 * 24 * 60));
-        }
+        // cookieに保存
+        setcookie('login_id', $login_id, time() + (60 * 60 * 24 * 60));
+        setcookie('user_pass', $user_pass, time() + (60 * 60 * 24 * 60));
 
         $url = 'Location: get_stamp.php' . $info_param;
         header($url, true, 307);
@@ -51,12 +50,12 @@ try {
             }
         }
         if ($check_account == true) {
-            header('Location: login.php', true, 307);
+            header('Location: login.php?banner=3', true, 307);
         } else {
-            header('Location: login.php', true, 307);
+            header('Location: login.php?banner=2', true, 307);
         }
     }
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }

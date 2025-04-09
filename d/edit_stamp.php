@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -53,10 +53,10 @@ if ($stamp_number === 0) {
         $stmt->execute();
         $dbh = null;
 
-        header('Location: info_stamp.php', true, 307);
+        header('Location: info_stamp.php?banner=8', true, 307);
         exit;
     } catch (PDOException $e) {
-        header('Location: login.php', true, 307);
+        header('Location: login.php?banner=9', true, 307);
         exit;
     }
 } else {
@@ -113,11 +113,11 @@ if ($stamp_number === 0) {
             $stmt->execute();
             $dbh = null;
         } catch (PDOException $e) {
-            header('Location: login.php', true, 307);
+            header('Location: login.php?banner=9', true, 307);
             exit;
         }
     }
 
-    header('Location: info_stamp.php', true, 307);
+    header('Location: info_stamp.php?banner=8', true, 307);
     exit;
 }

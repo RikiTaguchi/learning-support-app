@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -23,9 +23,9 @@ try {
     $stmt->execute();
     $dbh = null;
 
-    header('Location: info_stamp.php', true, 307);
+    header('Location: info_stamp.php?banner=7', true, 307);
     exit;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }

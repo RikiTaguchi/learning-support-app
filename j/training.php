@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 include('./set_book.php');
@@ -15,10 +15,10 @@ $selected = $key_submit[0];
 $selected_id = $key_submit[1];
 
 if (check_form($_POST['book_id'], $start, $end, $questions_num, $limit) == 1) {
-    header('Location: form2.php', true, 307);
+    header('Location: form2.php?banner=21', true, 307);
     exit;
 } else if (check_form($_POST['book_id'], $start, $end, $questions_num, $limit) == 2) {
-    header('Location: form2.php', true, 307);
+    header('Location: form2.php?banner=22', true, 307);
     exit;
 }
 
@@ -54,7 +54,7 @@ else if ($order == 2) {
     }
 }
 else {
-    header('Location: index.php', true, 307);
+    header('Location: index.php?banner=9', true, 307);
     exit;
 }
 
@@ -86,7 +86,7 @@ try {
 
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 
@@ -119,7 +119,7 @@ try {
     }
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 ?>
@@ -137,12 +137,10 @@ try {
     <script src = "../common/js/toggle-panel.js"></script>
     <script src = "../common/js/slide-panel.js"></script>
     <script src = "../common/js/change-question.js"></script>
-    <script src = "../common/js/toggle-feedback.js"></script>
     <script src = "../common/js/set-banner.js"></script>
 <body>
     <header class = "header">
         <?php include('./header.php'); ?>
-        <div class = "main-notice-feedback"><p class = "main-notice-feedback-text"></p></div>
     </header>
     <main class = "main">
         <div class = "main-block">

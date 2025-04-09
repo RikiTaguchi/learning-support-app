@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -47,12 +47,12 @@ try {
     }
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 
 if ($_POST['qanda'] == 'a') {
-    header('Location: training_answer.php', true, 307);
+    header('Location: training_answer.php?banner=10', true, 307);
 } else {
-    header('Location: training_next.php', true, 307);
+    header('Location: training_next.php?banner=10', true, 307);
 }

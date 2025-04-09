@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -19,7 +19,7 @@ try {
         if ($row['login_id'] === $new_login_id) {
             if ($row['login_id'] != $login_id) {
                 $dbh = null;
-                header('Location: info_account.php', true, 307);
+                header('Location: info_account.php?banner=5', true, 307);
                 exit;
             }
         }
@@ -41,10 +41,10 @@ try {
     setcookie('login_id', $login_id, time() + (60 * 60 * 24 * 60));
     setcookie('user_pass', $user_pass, time() + (60 * 60 * 24 * 60));
 
-    header('Location: info_account.php', true, 307);
+    header('Location: info_account.php?banner=8', true, 307);
     exit;
 
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }

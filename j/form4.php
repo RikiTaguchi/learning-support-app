@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -15,7 +15,7 @@ try {
     $table_id = $result['table_id'];
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 ?>
@@ -46,7 +46,6 @@ try {
                     echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                     echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
                     ?>
-                    <input class = "info_account" type = "text" name = "state" value = "new">
                     <div class = "form-content">
                         <span>単語帳名</span>
                         <input type = "text" name = "new_book_name" required>

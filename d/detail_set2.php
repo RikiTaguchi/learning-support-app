@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -22,8 +22,8 @@ try {
     $stmt->bindParam(':book_name', $book_name, PDO::PARAM_STR);
     $stmt->execute();
     $dbh = null;
-    header('Location: detail.php', true, 307);
+    header('Location: detail.php?banner=8', true, 307);
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }

@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -45,14 +45,14 @@ try {
     
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 
 if ($delete_all == 'all') {
-    header('Location: index.php', true, 307);
+    header('Location: index.php?banner=7', true, 307);
 } else if ($_POST['qanda'] == 'a') {
-    header('Location: feedback_answer.php', true, 307);
+    header('Location: feedback_answer.php?banner=11', true, 307);
 } else {
-    header('Location: feedback_next.php', true, 307);
+    header('Location: feedback_next.php?banner=11', true, 307);
 }

@@ -1,6 +1,6 @@
 <?php
-include('../common/get_info.php');
 include('../common/db_info.php');
+include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
@@ -38,7 +38,7 @@ try {
 
     $dbh = null;
 } catch (PDOException $e) {
-    header('Location: login.php', true, 307);
+    header('Location: login.php?banner=9', true, 307);
     exit;
 }
 ?>
@@ -75,7 +75,7 @@ try {
                         echo '<input class = "info_account" type = "text" name = "book_id" value = "' . $book_id . '">';
                         echo '<div class = "form-block-1">';
                             echo '<input type = "text" name = "new_book_name" value = "' . $book_name . '" required>';
-                            echo '<button type = "submit" name = "submit"><p>更新</p></button>';
+                            echo '<button type = "submit" name = "submit" value = "update"><p>更新</p></button>';
                         echo '</div>';
                     echo '</form>';
                 echo '</div>';

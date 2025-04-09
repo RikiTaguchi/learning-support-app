@@ -24,7 +24,7 @@
             <li><?php make_link('復習モード', 'form3.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('My単語帳作成', 'form4.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('アカウント情報', 'info_account.php', [$user_name, $login_id, $user_pass]) ?></li>
-            <li><?php make_link('ログアウト', 'login.php', ['', '', '']) ?></li>
+            <li><?php make_link('ログアウト', 'login.php?banner=1', ['', '', '']) ?></li>
         </ul>
     </div>
 </div>
