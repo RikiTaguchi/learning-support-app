@@ -123,27 +123,27 @@ function processParseResults($parse_results, $breakLineAfter, $breakLineAndInden
             $result = setTree($parse_results[$i]["penn"]["children"][$j]); // 結果を格納
 
             // $breakLineAfterの記号で改行を挿入し、その後空文字に置換
-            foreach ($breakLineAfter as $symbol) {
-                $pattern = '/(?<=\(|\)|\s|^)' . preg_quote($symbol, '/') . '(?=\(|\)|\s|$)/';
-                $result = preg_replace($pattern, '<br>', $result);
-            }
+            // foreach ($breakLineAfter as $symbol) {
+            //     $pattern = '/(?<=\(|\)|\s|^)' . preg_quote($symbol, '/') . '(?=\(|\)|\s|$)/';
+            //     $result = preg_replace($pattern, '<br>', $result);
+            // }
             // 改行とインデントを挿入するタグ
-            foreach ($breakLineAndIndent as $symbol) {
-                $pattern = '/(?<=\(|\)|\s|^)' . preg_quote($symbol, '/') . '(?=\(|\)|\s|$)/';
-                $result = preg_replace($pattern, '<br>&nbsp;&nbsp;&nbsp;&nbsp;', $result);
-            }
+            // foreach ($breakLineAndIndent as $symbol) {
+            //     $pattern = '/(?<=\(|\)|\s|^)' . preg_quote($symbol, '/') . '(?=\(|\)|\s|$)/';
+            //     $result = preg_replace($pattern, '<br>&nbsp;&nbsp;&nbsp;&nbsp;', $result);
+            // }
 
             // $tagsの記号を空文字に置換
-            foreach ($tags as $tag) {
-                $pattern = '/(?<=\(|\)|\s|^)' . preg_quote($tag, '/') . '(?=\(|\)|\s|$)/';
-                $result = preg_replace($pattern, '', $result);
-            }
+            // foreach ($tags as $tag) {
+            //     $pattern = '/(?<=\(|\)|\s|^)' . preg_quote($tag, '/') . '(?=\(|\)|\s|$)/';
+            //     $result = preg_replace($pattern, '', $result);
+            // }
 
             // (や)を空文字に置き換え
-            $result = str_replace(['(', ')'], '', $result);
+            // $result = str_replace(['(', ')'], '', $result);
 
             // 文末の句読点を空文字に置き換え
-            $result = str_replace('. .', '.', $result);
+            // $result = str_replace('. .', '.', $result);
 
             $results[$i] = $result;
         }
