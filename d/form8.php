@@ -202,7 +202,7 @@ try {
                                 <?php
                                 for ($i = 0; $i < $stamp_number; $i++) {
                                     if ($i == 0) {
-                                        echo '<div class = "count-block" style = "display: block; background-color: lightseagreen;"></div>';
+                                        echo '<div class = "count-block" style = "display: block; background-color: rgb(0, 129, 204);"></div>';
                                     } else {
                                         echo '<div class = "count-block" style = "display: block; background-color: lightgray;"></div>';
                                     }

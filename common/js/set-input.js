@@ -176,8 +176,8 @@ window.addEventListener('load', () => {
 
         buttonCheck.style.backgroundColor = 'gray';
         buttonPass.style.backgroundColor = 'gray';
-        buttonChange.style.backgroundColor = 'lightseagreen';
-        buttonResult.style.backgroundColor = 'lightseagreen';
+        buttonChange.style.backgroundColor = 'rgb(0, 129, 204)';
+        buttonResult.style.backgroundColor = 'rgb(0, 129, 204)';
 
         let userInput;
         let userAnswer;
@@ -307,8 +307,8 @@ window.addEventListener('load', () => {
         buttonResult.style.pointerEvents = 'auto';
         buttonCheck.style.backgroundColor = 'gray';
         buttonPass.style.backgroundColor = 'gray';
-        buttonChange.style.backgroundColor = 'lightseagreen';
-        buttonResult.style.backgroundColor = 'lightseagreen';
+        buttonChange.style.backgroundColor = 'rgb(0, 129, 204)';
+        buttonResult.style.backgroundColor = 'rgb(0, 129, 204)';
         for (let i = 0; i < 12; i++) {
             buttonsInput[i].style.pointerEvents = 'none';
         }

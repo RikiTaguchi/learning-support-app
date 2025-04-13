@@ -67,7 +67,11 @@ const checkImage = () => {
 
    if (code) {
       drawRect(code.location);
-      // 本番環境
+      // 本番環境（Xserver）
+      // const pattern1 = /^https:\/\/wordsystemforstudents.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
+      // const pattern2 = /^https:\/\/wordsystemforstudents.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
+
+      // 本番環境（AWS）
       // const pattern1 = /^https:\/\/wordsystemforlearning.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
       // const pattern2 = /^https:\/\/wordsystemforlearning.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
       

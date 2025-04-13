@@ -1,5 +1,8 @@
 <?php
-// 本番環境
+// 本番環境（Xserver）
+// $domain = 'https://wordsystemforstudents.com';
+
+// 本番環境（AWS）
 // $domain = 'https://wordsystemforlearning.com';
 
 // ローカル環境

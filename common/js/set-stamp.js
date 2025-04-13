@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
         pageCount.value = '0';
         randomArea[0].style.display = 'flex';
         countBlock[0].style.display = 'block';
-        countBlock[0].style.backgroundColor = 'lightseagreen';
+        countBlock[0].style.backgroundColor = 'rgb(0, 129, 204)';
         randomArea[1].style.display = 'none';
         countBlock[1].style.display = 'block';
         countBlock[1].style.backgroundColor = 'lightgray';
@@ -53,7 +53,7 @@ window.addEventListener('load', () => {
         pageCount.value = '2';
         randomArea[0].style.display = 'flex';
         countBlock[0].style.display = 'block';
-        countBlock[0].style.backgroundColor = 'lightseagreen';
+        countBlock[0].style.backgroundColor = 'rgb(0, 129, 204)';
         randomArea[1].style.display = 'none';
         countBlock[1].style.display = 'block';
         countBlock[1].style.backgroundColor = 'lightgray';
@@ -99,7 +99,7 @@ window.addEventListener('load', () => {
             randomArea[page - 1].style.display = 'flex';
             for (let i = 0; i < count; i++) {
                 if (i === page - 1) {
-                    countBlock[i].style.backgroundColor = 'lightseagreen';
+                    countBlock[i].style.backgroundColor = 'rgb(0, 129, 204)';
                 } else {
                     countBlock[i].style.backgroundColor = 'lightgray';
                 }
@@ -120,7 +120,7 @@ window.addEventListener('load', () => {
             randomArea[page + 1].style.display = 'flex';
             for (let i = 0; i < count; i++) {
                 if (i === page + 1) {
-                    countBlock[i].style.backgroundColor = 'lightseagreen';
+                    countBlock[i].style.backgroundColor = 'rgb(0, 129, 204)';
                 } else {
                     countBlock[i].style.backgroundColor = 'lightgray';
                 }
@@ -144,7 +144,7 @@ window.addEventListener('load', () => {
             for (let i = 0; i < count; i++) {
                 countBlock[i].style.display = 'block';
                 if (i === page) {
-                    countBlock[i].style.backgroundColor = 'lightseagreen';
+                    countBlock[i].style.backgroundColor = 'rgb(0, 129, 204)';
                 } else {
                     countBlock[i].style.backgroundColor = 'lightgray';
                 }
@@ -175,7 +175,7 @@ window.addEventListener('load', () => {
             }
             for (let i = 0; i < count; i++) {
                 if (i === page) {
-                    countBlock[i].style.backgroundColor = 'lightseagreen';
+                    countBlock[i].style.backgroundColor = 'rgb(0, 129, 204)';
                 } else {
                     countBlock[i].style.backgroundColor = 'lightgray';
                 }

@@ -169,7 +169,7 @@ try {
                             </div>
                         </div>
                         <div class = "random-count">
-                            <div class = "count-block" style = "display: block; background-color: lightseagreen;"></div>
+                            <div class = "count-block" style = "display: block; background-color: rgb(0, 129, 204);"></div>
                             <div class = "count-block" style = "display: block; background-color: lightgray;"></div>
                             <div class = "count-block" style = "display: none; background-color: lightgray;"></div>
                             <div class = "count-block" style = "display: none; background-color: lightgray;"></div>

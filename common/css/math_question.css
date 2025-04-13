@@ -3,7 +3,7 @@
     align-items: center;
     font-size: 15px;
     font-weight: bold;
-    color: lightseagreen;
+    color: rgb(0, 129, 204);
     height: 25px;
     margin-top: 15px;
     background-color: rgb(240, 240, 240);
@@ -16,7 +16,7 @@
     align-items: center;
     font-size: 15px;
     font-weight: bold;
-    color: lightseagreen;
+    color: rgb(0, 129, 204);
     height: 25px;
     margin-top: 15px;
     background-color: rgb(240, 240, 240);
@@ -120,7 +120,7 @@
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 1px 1px gray;
-    background-color: lightseagreen;
+    background-color: rgb(0, 129, 204);
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -147,7 +147,7 @@
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 1px 1px gray;
-    background-color: lightseagreen;
+    background-color: rgb(0, 129, 204);
     color: white;
     text-align: center;
 }
@@ -163,7 +163,7 @@
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 1px 1px gray;
-    background-color: lightseagreen;
+    background-color: rgb(0, 129, 204);
     color: white;
     text-align: center;
 }
@@ -179,7 +179,7 @@
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 1px 1px gray;
-    background-color: lightseagreen;
+    background-color: rgb(0, 129, 204);
     color: white;
     text-align: center;
 }
@@ -204,7 +204,7 @@
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 1px 1px gray;
-    background-color: lightseagreen;
+    background-color: rgb(0, 129, 204);
     color: white;
 }
 
@@ -219,7 +219,7 @@
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 1px 1px gray;
-    background-color: lightseagreen;
+    background-color: rgb(0, 129, 204);
     color: white;
 }
 
@@ -278,7 +278,7 @@
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 1px 1px gray;
-    background-color: lightseagreen;
+    background-color: rgb(0, 129, 204);
     color: white;
 }
 

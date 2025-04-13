@@ -79,7 +79,7 @@ main {
     font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
-    color: lightseagreen;
+    color: rgb(0, 129, 204);
 }
 
 .main-block-announce {
@@ -93,7 +93,7 @@ main {
 }
 
 .main-block-button button {
-    background-color: lightseagreen;
+    background-color: rgb(0, 129, 204);
     color: white;
     font-size: 12px;
     font-weight: bold;

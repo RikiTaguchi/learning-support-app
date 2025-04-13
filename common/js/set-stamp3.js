@@ -46,7 +46,7 @@ window.addEventListener('load', () => {
                 if (pageTarget > 0) {
                     countBlock[pageTarget].style.backgroundColor = 'lightgray';
                     stampList[pageTarget].style.display = 'none';
-                    countBlock[pageTarget - 1].style.backgroundColor = 'lightseagreen';
+                    countBlock[pageTarget - 1].style.backgroundColor = 'rgb(0, 129, 204)';
                     stampList[pageTarget - 1].style.display = 'flex';
                 }
             });
@@ -61,7 +61,7 @@ window.addEventListener('load', () => {
                 if (pageTarget < pageCount - 1) {
                     countBlock[pageTarget].style.backgroundColor = 'lightgray';
                     stampList[pageTarget].style.display = 'none';
-                    countBlock[pageTarget + 1].style.backgroundColor = 'lightseagreen';
+                    countBlock[pageTarget + 1].style.backgroundColor = 'rgb(0, 129, 204)';
                     stampList[pageTarget + 1].style.display = 'flex';
                 }
             });

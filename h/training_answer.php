@@ -133,7 +133,7 @@ try {
                     } else {
                         $answer_formatted_before = $select4;
                     }
-                    $answer_formatted_after = '<span style="color: lightseagreen">' . explode(' → ', $answer)[1] . '</span>';
+                    $answer_formatted_after = '<span style="color: rgb(0, 129, 204)">' . explode(' → ', $answer)[1] . '</span>';
                     $answer_formatted_full = str_replace($answer_formatted_before, $answer_formatted_after, str_replace('<br><br>', '<br>', $word));
                     echo '<p class = "main-inner-word-select">' . $answer_formatted_full . '</p>' . PHP_EOL;
                 }
