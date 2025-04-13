@@ -1,5 +1,5 @@
 <?php
-// AWS本番環境
+// 本番環境
 // $db_user = 'root';
 // $db_pass = 'myrdspassword';
 // $db_host = 'wordsystemdb.c74wk6yq0kc9.ap-northeast-1.rds.amazonaws.com';

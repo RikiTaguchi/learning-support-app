@@ -6,8 +6,7 @@
         echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
         ?>
         <button class = "header-logo" type = "submit">
-            <img src = "../common/images/logo-1.png" alt = "ロゴ画像">
-            <p>単語システム</p>
+            <img src = "../common/images/meiko-logo.png" alt = "ロゴ画像">
         </button>
     </form>
     <button class = "header-menu-button">

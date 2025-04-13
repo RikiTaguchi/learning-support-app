@@ -110,7 +110,7 @@ try {
                 echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
                 ?>
                 <button class = "header-logo" type = "submit">
-                    <img src = "../common/images/logo-1.png" alt = "ロゴ画像">
+                    <img src = "../common/images/meiko-logo.png" alt = "ロゴ画像">
                 </button>
             </form>
             <div class = "header-inner-menu">

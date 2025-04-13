@@ -84,7 +84,7 @@ try {
                 echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                 echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
                 echo '<button class = "header-logo" type = "submit">';
-                    echo '<img src = "../common/images/logo-1.png" alt = "ロゴ画像">';
+                    echo '<img src = "../common/images/meiko-logo.png" alt = "ロゴ画像">';
                 echo '</button>';
             echo '</form>';
             echo '<div class = "header-inner-menu">' . PHP_EOL;

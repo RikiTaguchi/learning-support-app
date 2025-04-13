@@ -22,7 +22,7 @@ include('../common/banner.php');
         <header class = "header">
             <div class = "header-inner">
                 <a class = "header-logo" href = "./login.php">
-                    <img src = "../common/images/logo-1.png" alt = "ロゴ画像">
+                    <img src = "../common/images/meiko-logo.png" alt = "ロゴ画像">
                 </a>
             </div>
             <div class = "main-banner">
@@ -31,6 +31,10 @@ include('../common/banner.php');
         </header>
         <main class = "main">
             <div class = "main-block">
+                <div class = "login-block">
+                    <img src = "../common/images/meiko-logo.png">
+                    <p>高校生版</p>
+                </div>
                 <p class = "main-block-title">新規登録</p>
                 <form class = "form" method = "post" action = "make_account_check.php">
                     <div class = "form-content-3">
