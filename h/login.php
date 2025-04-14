@@ -24,6 +24,7 @@ include('../common/banner.php');
             <div class = "header-inner">
                 <a class = "header-logo" href = "./login.php">
                     <img src = "../common/images/meiko-logo.png" alt = "ロゴ画像">
+                    <p>高校生版</p>
                 </a>
             </div>
             <div class = "main-banner">
@@ -36,7 +37,6 @@ include('../common/banner.php');
                     <img src = "../common/images/meiko-logo.png">
                     <p>高校生版</p>
                 </div>
-                <p class = "main-block-title">ログイン</p>
                 <form class = "form" method = "post" action = "login_check.php">
                     <div class = "form-content-3">
                         <span>ログインID</span>

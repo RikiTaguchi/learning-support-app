@@ -5,6 +5,8 @@ include('../common/function.php');
 include('../common/banner.php');
 
 $account_type = 'e';
+check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
+
 $date_today = strtotime(date('Y-m-d'));
 $notice = [];
 

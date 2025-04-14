@@ -4,6 +4,9 @@ include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
+$account_type = 'h';
+check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
+
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

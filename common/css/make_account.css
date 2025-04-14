@@ -37,6 +37,10 @@
         width: 90%;
     }
 
+    .login-block img {
+        width: 80%;
+    }
+
     .login-block p {
         font-size: 18px;
         margin-bottom: 5px;

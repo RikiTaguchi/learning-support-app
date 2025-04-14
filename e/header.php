@@ -7,6 +7,7 @@
         ?>
         <button class = "header-logo" type = "submit">
             <img src = "../common/images/meiko-logo.png" alt = "ロゴ画像">
+            <p>スタンプカード</p>
         </button>
     </form>
     <button class = "header-menu-button">

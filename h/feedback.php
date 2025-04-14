@@ -6,6 +6,9 @@ include('../common/banner.php');
 include('./set_book.php');
 include('./source_book.php');
 
+$account_type = 'h';
+check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
+
 if ($_POST['book_id'] == '' || $_POST['book_id'] == 'n') {
     header('Location: login.php?banner=9', true, 307);
     exit;

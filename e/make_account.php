@@ -23,6 +23,7 @@ include('../common/banner.php');
             <div class = "header-inner">
                 <a class = "header-logo" href = "./login.php">
                     <img src = "../common/images/meiko-logo.png" alt = "ロゴ画像">
+                    <p>スタンプカード</p>
                 </a>
             </div>
             <div class = "main-banner">
@@ -35,7 +36,6 @@ include('../common/banner.php');
                     <img src = "../common/images/meiko-logo.png">
                     <p>スタンプカード</p>
                 </div>
-                <p class = "main-block-title">新規登録</p>
                 <form class = "form" method = "post" action = "make_account_check.php">
                     <div class = "form-content-3">
                         <span>ユーザーネーム</span>
@@ -56,7 +56,7 @@ include('../common/banner.php');
                     </div>
                 </form>
                 <p class = "main-block-announce">
-                    <a href = "login.php">ログイン画面へ戻る</a>
+                    <a href = "login.php">ログイン画面へ</a>
                 </p>
             </div>
         </main>

@@ -5,6 +5,9 @@ include('../common/function.php');
 include('../common/banner.php');
 include('../common/parser/parse-activator/autoload.php'); // 構文解析器のセットアップ
 
+$account_type = 'h';
+check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
+
 // 特に加工処理をしないタグ
 $tags = [
     // 1. 名詞カテゴリー

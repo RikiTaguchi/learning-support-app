@@ -26,9 +26,9 @@ $img_probability_list = [];
 
 if ($login_id == '' || $user_pass == '') {
     if ($_GET['img_extention_0'] == '') {
-        $redirect_url = 'login.php?table_id=' . $director_table_id . '&img_id=' . $img_id . '&img_extention=' . $_GET['img_extention'] . '&banner=17';
+        $redirect_url = 'Location: login.php?table_id=' . $director_table_id . '&img_id=' . $img_id . '&img_extention=' . $_GET['img_extention'] . '&banner=17';
     } else {
-        $redirect_url = 'login.php?table_id=' . $director_table_id . '&img_id=' . $img_id . '&img_extention_0=' . $_GET['img_extention_0'] . '&banner=17';
+        $redirect_url = 'Location: login.php?table_id=' . $director_table_id . '&img_id=' . $img_id . '&img_extention_0=' . $_GET['img_extention_0'] . '&banner=17';
     }
     header($redirect_url, true, 307);
     exit;

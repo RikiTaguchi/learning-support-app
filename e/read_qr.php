@@ -3,6 +3,9 @@ include('../common/db_info.php');
 include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
+
+$account_type = 'e';
+check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 ?>
 
 <!DOCTYPE html>

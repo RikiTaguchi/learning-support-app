@@ -14,6 +14,26 @@ function make_link($title, $url, $info) {
     echo $text_form;
 }
 
+// アカウントのタイプをチェックする関数
+function check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass) {
+    try {
+        $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = 'SELECT * FROM info_account WHERE login_id = :login_id';
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':login_id', $login_id, PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($result['account_type'] !== $account_type) {
+            header('Location: login.php?banner=9', true, 307);
+            exit;
+        }
+    } catch (Exception $e) {
+        header('Location: login.php?banner=9', true, 307);
+        exit;
+    }
+}
+
 // 入力範囲のエラーをチェックする関数
 function check_form($book, $start, $end, $number, $limit) {
     if ($book == '' || $book == 'n') {

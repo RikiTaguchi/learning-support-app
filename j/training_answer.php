@@ -5,6 +5,9 @@ include('../common/function.php');
 include('../common/banner.php');
 include('./source_book.php');
 
+$account_type = 'j';
+check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
+
 $book_id = $_POST['book_id'];
 $book_name = $_POST['book_name'];
 $start = $_POST['start'];

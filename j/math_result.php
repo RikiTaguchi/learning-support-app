@@ -4,6 +4,9 @@ include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
+$account_type = 'j';
+check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
+
 $type = $_POST['type'];
 $level = $_POST['level'];
 $question_number = $_POST['question_number'];
