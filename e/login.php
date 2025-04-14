@@ -26,7 +26,7 @@ include('../common/banner.php');
         <header class = "header">
             <div class = "header-inner">
                 <a class = "header-logo" href = "./login.php">
-                    <img src = "../common/images/meiko-logo.png.png" alt = "ロゴ画像">
+                    <img src = "../common/images/meiko-logo.png" alt = "ロゴ画像">
                 </a>
             </div>
             <div class = "main-banner">
