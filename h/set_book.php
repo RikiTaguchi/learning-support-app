@@ -22,7 +22,7 @@ else if ($_POST['book_id'] == '4') {
 else if ($_POST['book_id'] == '5') {
     $book_name = 'Vintage';
     $book_id = 'Vintage';
-    $limit = 852;
+    $limit = 525;
 }
 else if ($_POST['book_id'] == '6') {
     $book_name = 'パス単(3級)';
