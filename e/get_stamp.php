@@ -4,6 +4,11 @@ include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
+if ($login_id == '' || $user_pass == '') {
+    header('Location: login.php?banner=17', true, 307);
+    exit;
+}
+
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -23,16 +28,6 @@ $director_table_id = $_GET['table_id'];
 $img_id = $_GET['img_id'];
 $img_extention_list = [];
 $img_probability_list = [];
-
-if ($login_id == '' || $user_pass == '') {
-    if ($_GET['img_extention_0'] == '') {
-        $redirect_url = 'Location: login.php?table_id=' . $director_table_id . '&img_id=' . $img_id . '&img_extention=' . $_GET['img_extention'] . '&banner=17';
-    } else {
-        $redirect_url = 'Location: login.php?table_id=' . $director_table_id . '&img_id=' . $img_id . '&img_extention_0=' . $_GET['img_extention_0'] . '&banner=17';
-    }
-    header($redirect_url, true, 307);
-    exit;
-}
 
 if ($_GET['img_extention_0'] != '') {
     try {

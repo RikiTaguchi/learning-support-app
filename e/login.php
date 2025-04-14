@@ -18,9 +18,6 @@ include('../common/banner.php');
         <link href = "../common/css/login.css" rel = "stylesheet">
         <script src = "../common/js/set-cookie.js"></script>
         <script src = "../common/js/set-banner.js"></script>
-        <?php if ($banner === '17') { ?>
-            <script src = "../common/js/change-form.js"></script>
-        <?php } ?>
     </head>
     <body>
         <header class = "header">
