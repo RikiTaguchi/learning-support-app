@@ -4,6 +4,9 @@ include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
+$account_type = 'd';
+check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
+
 $new_login_id = $_POST['new_login_id'];
 $new_user_name = $_POST['new_user_name'];
 $new_user_pass = $_POST['new_user_pass'];

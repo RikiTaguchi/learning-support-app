@@ -4,6 +4,9 @@ include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
+$account_type = 'd';
+check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
+
 $img_title_new = $_POST['stamp_title'];
 $date_limit_new = $_POST['date_limit'];
 $stamp_number = (int)$_POST['page_count'];

@@ -4,6 +4,9 @@ include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
+$account_type = 'd';
+check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
+
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -31,6 +34,13 @@ try {
         <link href = "../common/css/form.css" rel = "stylesheet">
         <link href = "../common/css/header.css" rel = "stylesheet">
         <link href = "../common/css/body.css" rel = "stylesheet">
+        <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
+		<link rel = "manifest" href = "../common/icons/manifest.json">
+		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
+		<link rel = "icon" type = "image/png" sizes = "16x16" href = "../common/icons/favicon-16x16.png">
+		<link rel = "icon" type = "image/png" sizes = "32x32" href = "../common/icons/favicon-32x32.png">
+		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
+		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js"></script>
         <script src = "../common/js/set-banner.js"></script>
     </head>
