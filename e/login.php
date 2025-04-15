@@ -27,23 +27,16 @@ include('../common/banner.php');
         <script src = "../common/js/set-banner.js"></script>
     </head>
     <body>
-        <header class = "header">
-            <div class = "header-inner">
-                <a class = "header-logo" href = "./login.php">
-                    <img src = "../common/images/meiko-logo.png" alt = "ロゴ画像">
-                    <p>スタンプカード</p>
-                </a>
-            </div>
-            <div class = "main-banner">
-                <p class = "main-banner-text"><?php echo $banner_msg; ?></p>
-            </div>
-        </header>
+        <div class = "main-banner">
+            <p class = "main-banner-text"><?php echo $banner_msg; ?></p>
+        </div>
         <main class = "main">
+            <div class = "login-block">
+                <p>スタンプカード</p>
+                <img src = "../common/images/meiko-logo.png">
+            </div>
             <div class = "main-block">
-                <div class = "login-block">
-                    <img src = "../common/images/meiko-logo.png">
-                    <p>スタンプカード</p>
-                </div>
+                <p class = "main-block-title">ログイン</p>
                 <form class = "form" method = "post" action = "login_check.php">
                     <div class = "form-content-3">
                         <span>ログインID</span>

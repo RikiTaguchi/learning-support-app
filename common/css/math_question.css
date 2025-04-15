@@ -1,3 +1,26 @@
+.main-block-title {
+    font-size: 18px;
+}
+
+.info-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 250px;
+}
+
+.info-panel div:first-child {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(0, 129, 204);
+    height: 25px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    padding: 10px;
+}
+
 .time_area {
     display: flex;
     align-items: center;
@@ -5,7 +28,6 @@
     font-weight: bold;
     color: rgb(0, 129, 204);
     height: 25px;
-    margin-top: 15px;
     background-color: rgb(240, 240, 240);
     border-radius: 5px;
     padding: 10px;
@@ -18,7 +40,6 @@
     font-weight: bold;
     color: rgb(0, 129, 204);
     height: 25px;
-    margin-top: 15px;
     background-color: rgb(240, 240, 240);
     border-radius: 5px;
     padding: 10px;
@@ -26,7 +47,7 @@
 
 .question_panel {
     position: relative;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .question_subpanel {
@@ -41,11 +62,6 @@
 
 .question_title {
     display: block;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    color: black;
 }
 
 .question_area {
@@ -115,15 +131,13 @@
 .button_element {
     display: block;
     width: 70px;
-    height: 45px;
+    height: 40px;
     margin: 5px;
     border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px gray;
+    border-radius: 5px;
     background-color: rgb(0, 129, 204);
     color: white;
     font-size: 20px;
-    font-weight: bold;
     text-align: center;
 }
 
@@ -139,14 +153,12 @@
 .button_b {
     display: block;
     font-size: 20px;
-    font-weight: bold;
     width: 70px;
-    height: 45px;
+    height: 40px;
     margin-left: 5px;
     margin-right: 5px;
     border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px gray;
+    border-radius: 5px;
     background-color: rgb(0, 129, 204);
     color: white;
     text-align: center;
@@ -155,14 +167,12 @@
 .button_n {
     display: block;
     font-size: 20px;
-    font-weight: bold;
     width: 70px;
-    height: 45px;
+    height: 40px;
     margin-left: 5px;
     margin-right: 5px;
     border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px gray;
+    border-radius: 5px;
     background-color: rgb(0, 129, 204);
     color: white;
     text-align: center;
@@ -171,14 +181,12 @@
 .button_r {
     display: block;
     font-size: 10px;
-    font-weight: bold;
     width: 70px;
-    height: 45px;
+    height: 40px;
     margin-left: 5px;
     margin-right: 5px;
     border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px gray;
+    border-radius: 5px;
     background-color: rgb(0, 129, 204);
     color: white;
     text-align: center;
@@ -200,10 +208,8 @@
     margin-left: 5px;
     margin-right: 5px;
     font-size: 14px;
-    font-weight: bold;
     border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px gray;
+    border-radius: 5px;
     background-color: rgb(0, 129, 204);
     color: white;
 }
@@ -215,10 +221,8 @@
     margin-left: 5px;
     margin-right: 5px;
     font-size: 14px;
-    font-weight: bold;
     border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px gray;
+    border-radius: 5px;
     background-color: rgb(0, 129, 204);
     color: white;
 }
@@ -234,10 +238,8 @@
     width: 70px;
     height: 30px;
     font-size: 14px;
-    font-weight: bold;
     border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px gray;
+    border-radius: 5px;
     color: white;
     margin-left: 5px;
     margin-right: 5px;
@@ -253,10 +255,8 @@
     width: 70px;
     height: 30px;
     font-size: 14px;
-    font-weight: bold;
     border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px gray;
+    border-radius: 5px;
     color: white;
     margin-left: 5px;
     margin-right: 5px;
@@ -274,10 +274,8 @@
     margin-left: auto;
     margin-right: auto;
     font-size: 14px;
-    font-weight: bold;
     border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px gray;
+    border-radius: 5px;
     background-color: rgb(0, 129, 204);
     color: white;
 }
@@ -324,35 +322,40 @@
 
 /* mobile */
 @media (max-width: 767px) {
+    .main-block-title {
+        font-size: 15px;
+    }
+
+    .info-panel {
+        width: 200px;
+    }
+
+    .info-panel div:first-child {
+        font-size: 12px;
+    }
+
     .time_area {
         font-size: 12px;
-        margin-top: 10px;
     }
     
     .time_area2 {
         font-size: 12px;
-        margin-top: 10px;
     }
 
     .question_panel {
         width: 100%;
-        margin-top: 10px;
     }
 
     .question_subpanel {
         width: 100%;
     }
 
-    .question_title {
-        font-size: 15px;
-    }
-
     .question_area {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .input_area {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .effect_area {

@@ -9,10 +9,6 @@ body {
     line-height: 1;
 }
 
-input {
-    font-size: 17px;
-}
-
 *,
 ::before,
 ::after {
@@ -24,11 +20,6 @@ input {
 ul,
 ol {
     list-style: none;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
 }
 
 img {
@@ -56,9 +47,10 @@ main {
     margin-top: 20px;
     padding: 15px;
     background-color: white;
-    border: none;
+    border: solid;
+    border-color: darkgray;
+    border-width: 1px;
     border-radius: 5px;
-    box-shadow: 1px 1px 5px rgb(76, 76, 78);
 }
 
 .main-block:first-child {
@@ -71,15 +63,21 @@ main {
 
 .main-block-title {
     font-size: 30px;
-    font-weight: bold;
+    color: black;
     margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-top: none;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    border-color: rgb(0, 129, 204);
 }
 
 .main-block-subtitle {
     font-size: 20px;
-    font-weight: bold;
     margin-top: 10px;
-    color: rgb(0, 129, 204);
+    color: black;
 }
 
 .main-block-announce {
@@ -96,7 +94,6 @@ main {
     background-color: rgb(0, 129, 204);
     color: white;
     font-size: 12px;
-    font-weight: bold;
     border: none;
     border-radius: 5px;
     width: 100px;

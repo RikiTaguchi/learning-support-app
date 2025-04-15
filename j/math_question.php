@@ -116,26 +116,31 @@ $feedback_text = $question_text . 'E' . $answer_text . 'E' . $question_count;
                 <div class = "main-block-title">
                     <p><?php echo $title . ' / レベル' . (string)$level . ' / ' . $question_number . '題'; ?></p>
                 </div>
+                
+                <div class = "info-panel">
+                    <div>
+                        <p class = "question_title"><?php echo $question_count . ' / ' . $question_number; ?></p>
+                    </div>
 
-                <div class = "time_area">
-                    <p class = "info_passed_time_h"><?php echo $time_h; ?></p>
-                    <p>：</p>
-                    <p class = "info_passed_time_m"><?php echo $time_m; ?></p>
-                    <p>：</p>
-                    <p class = "info_passed_time_s"><?php echo $time_s; ?></p>
-                </div>
+                    <div class = "time_area">
+                        <p class = "info_passed_time_h"><?php echo $time_h; ?></p>
+                        <p>：</p>
+                        <p class = "info_passed_time_m"><?php echo $time_m; ?></p>
+                        <p>：</p>
+                        <p class = "info_passed_time_s"><?php echo $time_s; ?></p>
+                    </div>
 
-                <div class = "time_area2">
-                    <p class = "info_passed_time_h_result"></p>
-                    <p>：</p>
-                    <p class = "info_passed_time_m_result"></p>
-                    <p>：</p>
-                    <p class = "info_passed_time_s_result"></p>
+                    <div class = "time_area2">
+                        <p class = "info_passed_time_h_result"></p>
+                        <p>：</p>
+                        <p class = "info_passed_time_m_result"></p>
+                        <p>：</p>
+                        <p class = "info_passed_time_s_result"></p>
+                    </div>
                 </div>
                 
                 <div class = "question_panel">
                     <div class = "question_subpanel">
-                        <p class = "question_title"><?php echo '[ 問' . $question_count . ' ]'; ?></p>
                         <div class = "question_area"><?php echo $question; ?></div>
                     </div>
                     <div class = "input_area"><?php echo $input; ?></div>
@@ -202,7 +207,7 @@ $feedback_text = $question_text . 'E' . $answer_text . 'E' . $question_count;
                         <input class = "finish_time_h" type = "text" name = "finish_time_h" value = "" style = "display: none;">
                         <input class = "finish_time_m" type = "text" name = "finish_time_m" value = "" style = "display: none;">
                         <input class = "finish_time_s" type = "text" name = "finish_time_s" value = "" style = "display: none;">
-                        <button class = "button_l" type = "submit" name = "submit" style = "pointer-events: none; background-color: gray;">結果へ</button>
+                        <button class = "button_l" type = "submit" name = "submit" style = "pointer-events: none; background-color: gray;">結果</button>
                     </form>
                 </div>
 

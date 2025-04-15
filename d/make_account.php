@@ -15,7 +15,7 @@ include('../common/banner.php');
         <link href = "../common/css/header.css" rel = "stylesheet">
         <link href = "../common/css/body.css" rel = "stylesheet">
         <link href = "../common/css/form.css" rel = "stylesheet">
-        <link href = "../common/css/make_account.css" rel = "stylesheet">
+        <link href = "../common/css/login.css" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -26,23 +26,16 @@ include('../common/banner.php');
         <script src = "../common/js/set-banner.js"></script>
     </head>
     <body>
-        <header class = "header">
-            <div class = "header-inner">
-                <a class = "header-logo" href = "./login.php">
-                    <img src = "../common/images/meiko-logo.png" alt = "ロゴ画像">
-                    <p>管理者版</p>
-                </a>
-            </div>
-            <div class = "main-banner">
-                <p class = "main-banner-text"><?php echo $banner_msg; ?></p>
-            </div>
-        </header>
+        <div class = "main-banner">
+            <p class = "main-banner-text"><?php echo $banner_msg; ?></p>
+        </div>
         <main class = "main">
+            <div class = "login-block">
+                <p>管理者版</p>
+                <img src = "../common/images/meiko-logo.png">
+            </div>
             <div class = "main-block">
-                <div class = "login-block">
-                    <img src = "../common/images/meiko-logo.png">
-                    <p>管理者版</p>
-                </div>
+                <p class = "main-block-title">新規登録</p>
                 <form class = "form" method = "post" action = "make_account_check.php">
                     <div class = "form-content-3">
                         <span>ユーザーネーム</span>

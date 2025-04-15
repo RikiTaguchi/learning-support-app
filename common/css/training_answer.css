@@ -1,3 +1,7 @@
+.main-block-title {
+    font-size: 15px;
+}
+
 .main-inner-type {
     display: block;
     margin-top: 10px;
@@ -30,8 +34,7 @@
 }
 
 .main-inner-answer-menu-select {
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 25px;
     width: 80%;
     min-height: 40px;
     background-color: rgb(0, 129, 204);
@@ -39,15 +42,13 @@
     border-radius: 5px;
     color: white;
     margin-top: 15px;
-    box-shadow: 1px 1px 5px rgb(76, 76, 78);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .main-inner-answer-menu-disabled {
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 25px;
     width: 80%;
     min-height: 40px;
     background-color: gray;
@@ -55,7 +56,6 @@
     border-radius: 5px;
     color: white;
     margin-top: 15px;
-    box-shadow: 1px 1px 5px rgb(76, 76, 78);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,7 +118,6 @@
     background-color: rgb(0, 129, 204);
     border: none;
     border-radius: 5px;
-    font-weight: bold;
     color: white;
     width: 200px;
     height: 40px;
@@ -129,7 +128,6 @@
     background-color: rgb(0, 129, 204);
     border: none;
     border-radius: 5px;
-    font-weight: bold;
     color: white;
     width: 200px;
     height: 40px;
@@ -143,7 +141,7 @@
 .main-inner-change {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
     font-size: 20px;
     font-weight: bold;
@@ -151,7 +149,7 @@
 
 .main-inner-change p {
     display: block;
-    width: 40%;
+    width: 47%;
 }
 
 .main-inner-submit-back {
@@ -193,7 +191,7 @@ input {
 /* mobile */
 @media (max-width: 767px) {
     .main-block-title {
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .main-block-subtitle {

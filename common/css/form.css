@@ -67,14 +67,17 @@
     width: 150px;
     margin-left: 75px;
     margin-right: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .form-content-submit input {
     width: 100%;
     color: white;
     background-color: rgb(0, 129, 204);
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 15px;
     border: none;
     border-radius: 5px;
     text-align: center;
@@ -84,8 +87,7 @@
     width: 100%;
     color: white;
     background-color: rgb(0, 129, 204);
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 15px;
     border: none;
     border-radius: 5px;
 }
@@ -134,7 +136,6 @@
     width: 100%;
     text-align: left;
     font-size: 18px;
-    font-weight: bold;
 }
 
 .form-content-3 input {
@@ -171,7 +172,6 @@
 .index-button-1 {
     display: block;
     font-size: 12px;
-    font-weight: bold;
     color: white;
     background-color: rgb(0, 129, 204);
     border: none;
@@ -184,7 +184,6 @@
 .index-button-2 {
     display: none;
     font-size: 12px;
-    font-weight: bold;
     color: white;
     background-color: rgb(0, 129, 204);
     border: none;
@@ -218,6 +217,7 @@
 .list-title {
     font-size: 15px;
     text-align: center;
+    font-weight: normal;
 }
 
 .list-element {
@@ -269,12 +269,11 @@
     
     .form-content-submit input {
         width: 100%;
-        font-size: 18px;
+        font-size: 12px;
     }
 
-    .form-content-submit input {
-        width: 100%;
-        font-size: 18px;
+    .form-content-submit button {
+        font-size: 12px;
     }
     
     .form-content-2 {

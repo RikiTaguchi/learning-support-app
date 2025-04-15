@@ -50,7 +50,6 @@ input {
     border: none;
     border-radius: 5px;
     font-size: 12px;
-    font-weight: bold;
 }
 
 .normal-button button input {
@@ -159,7 +158,6 @@ input {
     border: none;
     border-radius: 5px;
     font-size: 12px;
-    font-weight: bold;
 }
 
 .random-button button input {

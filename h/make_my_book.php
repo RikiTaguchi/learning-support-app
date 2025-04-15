@@ -93,6 +93,7 @@ if ($state === 'new') {
         <link href = "../common/css/form.css" rel = "stylesheet">
         <link href = "../common/css/header.css" rel = "stylesheet">
         <link href = "../common/css/body.css" rel = "stylesheet">
+        <link href = "../common/css/make_my_book.css" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -109,8 +110,8 @@ if ($state === 'new') {
         </header>
         <main class = "main">
             <div class = "main-block">
-                <p class = "main-block-title">作成完了</p>
-                <?php echo '<p class = "main-block-title">' . $new_book_name . '</p>'; ?>
+                <p class = "main-block-title">My単語帳</p>
+                <p class = "mybook-msg">登録完了：<?php echo $new_book_name; ?></p>
                 <form class = "form" method = "post" action = "detail.php">
                     <?php
                     echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
@@ -122,7 +123,6 @@ if ($state === 'new') {
                         <div class = "form-content-submit"><input type = "submit" value = "詳細へ"></div>
                     </div>
                 </form>
-                <p class = "main-block-msg">※データの追加・編集・削除はいつでも行うことができます。</p>
             </div>
         </main>
     </body>

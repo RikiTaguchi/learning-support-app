@@ -74,9 +74,16 @@ $finish_time_s = $_POST['finish_time_s'];
         <main class = "main">
             <div class = "main-block">
                 <p class = "main-block-title">スコア</p>
-                <p class = "result-score"><?php echo (string)$score; ?></p>
-                <p class = "result-count"><?php echo $question_correct . '/' . $question_number; ?></p>
-                <p class = "result-time"><?php echo $finish_time_h . 'h ' . $finish_time_m . 'm ' . $finish_time_s . 's'; ?></p>
+
+                <div class = "score-area">
+                    <div class = "score-area-main">
+                        <p class = "result-score"><?php echo (string)$score; ?></p>
+                    </div>
+                    <div class = "score-area-sub">
+                        <p class = "result-count"><?php echo $question_correct . ' / ' . $question_number; ?></p>
+                        <p class = "result-time"><?php echo $finish_time_m . '分 ' . $finish_time_s . '秒'; ?></p>
+                    </div>
+                </div>
 
                 <?php
                 foreach ($list_feedback as $value) {
