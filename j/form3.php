@@ -55,7 +55,7 @@ try {
 <html lang = "ja">
     <head>
         <meta charset = "UTF-8">
-        <title>復習モード</title>
+        <title>単語システム</title>
         <meta name = "description" content = "復習モード入力フォーム">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/form.css" rel = "stylesheet">
@@ -105,7 +105,7 @@ try {
                         </div>
                     </div>
                     <div class = "form-content">
-                        <div class = "form-content-submit"><input type = "submit" value = "開始"></div>
+                        <div class = "form-content-submit"><button type = "submit">開始</button></div>
                     </div>
                 </form>
             </div>

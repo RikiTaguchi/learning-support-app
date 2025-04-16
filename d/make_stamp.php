@@ -151,7 +151,7 @@ if ($page_count == 0) {
 <html>
     <head lang = "ja">
         <meta charset = "UTF-8">
-        <title>スタンプ登録</title>
+        <title>単語システム</title>
         <meta name = "description" content = "スタンプ登録">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css" rel = "stylesheet">

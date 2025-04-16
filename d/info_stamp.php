@@ -36,7 +36,7 @@ try {
 <html>
     <head lang = "ja">
         <meta charset = "UTF-8">
-        <title>スタンプ一覧</title>
+        <title>単語システム</title>
         <meta name = "description" content = "管理者ログイン">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css" rel = "stylesheet">

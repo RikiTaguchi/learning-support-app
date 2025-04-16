@@ -27,7 +27,7 @@ try {
 <html lang = "ja">
     <head>
         <meta charset = "UTF-8">
-        <title>構文解析</title>
+        <title>単語システム</title>
         <meta name = "description" content = "構文解析入力フォーム">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/form.css" rel = "stylesheet">
@@ -61,7 +61,7 @@ try {
                         <textarea name = "text_input" required></textarea>
                     </div>
                     <div class = "form-content">
-                        <div class = "form-content-submit"><input type = "submit" value = "送信"></div>
+                        <div class = "form-content-submit"><button type = "submit">送信</button></div>
                     </div>
                     <p class = "main-block-msg">※解析には数秒〜数十秒かかります。<br>※各文は改行で区切ってください。</p>
                 </form>

@@ -73,7 +73,7 @@ try {
 <html>
 <head lang = "ja">
     <meta charset = "UTF-8">
-    <title>単語テスト(解答)</title>
+    <title>単語システム</title>
     <meta name = "description" content = "テスト(解答)">
     <meta name = "viewport" content = "width=device-width">
     <link href = "../common/css/answer.css" rel = "stylesheet">

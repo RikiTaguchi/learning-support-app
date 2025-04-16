@@ -28,7 +28,7 @@ try {
 <html>
     <head lang = "ja">
         <meta charset = "UTF-8">
-        <title>アカウント情報</title>
+        <title>単語システム</title>
         <meta name = "description" content = "単語システムアカウント情報">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/form.css" rel = "stylesheet">
@@ -71,7 +71,7 @@ try {
                         <input type = "text" name = "new_user_pass" value ="<?php echo $user_pass ?>">
                     </div>
                     <div class = "form-content">
-                        <div class = "form-content-submit"><input type = "submit" value = "更新"></div>
+                        <div class = "form-content-submit"><button type = "submit">更新</button></div>
                     </div>
                 </form>
                 <form class = "form form-last" method = "post" action = "delete_account.php" onSubmit = "return checkSubmit()">
@@ -81,7 +81,7 @@ try {
                     echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
                     ?>
                     <div class = "form-content">
-                        <div class = "form-content-submit"><input type = "submit" value = "削除"></div>
+                        <div class = "form-content-submit"><button type = "submit">削除</button></div>
                     </div>
                 </form>
             </div>

@@ -50,7 +50,7 @@ $finish_time_s = $_POST['finish_time_s'];
 <html lang = "ja">
     <head>
         <meta charset = "UTF-8">
-        <title>計算トレーニング</title>
+        <title>単語システム</title>
         <meta name = "description" content = "計算トレーニング">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css" rel = "stylesheet">

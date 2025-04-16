@@ -87,7 +87,7 @@ if ($state === 'new') {
 <html lang = "ja">
     <head>
         <meta charset = "UTF-8">
-        <title>My単語帳作成</title>
+        <title>単語システム</title>
         <meta name = "description" content = "My単語帳作成フォーム">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/form.css" rel = "stylesheet">
@@ -120,7 +120,7 @@ if ($state === 'new') {
                     echo '<input class = "info_account" type = "text" name = "book_id" value = "' . $book_id . '">';
                     ?>
                     <div class = "form-content">
-                        <div class = "form-content-submit"><input type = "submit" value = "詳細へ"></div>
+                        <div class = "form-content-submit"><button type = "submit">詳細</button></div>
                     </div>
                 </form>
             </div>

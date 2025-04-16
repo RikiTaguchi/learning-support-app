@@ -50,7 +50,7 @@ try {
 <html>
     <head lang = "ja">
         <meta charset = "UTF-8">
-        <title>My単語帳</title>
+        <title>単語システム</title>
         <meta name = "description" content = "My単語帳編集ページ">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css" rel = "stylesheet">

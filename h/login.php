@@ -48,7 +48,7 @@ include('../common/banner.php');
                     </div>
                     <div class = "form-content">
                         <div class = "form-content-submit">
-                            <input type = "submit" name = "submit" value = "ログイン">
+                            <button type = "submit" name = "submit">ログイン</button>
                         </div>
                     </div>
                 </form>

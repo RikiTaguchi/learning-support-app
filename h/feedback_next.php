@@ -95,7 +95,7 @@ try {
 <!DOCTYPE html>
 <head lang = "ja">
     <meta charset = "UTF-8">
-    <title>復習モード</title>
+    <title>単語システム</title>
     <meta name = "description" content = "復習モード">
     <meta name = "viewport" content = "width=device-width">
     <link href = "../common/css/header.css" rel = "stylesheet">

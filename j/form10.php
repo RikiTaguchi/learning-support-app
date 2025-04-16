@@ -12,7 +12,7 @@ check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_p
 <html lang = "ja">
     <head>
         <meta charset = "UTF-8">
-        <title>計算トレーニング</title>
+        <title>単語システム</title>
         <meta name = "description" content = "計算トレーニング">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/form.css" rel = "stylesheet">
@@ -72,7 +72,7 @@ check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_p
                         <span>出題数</span><input type = "number" name = "question_number" required>
                     </div>
                     <div class = "form-content">
-                        <div class = "form-content-submit"><input type = "submit" value = "開始"></div>
+                        <div class = "form-content-submit"><button type = "submit">開始</button></div>
                     </div>
                 </form>
             </div>

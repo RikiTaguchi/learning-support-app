@@ -52,7 +52,7 @@ try {
 <html>
     <head lang = "ja">
         <meta charset = "UTF-8">
-        <title>スタンプ編集</title>
+        <title>単語システム</title>
         <meta name = "description" content = "スタンプ編集">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css" rel = "stylesheet">
@@ -224,7 +224,7 @@ try {
 
                     <!-- 送信 -->
                     <div class = "form-content">
-                        <div class = "form-content-submit"><input class = "stamp-submit" type = "submit" value = "更新"></div>
+                        <div class = "form-content-submit"><button class = "stamp-submit" type = "submit">更新</button></div>
                     </div>
                 </form>
             </div>

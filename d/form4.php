@@ -27,7 +27,7 @@ try {
 <html lang = "ja">
     <head>
         <meta charset = "UTF-8">
-        <title>My単語帳作成</title>
+        <title>単語システム</title>
         <meta name = "description" content = "My単語帳作成フォーム">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/form.css" rel = "stylesheet">
@@ -62,7 +62,7 @@ try {
                         <input type = "text" name = "new_book_name" required>
                     </div>
                     <div class = "form-content">
-                        <div class = "form-content-submit"><input type = "submit" value = "作成"></div>
+                        <div class = "form-content-submit"><button type = "submit">作成</button></div>
                     </div>
                 </form>
             </div>

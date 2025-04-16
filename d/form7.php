@@ -29,7 +29,7 @@ try {
 <html>
     <head lang = "ja">
         <meta charset = "UTF-8">
-        <title>スタンプ登録</title>
+        <title>単語システム</title>
         <meta name = "description" content = "スタンプ登録">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css" rel = "stylesheet">
@@ -193,7 +193,7 @@ try {
                     
                     <!-- 送信 -->
                     <div class = "form-content">
-                        <div class = "form-content-submit"><input class = "stamp-submit" type = "submit" value = "登録"></div>
+                        <div class = "form-content-submit"><button class = "stamp-submit" type = "submit">登録</button></div>
                     </div>
                 </form>
             </div>

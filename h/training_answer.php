@@ -91,7 +91,7 @@ try {
 <!DOCTYPE html>
 <head lang = "ja">
     <meta charset = "UTF-8">
-    <title>トレーニング</title>
+    <title>単語システム</title>
     <meta name = "description" content = "トレーニング">
     <meta name = "viewport" content = "width=device-width">
     <link href = "../common/css/header.css" rel = "stylesheet">

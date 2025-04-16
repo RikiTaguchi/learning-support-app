@@ -9,7 +9,7 @@ include('../common/banner.php');
 <html>
     <head lang = "ja">
         <meta charset = "UTF-8">
-        <title>単語システム</title>
+        <title>スタンプカード</title>
         <meta name = "description" content = "単語システムログインページ">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css" rel = "stylesheet">
@@ -32,8 +32,8 @@ include('../common/banner.php');
         </div>
         <main class = "main">
             <div class = "login-block">
-                <p>スタンプカード</p>
-                <img src = "../common/images/meiko-logo.png">
+                <p>明光義塾</p>
+                <img src = "../common/images/stamp-logo.png">
             </div>
             <div class = "main-block">
                 <p class = "main-block-title">ログイン</p>
@@ -48,7 +48,7 @@ include('../common/banner.php');
                     </div>
                     <div class = "form-content">
                         <div class = "form-content-submit">
-                            <input type = "submit" name = "submit" value = "ログイン">
+                            <button type = "submit" name = "submit">ログイン</button>
                         </div>
                     </div>
                 </form>

@@ -51,7 +51,7 @@ try {
 <html>
     <head lang = "ja">
         <meta charset = "UTF-8">
-        <title>単語システム</title>
+        <title>スタンプカード</title>
         <meta name = "description" content = "単語システムトップページ">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/index.css" rel = "stylesheet">

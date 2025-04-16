@@ -51,7 +51,7 @@ include('../common/banner.php');
                     </div>
                     <div class = "form-content">
                         <div class = "form-content-submit">
-                            <input type = "submit" name = "submit" value = "登録">
+                            <button type = "submit" name = "submit">登録</button>
                         </div>
                     </div>
                 </form>

@@ -12,7 +12,7 @@ check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_p
 <html lang = "ja">
     <head>
         <meta charset = "UTF-8">
-        <title>QRコード読取</title>
+        <title>スタンプカード</title>
         <meta name = "description" content = "QRコード読取">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/body.css" rel = "stylesheet">

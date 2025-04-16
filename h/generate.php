@@ -184,7 +184,7 @@ try {
 <html lang = "ja">
     <head>
         <meta charset = "UTF-8">
-        <title>構文解析</title>
+        <title>単語システム</title>
         <meta name = "description" content = "構文解析結果">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css" rel = "stylesheet">

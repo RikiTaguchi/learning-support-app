@@ -37,7 +37,7 @@ try {
 <html lang = "ja">
     <head>
         <meta charset = "UTF-8">
-        <title>トレーニング</title>
+        <title>単語システム</title>
         <meta name = "description" content = "トレーニング入力フォーム">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/form.css" rel = "stylesheet">
@@ -97,7 +97,7 @@ try {
                         <span>出題数</span><input type = "number" name = "questions_num" required>
                     </div>
                     <div class = "form-content">
-                        <div class = "form-content-submit"><input type = "submit" value = "開始"></div>
+                        <div class = "form-content-submit"><button type = "submit">開始</button></div>
                     </div>
                 </form>
             </div>

@@ -28,7 +28,7 @@ try {
 <html>
     <head lang = "ja">
         <meta charset = "UTF-8">
-        <title>カウントダウン</title>
+        <title>スタンプカード</title>
         <meta name = "description" content = "カウントダウン更新">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/form.css" rel = "stylesheet">
