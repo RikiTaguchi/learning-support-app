@@ -18,7 +18,7 @@
 }
 
 .result-score {
-    color: rgb(0, 129, 204);
+    color: rgb(0, 149, 224);
     font-size: 100px;
     font-weight: bold;
 }
@@ -79,7 +79,7 @@
     font-size: 14px;
     border: none;
     border-radius: 5px;
-    background-color: rgb(0, 129, 204);
+    background-color: rgb(0, 149, 224);
 }
 
 /* mobile */

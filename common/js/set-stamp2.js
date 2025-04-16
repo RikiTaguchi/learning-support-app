@@ -47,7 +47,7 @@ window.addEventListener('load', () => {
                 randomArea[page - 1].style.display = 'flex';
                 for (let i = 0; i < count; i++) {
                     if (i === page - 1) {
-                        countBlock[i].style.backgroundColor = 'rgb(0, 129, 204)';
+                        countBlock[i].style.backgroundColor = 'rgb(0, 149, 224)';
                     } else {
                         countBlock[i].style.backgroundColor = 'lightgray';
                     }
@@ -68,7 +68,7 @@ window.addEventListener('load', () => {
                 randomArea[page + 1].style.display = 'flex';
                 for (let i = 0; i < count; i++) {
                     if (i === page + 1) {
-                        countBlock[i].style.backgroundColor = 'rgb(0, 129, 204)';
+                        countBlock[i].style.backgroundColor = 'rgb(0, 149, 224)';
                     } else {
                         countBlock[i].style.backgroundColor = 'lightgray';
                     }

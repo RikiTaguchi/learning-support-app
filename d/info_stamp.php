@@ -134,7 +134,7 @@ try {
                                 echo '<button class = "stamp-block-right" type = "button">〉</button>';
                             echo '</div>';
                             echo '<div class = "stamp-count">';
-                                echo '<div class = "count-block" style = "background-color: rgb(0, 129, 204);"></div>';
+                                echo '<div class = "count-block" style = "background-color: rgb(0, 149, 224);"></div>';
                                 for ($j = 1; $j < count($stamp_random_info); $j++) {
                                     echo '<div class = "count-block" style = "background-color: lightgray;"></div>';
                                 }

@@ -5,7 +5,7 @@
 .main-inner-type {
     display: block;
     margin-top: 10px;
-    color: rgb(0, 129, 204);
+    color: rgb(0, 149, 224);
     font-size: 20px;
 }
 
@@ -37,7 +37,7 @@
     font-size: 25px;
     width: 80%;
     min-height: 40px;
-    background-color: rgb(0, 129, 204);
+    background-color: rgb(0, 149, 224);
     border: none;
     border-radius: 5px;
     color: white;
@@ -97,7 +97,7 @@
     font-weight: bold;
     margin-top: 20px;
     text-align: center;
-    color: rgb(0, 129, 204);
+    color: rgb(0, 149, 224);
     display: block;
 }
 
@@ -115,7 +115,7 @@
 
 .feedback-list button {
     font-size: 18px;
-    background-color: rgb(0, 129, 204);
+    background-color: rgb(0, 149, 224);
     border: none;
     border-radius: 5px;
     color: white;
@@ -125,7 +125,7 @@
 
 .feedback-list2 button {
     font-size: 18px;
-    background-color: rgb(0, 129, 204);
+    background-color: rgb(0, 149, 224);
     border: none;
     border-radius: 5px;
     color: white;
@@ -156,7 +156,7 @@
     display: block;
     width: 100%;
     height: 40px;
-    background-color: rgb(0, 129, 204);
+    background-color: rgb(0, 149, 224);
     border: none;
     border-radius: 5px;
     color: white;
@@ -166,7 +166,7 @@
     display: block;
     width: 100%;
     height: 40px;
-    background-color: rgb(0, 129, 204);
+    background-color: rgb(0, 149, 224);
     border: none;
     border-radius: 5px;
     color: white;
