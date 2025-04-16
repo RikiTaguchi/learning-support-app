@@ -42,6 +42,7 @@ try {
         <link href = "../common/css/header.css" rel = "stylesheet">
         <link href = "../common/css/body.css" rel = "stylesheet">
         <link href = "../common/css/info_stamp.css" rel = "stylesheet">
+        <link href = "../common/css/info_stamp_print.css" rel = "stylesheet" media = "print">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -52,6 +53,7 @@ try {
         <script src = "../common/js/toggle-menu.js"></script>
         <script src = "../common/js/set-banner.js"></script>
         <script src = "../common/js/set-stamp3.js"></script>
+        <script src = "../common/js/print-stamp.js"></script>
         <script src = "../common/js/check-submit.js"></script>
     </head>
     <body>
@@ -171,6 +173,7 @@ try {
                                 echo '<img class = "qr-img" src = "' . $qr_path . '">';
                                 echo '<div class = "qr-icon"><img src = "' . $img_path . '"></div>';
                             echo '</div>';
+                            echo '<button class = "qr-print" type = "button">印刷</button>';
                             echo '<a class = "qr-download" href = "' . $qr_path . '" download = "qr_' . $img_list[$i]['table_id'] . $img_list[$i]['img_id'] . '.png">保存</a>';
                             echo '<button class = "qr-close" type = "button">閉じる</button>';
                         echo '</div>';
@@ -184,8 +187,45 @@ try {
                                 echo '<img class = "qr-img" src = "' . $qr_path . '">';
                                 echo '<div class = "qr-icon"><img src = "../common/images/qr-back.png"></div>';
                             echo '</div>';
+                            echo '<button class = "qr-print" type = "button">印刷</button>';
                             echo '<a class = "qr-download" href = "' . $qr_path . '" download = "qr_' . $img_list[$i]['table_id'] . $img_list[$i]['img_id'] . '.png">保存</a>';
                             echo '<button class = "qr-close" type = "button">閉じる</button>';
+                        echo '</div>';
+                    }
+                }
+                ?>
+            </div>
+            <div class = "print-block">
+                <?php
+                $stamp_random_id = [];
+                for ($i = 0; $i < count($img_list); $i += 1) {
+                    if ($img_list[$i]['stamp_id'] == 'none' && $img_list[$i]['stamp_prob'] == 'none') { // 通常
+                        $qr_path = '../common/qr/' . $img_list[$i]['table_id'] . '_' . $img_list[$i]['img_id'] . '_qr.png';
+
+                        // 印刷ページ
+                        echo '<div class = "print-area">';
+                            echo '<img class = "print-logo" src = "../common/images/stamp-logo.png">';
+                            echo '<p class = "print-title">' . $img_list[$i]['img_title'] . '</p>';
+                            echo '<p class = "print-limit">有効期限：' . $img_list[$i]['date_limit'] . '</p>';
+                            $img_path = "../common/stamp/" . $img_list[$i]['table_id'] . '_' . $img_list[$i]['img_id'] . '.' . $img_list[$i]['img_extention'] . '?version=' . uniqid();
+                            echo '<div class = "print-back">';
+                                echo '<img class = "print-img" src = "' . $qr_path . '">';
+                                echo '<div class = "print-icon"><img src = "' . $img_path . '"></div>';
+                            echo '</div>';
+                        echo '</div>';
+                    } else if (in_array($img_list[$i]['img_id'], $stamp_random_id) == false) { // ランダム
+                        $stamp_random_id[] = $img_list[$i]['img_id'];
+                        $qr_path = '../common/qr/' . $img_list[$i]['table_id'] . '_' . $img_list[$i]['img_id'] . '_qr.png';
+                        
+                        // 印刷ページ
+                        echo '<div class = "print-area">';
+                            echo '<img class = "print-logo" src = "../common/images/stamp-logo.png">';
+                            echo '<p class = "print-title">' . $img_list[$i]['img_title'] . '</p>';
+                            echo '<p class = "print-limit">有効期限：' . $img_list[$i]['date_limit'] . '</p>';
+                            echo '<div class = "print-back">';
+                                echo '<img class = "print-img" src = "' . $qr_path . '">';
+                                echo '<div class = "print-icon"><img src = "../common/images/qr-back.png"></div>';
+                            echo '</div>';
                         echo '</div>';
                     }
                 }

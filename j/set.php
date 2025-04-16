@@ -143,6 +143,11 @@ try {
                         echo '</form>';
                     }
                 }
+                echo '<form>';
+                    echo '<button type = "button" onclick="window.print()">';
+                        echo '<p>印刷</p>';
+                    echo '</button>';
+                echo '</form>';
                 make_link('戻る', 'form.php', [$user_name, $login_id, $user_pass]);
             ?>
             </div>
