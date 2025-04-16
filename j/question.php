@@ -124,11 +124,6 @@ try {
     </header>
     <main>
         <div class = "main-inner">
-        <p class = "main-inner-title">
-            <?php
-            echo $book_name . ' / #' . $start . '~' . $end . ' / ' . $questions_num . '題<br>';
-            ?>
-        </p>
         <?php
             for ($i = 0; $i < $questions_num; $i++) {
                 if (($i + 1) % 10 == 0) {
