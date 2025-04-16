@@ -1,90 +1,83 @@
 /* header */
-.header-inner-logo-sub {
-    width: 300px;
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.error-message {
-    color: rgb(255, 0, 0);
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 70px;
-}
-
-.error-button {
-    display: inline-block;
+.header {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    font-size: 30px;
-    margin-top: 50px;
-    margin-bottom: 100px;
-    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 45px;
 }
 
-.header-inner {
-    display: flex;
-    align-items: center;
+.header-top {
+    width: 250px;
     margin-top: 10px;
-    margin-bottom: 0px;
-    margin-left: 30px;
-    margin-right: 30px;
 }
 
-.header-logo {
-    display: block;
-    width: 70px;
-    background: transparent;
+.header-top button {
+    width: 100%;
     border: none;
+    background-color: transparent;
 }
 
-.header-logo img {
+.header-top button img {
     width: 100%;
 }
 
 .header-inner-menu {
-    text-align: center;
-    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
 }
 
-.header-inner-menu p{
+.header-inner-menu-title {
     font-size: 20px;
     font-weight: bold;
-    margin-top: 15px;
-}
-
-.header-inner-menu-button form button p{
-    color: blue;
-    margin-top: 20px;
+    color: black;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .header-inner-menu-button {
     display: flex;
-    margin-top: 10px;
+    align-items: center;
+    margin-left: 10px;
 }
 
-.header-inner-menu-button form{
-    margin-left: 45px;
+.header-inner-menu-button form {
+    width: 80px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.header-inner-menu p:first-child{
-    margin-top: -5px;
+.header-inner-menu-button form button {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(0, 149, 224);
+    width: 80px;
+    height: 25px;
 }
 
-.header-inner-menu p a:nth-child(2) {
-    margin-left: 30px;
+.header-inner-menu-button form button p {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* main */
 .main-inner {
     width: 100%;
     font-size: 20px;
-}
-
-.main-inner-title {
-    display: none;
 }
 
 .main-inner-word,
@@ -110,44 +103,40 @@ input {
 /* for smart devices */
 @media (max-width: 767px) {
     /* header */
-    .header-inner-logo-sub {
-        width: 200px;
+    .header {
+        margin-bottom: 30px;
     }
-
-    .error-message {
-        font-size: 13px;
+    
+    .header-top {
+        width: 150px;
+        margin-top: 5px;
     }
-
-    .error-button {
-        font-size: 20px;
-    }
-
-    .header-inner {
-        margin-left: 8px;
-        margin-right: 8px;
-        padding-top: 10px;
-    }
-
-    .header-inner-logo {
-        width: 40px;
-    }
-
+    
     .header-inner-menu {
         margin-top: 5px;
-        margin-left: 8px;
+        flex-direction: column;
+        align-items: flex-start;
     }
-
-    .header-inner-menu p{
+    
+    .header-inner-menu-title {
+        font-size: 15px;
+    }
+    
+    .header-inner-menu-button {
+        margin-top: 5px;
+    }
+    
+    .header-inner-menu-button form {
+        width: 45px;
+        height: 20px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .header-inner-menu-button form button {
         font-size: 12px;
-        margin-top: 10px;
-    }
-
-    .header-inner-menu-button a{
-        color: blue;
-    }
-
-    .header-inner-menu p a:nth-child(2) {
-        margin-left: 20px;
+        width: 45px;
+        height: 20px;
     }
 
     /* main */

@@ -37,7 +37,7 @@ else if ($_POST['book_id'] == '7') {
 else if ($_POST['book_id'] == '8') {
     $book_name = 'Vintage';
     $book_id = 'Vintage';
-    $limit = 852;
+    $limit = 525;
 }
 else if ($_POST['book_id'] == '9') {
     $book_name = 'パス単(3級)';
@@ -72,7 +72,7 @@ else if ($_POST['book_id'] == '14') {
 else if ($_POST['book_id'] == '15') {
     $book_name = 'みるみる古文単語300';
     $book_id = 'kobun300';
-    $limit = 300;
+    $limit = 330;
 }
 else if ($_POST['book_id'] == '16') {
     $book_name = '古文単語315';

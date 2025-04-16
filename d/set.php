@@ -111,48 +111,45 @@ try {
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-    <header>
-        <div class = "header-inner">
-            <form method = "post" action = "index.php">
-                <?php
-                echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
-                echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
-                echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
-                ?>
-                <button class = "header-logo" type = "submit">
-                    <img src = "../common/images/meiko-logo.png" alt = "ロゴ画像">
-                </button>
-            </form>
-            <div class = "header-inner-menu">
-                <?php
-                echo '<p class = "header-inner-menu-title">' . $book_name . ' / #' . $start . '~' . $end . ' / ' . $questions_num . '題</p>'. PHP_EOL;
-                echo '<div class = "header-inner-menu-button">';
-                    echo '<form method = "post" action = "answer.php?book_name=' . $book_name . '&book_id=' . $book_id . '&start=' . $start . '&end=' . $end . '&questions_num=' . $questions_num . '&';
-                    for ($i = 1; $i <= $questions_num; $i++) {
-                        echo 'data' . $i . '=' . $number[$i - 1];
-                        if ($i < $questions_num) {
-                            echo '&';
-                        }
-                        else {
-                            echo '">';
-                            echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
-                            echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
-                            echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
-                            echo '<button class = "make-link-button" type = "submit">';
-                                echo '<p>解答</p>';
-                            echo '</button>';
-                            echo '</form>';
-                        }
+    <header class = "header">
+        <form class = "header-top" method = "post" action = "index.php">
+            <?php
+            echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
+            echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
+            echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
+            ?>
+            <button class = "header-logo" type = "submit">
+                <img src = "../common/images/meiko-logo.png" alt = "ロゴ画像">
+            </button>
+        </form>
+        <div class = "header-inner-menu">
+            <?php
+            echo '<p class = "header-inner-menu-title">' . $book_name . ' / #' . $start . '~' . $end . ' / ' . $questions_num . '題</p>'. PHP_EOL;
+            echo '<div class = "header-inner-menu-button">';
+                echo '<form method = "post" action = "answer.php?book_name=' . $book_name . '&book_id=' . $book_id . '&start=' . $start . '&end=' . $end . '&questions_num=' . $questions_num . '&';
+                for ($i = 1; $i <= $questions_num; $i++) {
+                    echo 'data' . $i . '=' . $number[$i - 1];
+                    if ($i < $questions_num) {
+                        echo '&';
                     }
-                    make_link('入力フォームに戻る', 'form.php', [$user_name, $login_id, $user_pass]);
-                ?>
-                </div>
+                    else {
+                        echo '">';
+                        echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
+                        echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
+                        echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
+                        echo '<button class = "make-link-button" type = "submit">';
+                            echo '<p>解答</p>';
+                        echo '</button>';
+                        echo '</form>';
+                    }
+                }
+                make_link('戻る', 'form.php', [$user_name, $login_id, $user_pass]);
+            ?>
             </div>
         </div>
     </header>
     <main>
         <div class = "main-inner">
-            <p class = "main-inner-title"><?php echo $book_name . ' / #' . $start . '~' . $end . ' / ' . $questions_num . '題<br>'; ?></p>
             <?php
             for ($i = 0; $i < $questions_num; $i++) {
                 if (($i + 1) % 10 == 0) {
