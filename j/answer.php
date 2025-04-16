@@ -77,6 +77,7 @@ try {
     <meta name = "description" content = "テスト(解答)">
     <meta name = "viewport" content = "width=device-width">
     <link href = "../common/css/answer.css" rel = "stylesheet">
+    <link href = "../common/css/answer_print.css" rel = "stylesheet" media = "print">
     <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
     <link rel = "manifest" href = "../common/icons/manifest.json">
     <link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -86,18 +87,17 @@ try {
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-    <header>
-        <div class = "header-inner">
-            <?php
-            echo '<form method = "post" action = "index.php">';
-                echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
-                echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
-                echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
-                echo '<button class = "header-logo" type = "submit">';
-                    echo '<img src = "../common/images/meiko-logo.png" alt = "ロゴ画像">';
-                echo '</button>';
-            echo '</form>';
-            echo '<div class = "header-inner-menu">' . PHP_EOL;
+    <header class = "header">
+        <?php
+        echo '<form class = "header-top" method = "post" action = "index.php">';
+            echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
+            echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
+            echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
+            echo '<button class = "header-logo" type = "submit">';
+                echo '<img src = "../common/images/meiko-logo.png" alt = "ロゴ画像">';
+            echo '</button>';
+        echo '</form>';
+        echo '<div class = "header-inner-menu">' . PHP_EOL;
             echo '<p class = "header-inner-menu-title">' . $book_name . ' / #' . $start . '~' . $end . ' / ' . $questions_num . '題</p>'. PHP_EOL;
             echo '<div class = "header-inner-menu-button">';
             echo '<form method = "post" action = "question.php?book_name=' . $book_name . '&book_id=' . $book_id . '&start=' . $start . '&end=' . $end . '&questions_num=' . $questions_num . '&';
@@ -117,17 +117,13 @@ try {
                     echo '</form>';
                 }
             }
-            make_link('入力フォームに戻る', 'form.php', [$user_name, $login_id, $user_pass]);
+            make_link('戻る', 'form.php', [$user_name, $login_id, $user_pass]);
             echo '</div>';
-            echo '</div>';
-            ?>
-        </div>
+        echo '</div>';
+        ?>
     </header>
     <main>
         <div class = "main-inner">
-        <p class = "main-inner-title">
-            <?php echo $book_name . ' / #' . $start . '~' . $end . ' / ' . $questions_num . '題<br>'; ?>
-        </p>
         <?php
         for ($i = 0; $i < $questions_num; $i++) {
             if (($i + 1) % 10 == 0) {
