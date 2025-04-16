@@ -68,16 +68,16 @@ const checkImage = () => {
    if (code) {
       drawRect(code.location);
       // 本番環境（Xserver）
-      const pattern1 = /^https:\/\/wordsystemforstudents.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
-      const pattern2 = /^https:\/\/wordsystemforstudents.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
+      // const pattern1 = /^https:\/\/wordsystemforstudents.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
+      // const pattern2 = /^https:\/\/wordsystemforstudents.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
 
       // 本番環境（AWS）
       // const pattern1 = /^https:\/\/wordsystemforlearning.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
       // const pattern2 = /^https:\/\/wordsystemforlearning.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
       
       // ローカル環境
-      // const pattern1 = /^http:\/\/localhost\/learning-support-app\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
-      // const pattern2 = /^http:\/\/localhost\/learning-support-app\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
+      const pattern1 = /^http:\/\/localhost\/learning-support-app\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
+      const pattern2 = /^http:\/\/localhost\/learning-support-app\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
       
       if (pattern1.test(code.data) === true && previewButton.style.display === 'none' && previewBackButton.style.display === 'none') {
          let infoQR = (code.data).split('?')[1].split('&');
