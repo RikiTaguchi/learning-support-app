@@ -106,39 +106,9 @@ try {
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js"></script>
+        <script src = "../common/js/toggle-notice.js"></script>
         <script src = "../common/js/set-banner.js"></script>
         <script src = "../common/js/check-submit.js"></script>
-		<script>
-            const button = new Array(<?php echo (string)count($notice); ?>);
-            const detail = new Array(<?php echo (string)count($notice); ?>);
-
-			<?php foreach ($notice as $i => $info) { ?>
-				window.addEventListener('load', () => {
-                    button[<?php echo (string)$i; ?>] = document.querySelector(<?php echo '\'.notice-button-' . (string)$info['id'] . '\''; ?>);
-                    detail[<?php echo (string)$i; ?>] = document.querySelector(<?php echo '\'.notice-detail-' . (string)$info['id'] . '\''; ?>);
-                    detail[<?php echo (string)$i; ?>].style.display = 'none';
-
-                    const options = {
-                        duration: 250,
-                        easing: 'ease',
-                        fill: 'forwards',
-                    };
-
-                    const openDetail = {
-                        opacity: [0, 1],
-                    };
-
-                    button[<?php echo (string)$i; ?>].addEventListener('click', () => {
-                        if (detail[<?php echo (string)$i; ?>].style.display === 'none') {
-                            detail[<?php echo (string)$i; ?>].style.display = 'block';
-                            detail[<?php echo (string)$i; ?>].animate(openDetail, options);
-                        } else {
-                            detail[<?php echo (string)$i; ?>].style.display = 'none';
-                        }
-                    });
-                });
-			<?php } ?>
-		</script>
     </head>
     <body>
         <header class = "header">
@@ -198,9 +168,9 @@ try {
                                 echo '<div class = "notice-list-subblock">';
                                     echo '<p class = "notice-subtitle">' . $notice[$i]['title'] . '</p>';
                                     echo '<p class = "notice-date">' . $notice[$i]['date'] . '</p>';
-                                    echo '<button class = "notice-button-root notice-button-' . (string)$notice[$i]['id'] . '"><p>詳細</p></button>';
+                                    echo '<button class = "notice-button"><p>詳細</p></button>';
                                 echo '</div>';
-                                echo '<div class = "notice-detail-root notice-detail-' . (string)$notice[$i]['id'] . '"><p>' . $notice[$i]['detail'] . '</p></div>';
+                                echo '<div class = "notice-detail"><p>' . $notice[$i]['detail'] . '</p></div>';
                             echo '</div>';
                             echo '<hr class = "notice-line">';
                         }
