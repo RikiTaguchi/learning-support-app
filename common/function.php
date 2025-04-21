@@ -24,7 +24,7 @@ function check_account_type($login_id, $account_type, $db_host, $db_name, $db_us
         $stmt->bindParam(':login_id', $login_id, PDO::PARAM_STR);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($result['account_type'] !== $account_type) {
+        if (!in_array($result['account_type'], $account_type)) {
             header('Location: login.php?banner=9', true, 307);
             exit;
         }

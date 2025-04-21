@@ -4,7 +4,7 @@ include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
-$account_type = 'e';
+$account_type = ['e', 'j', 'h'];
 
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
@@ -48,7 +48,7 @@ try {
     $stmt->bindParam(':login_id', $login_id, PDO::PARAM_STR);
     $stmt->bindParam(':user_pass', $user_pass, PDO::PARAM_STR);
     $stmt->bindParam(':table_id', $table_id, PDO::PARAM_INT);
-    $stmt->bindParam(':account_type', $account_type, PDO::PARAM_STR);
+    $stmt->bindParam(':account_type', $account_type[0], PDO::PARAM_STR);
     $stmt->execute();
     $dbh = null;
 

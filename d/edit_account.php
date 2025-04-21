@@ -4,7 +4,7 @@ include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
-$account_type = 'd';
+$account_type = ['d'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
 $new_login_id = $_POST['new_login_id'];

@@ -5,7 +5,7 @@ include('../common/function.php');
 include('../common/banner.php');
 include('./source_book.php');
 
-$account_type = 'h';
+$account_type = ['h'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
 $date_today = strtotime(date('Y-m-d'));

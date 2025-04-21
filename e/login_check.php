@@ -4,7 +4,7 @@ include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
 
-$account_type = 'e';
+$account_type = ['e', 'j', 'h'];
 
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
@@ -14,7 +14,7 @@ try {
     $stmt->bindParam(':login_id', $login_id, PDO::PARAM_STR);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($login_id === $result['login_id'] && $user_pass === $result['user_pass']) {
+    if ($login_id === $result['login_id'] && $user_pass === $result['user_pass'] && in_array($result['account_type'], $account_type)) {
         $user_name = $result['user_name'];
         $dbh = null;
 

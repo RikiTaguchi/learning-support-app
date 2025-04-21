@@ -5,7 +5,7 @@ include('../common/function.php');
 include('../common/banner.php');
 include('./source_book.php');
 
-$account_type = 'j';
+$account_type = ['j'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
 try {
