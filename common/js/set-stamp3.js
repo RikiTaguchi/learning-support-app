@@ -6,6 +6,22 @@ window.addEventListener('load', () => {
     const qrCloseButton = Array.from(document.getElementsByClassName('qr-close'));
     const stampImage = Array.from(document.getElementsByClassName('stamp-block-img'));
 
+    const options = {
+        duration: 500,
+        easing: 'ease',
+        fill: 'forwards',
+    };
+    const openDetail = {
+        translate: ['-50% -50%', '-50% -50%'],
+        transform: ['rotate3d(0, 1, 0, 180deg)', 'rotate3d(0, 1, 0, 0deg)'],
+        opacity: [0, 1],
+    };
+    const closeDetail = {
+        translate: ['-50% -50%', '-50% -50%'],
+        transform: ['rotate3d(0, 1, 0, -180deg)', 'rotate3d(0, 1, 0, 0deg)'],
+        opacity: [1, 0],
+    };
+
     for (let i = 0; i < detailButton.length; i++) {
         // 詳細の表示・非表示切替
         detailButton[i].addEventListener('click', () => {
@@ -19,11 +35,15 @@ window.addEventListener('load', () => {
         // QRコードの表示
         qrOpenButton[i].addEventListener('click', () => {
             qrBlock[i].style.display = 'flex';
+            qrBlock[i].animate(openDetail, options);
         });
 
         // QRコードの非表示
         qrCloseButton[i].addEventListener('click', () => {
-            qrBlock[i].style.display = 'none';
+            qrBlock[i].animate(closeDetail, options);
+            setTimeout(() => {
+                qrBlock[i].style.display = 'none';
+            }, '500');
         });
 
         // スライド（タイプ：ランダム）
