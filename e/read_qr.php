@@ -15,8 +15,8 @@ check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_p
         <title>スタンプカード</title>
         <meta name = "description" content = "QRコード読取">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/body.css" rel = "stylesheet">
-        <link href = "../common/css/read_qr.css" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/read_qr.css?v=1.0.0" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest2.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -58,8 +58,8 @@ check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_p
                     <button class = "main-form-qr-button-back" type = "button" style = "display: none;"><p>戻る</p></button>
                 </form>
             </div>
-            <script src = "../common/js/jsQR.js"></script>
-            <script src = "../common/js/set-qr.js"></script>
+            <script src = "../common/js/jsQR.js?v=1.0.0"></script>
+            <script src = "../common/js/set-qr.js?v=1.0.0"></script>
         </main>
     </body>
 </html>

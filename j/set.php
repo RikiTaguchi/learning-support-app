@@ -100,8 +100,8 @@ try {
     <title>単語システム</title>
     <meta name = "description" content = "テスト(問題)">
     <meta name = "viewport" content = "width=device-width">
-    <link href = "../common/css/set.css" rel = "stylesheet">
-    <link href = "../common/css/set_print.css" rel = "stylesheet" media = "print">
+    <link href = "../common/css/set.css?v=1.0.0" rel = "stylesheet">
+    <link href = "../common/css/set_print.css?v=1.0.0" rel = "stylesheet" media = "print">
     <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
     <link rel = "manifest" href = "../common/icons/manifest.json">
     <link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">

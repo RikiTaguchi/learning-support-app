@@ -39,10 +39,10 @@ try {
         <title>単語システム</title>
         <meta name = "description" content = "管理者ログイン">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/header.css" rel = "stylesheet">
-        <link href = "../common/css/body.css" rel = "stylesheet">
-        <link href = "../common/css/info_stamp.css" rel = "stylesheet">
-        <link href = "../common/css/info_stamp_print.css" rel = "stylesheet" media = "print">
+        <link href = "../common/css/header.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/info_stamp.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/info_stamp_print.css?v=1.0.0" rel = "stylesheet" media = "print">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -50,11 +50,11 @@ try {
 		<link rel = "icon" type = "image/png" sizes = "32x32" href = "../common/icons/favicon-32x32.png">
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
-        <script src = "../common/js/toggle-menu.js"></script>
-        <script src = "../common/js/set-banner.js"></script>
-        <script src = "../common/js/set-stamp3.js"></script>
-        <script src = "../common/js/print-stamp.js"></script>
-        <script src = "../common/js/check-submit.js"></script>
+        <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.0"></script>
+        <script src = "../common/js/set-stamp3.js?v=1.0.0"></script>
+        <script src = "../common/js/print-stamp.js?v=1.0.0"></script>
+        <script src = "../common/js/check-submit.js?v=1.0.0"></script>
     </head>
     <body>
         <header class = "header">
