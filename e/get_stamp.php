@@ -112,12 +112,23 @@ if (($date_limit - $date_today) / (60 * 60 * 24) >= 0) {
             $i += 1;
         }
 
-        if ($i > $stamp_count_limit) {
+        $get_date_set = date('Y-m-d');
+
+        $sql = 'SELECT * FROM info_stamp WHERE user_table_id = :user_table_id AND get_date = :get_date';
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_table__id', $user_table__id, PDO::PARAM_INT);
+        $stmt->bindParam(':get_date', $get_date_set, PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $j = 1;
+        foreach ($result as $row) {
+            $j += 1;
+        }
+        if ($j > $stamp_count_limit) {
             header('Location: detail_stamp.php?banner=23', true, 307);
             exit;
         }
 
-        $get_date_set = date('Y-m-d');
         $sql = 'INSERT INTO info_stamp (id, user_table_id, director_table_id, img_id, stamp_id, get_date) VALUES(:id, :user_table_id, :director_table_id, :img_id, :stamp_id, :get_date)';
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':id', $i, PDO::PARAM_INT);
