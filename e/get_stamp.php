@@ -29,6 +29,8 @@ $img_id = $_GET['img_id'];
 $img_extention_list = [];
 $img_probability_list = [];
 
+$stamp_count_limit = 3;
+
 if ($_GET['img_extention_0'] != '') {
     try {
         $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
@@ -108,6 +110,11 @@ if (($date_limit - $date_today) / (60 * 60 * 24) >= 0) {
         $i = 1;
         foreach ($result as $row) {
             $i += 1;
+        }
+
+        if ($i > $stamp_count_limit) {
+            header('Location: detail_stamp.php?banner=23', true, 307);
+            exit;
         }
 
         $get_date_set = date('Y-m-d');
