@@ -93,7 +93,6 @@ const checkImage = () => {
          previewImage0.style.display = 'none';
          previewImageList.style.display = 'none';
          previewImage.style.display = 'block';
-         previewButton.disabled = false;
          previewArea.animate(previewOpen, options);
       }
 
@@ -105,7 +104,6 @@ const checkImage = () => {
          cameraBackButton.style.display = 'none';
          previewImageList.style.display = 'block';
          previewImage.style.display = 'none';
-         previewButton.disabled = false;
          previewArea.animate(previewOpen, options);
       }
 
