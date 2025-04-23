@@ -116,7 +116,7 @@ if (($date_limit - $date_today) / (60 * 60 * 24) >= 0) {
 
         $sql = 'SELECT * FROM info_stamp WHERE user_table_id = :user_table_id AND get_date = :get_date';
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':user_table__id', $user_table__id, PDO::PARAM_INT);
+        $stmt->bindParam(':user_table__id', $user_table_id, PDO::PARAM_INT);
         $stmt->bindParam(':get_date', $get_date_set, PDO::PARAM_STR);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
