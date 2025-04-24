@@ -34,7 +34,7 @@ try {
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = 'SELECT * FROM info_notice WHERE account_type = :account_type';
     $stmt = $dbh->prepare($sql);
-    $stmt->bindParam(':account_type', $account_type, PDO::PARAM_STR);
+    $stmt->bindParam(':account_type', $account_type[0], PDO::PARAM_STR);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $dbh = null;
