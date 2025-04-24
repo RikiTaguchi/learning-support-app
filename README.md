@@ -52,6 +52,7 @@
   - 20: 出題数は１〜１００の範囲で入力してください。
   - 21: 参考書を選択してください。
   - 22: 範囲内の数値を入力してください。
+  - 23: スタンプの取得上限は１日３個までです。
 
 ## URL(ローカル)
   #### 管理者版
@@ -65,13 +66,13 @@
 
 ## URL(本番環境)
   #### 管理者版
-  - http://localhost/wordsystemforstudents.com/d/login.php
+  - https://wordsystemforstudents.com/d/login.php
   #### 高校生版
-  - http://localhost/wordsystemforstudents.com/h/login.php
+  - https://wordsystemforstudents.com/h/login.php
   #### 中学生版
-  - http://localhost/wordsystemforstudents.com/j/login.php
+  - https://wordsystemforstudents.com/j/login.php
   #### スタンプカード
-  - http://localhost/wordsystemforstudents.com/e/login.php
+  - https://wordsystemforstudents.com/e/login.php
 
 ## 環境構築(ローカル)
 1. XAMPPをインストール
