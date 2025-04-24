@@ -45,6 +45,8 @@ const previewButton = document.querySelector('.main-form-qr-button');
 const previewBackButton = document.querySelector('.main-form-qr-button-back');
 const previewImage = document.querySelector('.main-form-qr-preview');
 
+let isSubmitting = false;
+
 const previewImage0 = document.querySelector('.main-form-qr-preview-0');
 const previewImageList = document.querySelector('.main-form-qr-preview-list');
 
@@ -156,6 +158,11 @@ const drawLine = (begin, end) => {
 }
 
 // 取得ボタンを無効にする
-previewButton.addEventListener('click', () => {
+previewSubmit.addEventListener('submit', (e) => {
+   if (isSubmitting) {
+      e.preventDefault();
+      return;
+   }
+   isSubmitting = true;
    previewButton.disabled = true;
 });

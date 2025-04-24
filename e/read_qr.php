@@ -59,7 +59,7 @@ check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_p
                 </form>
             </div>
             <script src = "../common/js/jsQR.js?v=1.0.0"></script>
-            <script src = "../common/js/set-qr.js?v=1.0.3"></script>
+            <script src = "../common/js/set-qr.js?v=1.0.4"></script>
         </main>
     </body>
 </html>
