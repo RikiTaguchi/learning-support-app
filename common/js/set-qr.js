@@ -67,17 +67,20 @@ const checkImage = () => {
 
    if (code) {
       drawRect(code.location);
-      // 本番環境（Xserver）
-      // const pattern1 = /^https:\/\/wordsystemforstudents.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
-      // const pattern2 = /^https:\/\/wordsystemforstudents.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
 
-      // 本番環境（AWS）
-      // const pattern1 = /^https:\/\/wordsystemforlearning.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
-      // const pattern2 = /^https:\/\/wordsystemforlearning.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
-      
-      // ローカル環境
-      const pattern1 = /^http:\/\/localhost\/learning-support-app\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
-      const pattern2 = /^http:\/\/localhost\/learning-support-app\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
+      // 正規表現の定義
+      let pattern1;
+      let pattern2;
+
+      if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+         // ローカル環境
+         pattern1 = /^http:\/\/localhost\/learning-support-app\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
+         pattern2 = /^http:\/\/localhost\/learning-support-app\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
+      } else {
+         // 本番環境
+         pattern1 = /^https:\/\/wordsystemforstudents.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention=.+$/g;
+         pattern2 = /^https:\/\/wordsystemforstudents.com\/e\/get_stamp.php\?table_id=[0-9]{6}&img_id=[0-9]{6}&img_extention_0=.+$/g;
+      }
       
       if (pattern1.test(code.data) === true && previewButton.style.display === 'none' && previewBackButton.style.display === 'none') {
          let infoQR = (code.data).split('?')[1].split('&');
@@ -124,6 +127,9 @@ const checkImage = () => {
          previewImage0.style.display = 'none';
          previewBackButton.style.display = 'none';
          previewBackButton.style.pointerEvents = 'auto';
+
+         // 取得ボタンを有効にする
+         previewButton.disabled = false;
       }
       setTimeout(()=>{ setDisplay() }, 500);
    });
@@ -148,3 +154,8 @@ const drawLine = (begin, end) => {
    rectCtx.lineTo(end.x, end.y);
    rectCtx.stroke();
 }
+
+// 取得ボタンを無効にする
+previewButton.addEventListener('click', () => {
+   previewButton.disabled = true;
+});

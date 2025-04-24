@@ -24,7 +24,6 @@ check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_p
 		<link rel = "icon" type = "image/png" sizes = "32x32" href = "../common/icons/favicon-32x32.png">
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
-        <script src = "../common/js/set-qr2.js?v=1.0.1"></script>
     </head>
     <body>
         <main class = "main">
@@ -60,7 +59,7 @@ check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_p
                 </form>
             </div>
             <script src = "../common/js/jsQR.js?v=1.0.0"></script>
-            <script src = "../common/js/set-qr.js?v=1.0.2"></script>
+            <script src = "../common/js/set-qr.js?v=1.0.3"></script>
         </main>
     </body>
 </html>
