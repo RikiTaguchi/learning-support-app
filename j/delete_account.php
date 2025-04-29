@@ -23,6 +23,11 @@ try {
     $stmt->bindParam(':table_id', $table_id, PDO::PARAM_INT);
     $stmt->execute();
 
+    $sql = 'DELETE FROM info_countdown WHERE table_id = :table_id';
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindParam(':table_id', $table_id, PDO::PARAM_INT);
+    $stmt->execute();
+
     $sql = 'DELETE FROM info_my_book_index WHERE table_id = :table_id';
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':table_id', $table_id, PDO::PARAM_INT);

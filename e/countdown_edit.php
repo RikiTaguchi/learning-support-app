@@ -16,9 +16,8 @@ try {
     $stmt->bindParam(':login_id', $login_id, PDO::PARAM_STR);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $table_id = $result['table_id'];
     $dbh = null;
-    $user_countdown_title = $result['countdown_title'];
-    $user_countdown_date = strtotime($result['countdown_date']);
 } catch (PDOException $e) {
     header('Location: login.php?banner=9', true, 307);
     exit;
@@ -26,18 +25,14 @@ try {
 
 if ($edit_type == 'reset') {
     try {
-        $countdown_title = '';
-        $conutdown_date = '0000-00-00';
         $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = 'UPDATE info_account SET countdown_title = :countdown_title, countdown_date = :countdown_date WHERE login_id = :login_id';
+        $sql = 'DELETE FROM info_countdown WHERE table_id = :table_id';
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':countdown_title', $countdown_title, PDO::PARAM_STR);
-        $stmt->bindParam(':countdown_date', $conutdown_date, PDO::PARAM_STR);
-        $stmt->bindParam(':login_id', $login_id, PDO::PARAM_STR);
+        $stmt->bindParam(':table_id', $table_id, PDO::PARAM_INT);
         $stmt->execute();
         $dbh = null;
-        header('Location: countdown_set.php?banner=8', true, 307);
+        header('Location: index.php?banner=8', true, 307);
     } catch (PDOException $e) {
         header('Location: login.php?banner=9', true, 307);
         exit;
@@ -56,12 +51,29 @@ if ($edit_type == 'reset') {
         }
         $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = 'UPDATE info_account SET countdown_title = :countdown_title, countdown_date = :countdown_date WHERE login_id = :login_id';
+
+        $sql = 'SELECT * FROM info_countdown WHERE table_id = :table_id';
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':countdown_title', $new_title, PDO::PARAM_STR);
-        $stmt->bindParam(':countdown_date', $new_date, PDO::PARAM_STR);
-        $stmt->bindParam(':login_id', $login_id, PDO::PARAM_STR);
+        $stmt->bindParam(':table_id', $table_id, PDO::PARAM_INT);
         $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($result === false) {
+            $sql = 'INSERT INTO info_countdown VALUES(:table_id, :title, :date_limit)';
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(':title', $new_title, PDO::PARAM_STR);
+            $stmt->bindParam(':date_limit', $new_date, PDO::PARAM_STR);
+            $stmt->bindParam(':table_id', $table_id, PDO::PARAM_INT);
+            $stmt->execute();
+        } else {
+            $sql = 'UPDATE info_countdown SET title = :title, date_limit = :date_limit WHERE table_id = :table_id';
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(':title', $new_title, PDO::PARAM_STR);
+            $stmt->bindParam(':date_limit', $new_date, PDO::PARAM_STR);
+            $stmt->bindParam(':table_id', $table_id, PDO::PARAM_INT);
+            $stmt->execute();
+        }
+
         $dbh = null;
         header('Location: index.php?banner=8', true, 307);
     } catch (PDOException $e) {
