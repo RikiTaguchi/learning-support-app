@@ -3,9 +3,13 @@ CREATE TABLE info_account (
     login_id VARCHAR(255),
     user_pass VARCHAR(255),
     table_id INTEGER,
-    countdown_title VARCHAR(255),
-    countdown_date DATE,
     account_type VARCHAR(255)
+);
+
+CREATE TABLE info_countdown (
+    table_id INTEGER,
+    title VARCHAR(255),
+    date_limit DATE
 );
 
 CREATE TABLE info_feedback (

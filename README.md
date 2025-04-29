@@ -149,9 +149,11 @@
   - login_id(varchar): ログインID
   - user_pass(varchar): パスワード
   - table_id(int): ユーザー識別番号
-  - countdown_title(varchar): カウントダウン(タイトル)
-  - countdown_date(date): カウントダウン(yyyy-MM-dd)
   - account_type(varchar): アカウントタイプ
+#### info_countdown: カウントダウン情報
+  - table_id(int): テーブルID
+  - title(varchar): タイトル
+  - date_limit(date): 日付
 #### info_feedback: 復習リストの情報
   - table_id(int): ユーザー識別番号
   - book_id(varchar): 参考書ID

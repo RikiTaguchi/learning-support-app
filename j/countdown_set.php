@@ -10,14 +10,23 @@ check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_p
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
     $sql = 'SELECT * FROM info_account WHERE login_id = :login_id';
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':login_id', $login_id, PDO::PARAM_STR);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $table_id = $result['table_id'];
+
+    $sql = 'SELECT * FROM info_countdown WHERE table_id = :table_id';
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindParam(':table_id', $table_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $user_countdown_title = $result['title'];
+    $user_countdown_date = strtotime($result['date_limit']);
+
     $dbh = null;
-    $user_countdown_title = $result['countdown_title'];
-    $user_countdown_date = strtotime($result['countdown_date']);
 } catch (PDOException $e) {
     header('Location: login.php?banner=9', true, 307);
     exit;
