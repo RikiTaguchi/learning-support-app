@@ -66,6 +66,11 @@ try {
                     <p class = "main-block-msg">※解析には数秒〜数十秒かかります。<br>※各文は改行で区切ってください。</p>
                 </form>
             </div>
+
+            <div style="margin-top: 20px;">
+                <!-- for SP -->
+                <script src="https://adm.shinobi.jp/s/b48d915b597d17a79d6d43b4b7c4b69c"></script>
+            </div>
         </main>
     </body>
 </html>
