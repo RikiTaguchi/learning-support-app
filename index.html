@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>単語システム | 明光義塾</title>
+    <link rel="stylesheet" href="common/css/style.css">
+    <link rel="manifest" href="common/icons/manifest.json">
+    <link rel="icon" href="common/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="common/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="common/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="common/icons/favicon-48x48.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <h1>明光義塾の<br><span class="highlight">学習サポートアプリ</span><br>「単語システム」</h1>
+        <p class="tagline">復習と反復で、学力アップを応援！</p>
+        <button class="cta" onclick="scrollToApps()">アプリを使ってみよう！</button>
+    </header>
+
+    <section id="about" class="about">
+        <h2>アプリの概要</h2>
+        <p>「単語システム」は、明光義塾で使用されている学習サポートWebアプリです。<br>高校生、中学生、小中高生向けスタンプカード、管理者用の4つのバージョンがあります。</p>
+        <div class="jump-buttons">
+            <a href="#high" class="jump-button">高校生版</a>
+            <a href="#junior" class="jump-button">中学生版</a>
+            <a href="#stamp" class="jump-button">スタンプカード</a>
+            <a href="#admin" class="jump-button">管理者版</a>
+        </div>
+    </section>
+
+    <section id="high" class="app-section">
+        <h2>高校生版</h2>
+        <p>英単語の暗記や文法学習、試験対策を効率よくサポートします。</p>
+        <ul>
+            <li>印刷用単語テストの生成</li>
+            <li>デバイス上での暗記や文法トレーニング</li>
+            <li>復習リストの登録</li>
+            <li>My単語帳の登録</li>
+            <li>カウントダウン機能で目標日を明確に！</li>
+        </ul>
+        <a href="h/login.php" class="link-button">高校生版を開く</a>
+        <div class="screenshot-scroll">
+            <img src="common/images/highschool_1.png" alt="高校生版1">
+            <img src="common/images/highschool_2.png" alt="高校生版2">
+            <img src="common/images/highschool_3.png" alt="高校生版3">
+            <img src="common/images/highschool_4.png" alt="高校生版4">
+            <img src="common/images/highschool_5.png" alt="高校生版5">
+            <img src="common/images/highschool_6.png" alt="高校生版6">
+            <img src="common/images/highschool_7.png" alt="高校生版7">
+            <img src="common/images/highschool_8.png" alt="高校生版8">
+        </div>
+    </section>
+
+    <section id="junior" class="app-section">
+        <h2>中学生版</h2>
+        <p>英単語だけでなく、計算トレーニングもできる学年別対応アプリです。</p>
+        <ul>
+            <li>印刷用単語テストの生成</li>
+            <li>デバイス上での暗記や計算トレーニング</li>
+            <li>復習リストの登録</li>
+            <li>My単語帳の登録</li>
+            <li>カウントダウン機能でやる気アップ！</li>
+        </ul>
+        <a href="j/login.php" class="link-button">中学生版を開く</a>
+        <div class="screenshot-scroll">
+            <img src="common/images/junior_1.png" alt="中学生版1">
+            <img src="common/images/junior_2.png" alt="中学生版2">
+            <img src="common/images/junior_3.png" alt="中学生版3">
+            <img src="common/images/junior_4.png" alt="中学生版4">
+            <img src="common/images/junior_5.png" alt="中学生版5">
+            <img src="common/images/junior_6.png" alt="中学生版6">
+            <img src="common/images/junior_7.png" alt="中学生版7">
+            <img src="common/images/junior_8.png" alt="中学生版8">
+        </div>
+    </section>
+
+    <section id="stamp" class="app-section">
+        <h2>スタンプカード</h2>
+        <p>楽しく学習を続ける仕掛けとして、生徒のやる気を引き出します。</p>
+        <ul>
+            <li>カウントダウン機能で目標設定</li>
+            <li>スタンプを貯めて景品ゲット！</li>
+            <li>QRコードで手軽にスタンプ取得</li>
+        </ul>
+        <a href="e/login.php" class="link-button">スタンプカードを開く</a>
+        <div class="screenshot-scroll">
+            <img src="common/images/stampcard_1.png" alt="スタンプカード1">
+            <img src="common/images/stampcard_2.png" alt="スタンプカード2">
+            <img src="common/images/stampcard_3.png" alt="スタンプカード3">
+            <img src="common/images/stampcard_4.png" alt="スタンプカード4">
+        </div>
+    </section>
+
+    <section id="admin" class="app-section">
+        <h2>管理者版</h2>
+        <p>教室での運用を支援する機能をまとめた管理者向けツールです。</p>
+        <ul>
+            <li>印刷用単語テストの生成</li>
+            <li>My単語帳の登録</li>
+            <li>カウントダウン機能の利用</li>
+            <li>スタンプ登録機能（QRコード生成）</li>
+        </ul>
+        <a href="d/login.php" class="link-button">管理者版を開く</a>
+        <div class="screenshot-scroll admin-screens">
+            <img src="common/images/admin_1.png" alt="管理者版1">
+            <img src="common/images/admin_2.png" alt="管理者版2">
+            <img src="common/images/admin_3.png" alt="管理者版3">
+            <img src="common/images/admin_4.png" alt="管理者版4">
+            <img src="common/images/admin_5.png" alt="管理者版5">
+            <img src="common/images/admin_6.png" alt="管理者版6">
+            <img src="common/images/admin_7.png" alt="管理者版7">
+            <img src="common/images/admin_8.png" alt="管理者版8">
+        </div>
+    </section>
+
+    <section class="promote">
+        <h2>スマホのホーム画面に追加しよう！</h2>
+        <p>Webページを「ホームに追加」すれば、アプリのように使えます！</p>
+        <div class="screenshot-scroll">
+            <img src="common/images/add-to-home_1.png" alt="ホーム画面追加の説明1">
+            <img src="common/images/add-to-home_2.png" alt="ホーム画面追加の説明2">
+            <img src="common/images/add-to-home_3.png" alt="ホーム画面追加の説明3">
+            <img src="common/images/add-to-home_4.png" alt="ホーム画面追加の説明4">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 明光義塾 単語システム</p>
+    </footer>
+
+    <script src="common/js/script.js"></script>
+</body>
+</html>
