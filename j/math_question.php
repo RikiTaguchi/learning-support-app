@@ -218,6 +218,11 @@ $feedback_text = $question_text . 'E' . $answer_text . 'E' . $question_count;
                     <button class = "back_button" type = "submit">ホームに戻る</button>
                 </form>
             </div>
+
+            <div style="margin-top: 20px;">
+                <!-- for SP -->
+                <script src="https://adm.shinobi.jp/s/b48d915b597d17a79d6d43b4b7c4b69c"></script>
+            </div>
         </main>
     </body>
 </html>

@@ -251,6 +251,11 @@ if ($stamp_page_position == $stamp_page_max) {
                     <button class = "main-form-qr-button" type = "submit"><p>スタンプを取得する</p></button>
                 </form>
             </div>
+
+            <div style="margin-top: 20px;">
+                <!-- for SP -->
+                <script src="https://adm.shinobi.jp/s/b48d915b597d17a79d6d43b4b7c4b69c"></script>
+            </div>
         </main>
     </body>
 </html>
