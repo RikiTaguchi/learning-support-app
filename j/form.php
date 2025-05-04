@@ -60,7 +60,7 @@ try {
             <?php include('./header.php'); ?>
         </header>
         <main class = "main">
-            <di class = "main-block">
+            <div class = "main-block">
                 <p class = "main-block-title">テスト作成</p>
                 <?php include('./index_menu.php'); ?>
                 <form  class = "form" method = "post" action = "set.php">
@@ -100,6 +100,11 @@ try {
                         <div class = "form-content-submit"><button type = "submit">作成</button></div>
                     </div>
                 </form>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <!-- for SP -->
+                <script src="https://adm.shinobi.jp/s/b48d915b597d17a79d6d43b4b7c4b69c"></script>
             </div>
         </main>
 
