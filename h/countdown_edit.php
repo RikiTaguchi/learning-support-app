@@ -7,6 +7,8 @@ include('../common/banner.php');
 $account_type = ['h'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
 $edit_type = $_POST['edit_type'];
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
@@ -32,6 +34,10 @@ if ($edit_type == 'reset') {
         $stmt->bindParam(':table_id', $table_id, PDO::PARAM_INT);
         $stmt->execute();
         $dbh = null;
+
+        // ログを更新
+        set_log($login_id, 6, 'reset', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+
         header('Location: index.php?banner=8', true, 307);
     } catch (PDOException $e) {
         header('Location: login.php?banner=9', true, 307);
@@ -85,6 +91,10 @@ if ($edit_type == 'reset') {
         }
 
         $dbh = null;
+
+        // ログを更新
+        set_log($login_id, 6, 'set', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+
         header('Location: index.php?banner=8', true, 307);
     } catch (PDOException $e) {
         header('Location: login.php?banner=9', true, 307);

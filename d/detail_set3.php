@@ -7,6 +7,8 @@ include('../common/banner.php');
 $account_type = ['d'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
 $table_id = $_POST['table_id'];
 $book_name = $_POST['book_name'];
 $book_id = $_POST['book_id'];
@@ -51,6 +53,10 @@ try {
         $stmt->bindParam(':book_name_pre', $book_name, PDO::PARAM_STR);
         $stmt->execute();
         $dbh = null;
+
+        // ログを更新
+        set_log($login_id, 5, 'edit', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+
         header('Location: detail.php?banner=8', true, 307);
     }
 } catch (PDOException $e) {

@@ -8,6 +8,8 @@ include('./source_book.php');
 $account_type = ['h'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -53,7 +55,7 @@ try {
         <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
         <script src = "../common/js/toggle-index.js?v=1.0.0"></script>
         <script src = "../common/js/toggle-index-change.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.0"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.1"></script>
     </head>
     <body>
         <header class = "header">

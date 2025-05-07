@@ -23,7 +23,7 @@ include('../common/banner.php');
 		<link rel = "icon" type = "image/png" sizes = "32x32" href = "../common/icons/favicon-32x32.png">
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
-        <script src = "../common/js/set-banner.js?v=1.0.0"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.1"></script>
     </head>
     <body>
         <div class = "main-banner">

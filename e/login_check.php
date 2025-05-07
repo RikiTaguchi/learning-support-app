@@ -16,7 +16,11 @@ try {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($login_id === $result['login_id'] && $user_pass === $result['user_pass'] && in_array($result['account_type'], $account_type)) {
         $user_name = $result['user_name'];
+        $table_id = (int)$result['table_id'];
         $dbh = null;
+
+        // ログを更新
+        set_log($login_id, 0, 'login', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
 
         // cookieの保存
         setcookie('login_id', $login_id, time() + (60 * 60 * 24 * 60));

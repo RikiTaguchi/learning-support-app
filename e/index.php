@@ -7,6 +7,8 @@ include('../common/banner.php');
 $account_type = ['e', 'j', 'h'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
 $date_today = strtotime(date('Y-m-d'));
 $notice = [];
 
@@ -81,7 +83,7 @@ try {
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
         <script src = "../common/js/toggle-notice.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.0"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.1"></script>
         <script src = "../common/js/check-submit.js?v=1.0.0"></script>
     </head>
     <body>

@@ -7,6 +7,11 @@ include('../common/banner.php');
 $account_type = ['d'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
+// ログを更新
+set_log($login_id, 8, 'delete', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

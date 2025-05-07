@@ -52,6 +52,9 @@ try {
     $stmt->execute();
     $dbh = null;
 
+    // ログを更新
+    set_log($login_id, 8, 'set', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+
     // Cookieにアカウント情報を保存
     setcookie('login_id', $login_id, time() + (60 * 60 * 24 * 60));
     setcookie('user_pass', $user_pass, time() + (60 * 60 * 24 * 60));

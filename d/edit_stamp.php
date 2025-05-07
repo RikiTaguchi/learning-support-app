@@ -7,6 +7,8 @@ include('../common/banner.php');
 $account_type = ['d'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
 $img_title_new = $_POST['stamp_title'];
 $date_limit_new = $_POST['date_limit'];
 $stamp_number = (int)$_POST['page_count'];
@@ -65,6 +67,9 @@ if ($stamp_number === 0) {
         }
         $stmt->execute();
         $dbh = null;
+
+        // ログを更新
+        set_log($login_id, 7, 'edit', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
 
         header('Location: info_stamp.php?banner=8', true, 307);
         exit;
@@ -130,6 +135,9 @@ if ($stamp_number === 0) {
             exit;
         }
     }
+
+    // ログを更新
+    set_log($login_id, 7, 'edit', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
 
     header('Location: info_stamp.php?banner=8', true, 307);
     exit;

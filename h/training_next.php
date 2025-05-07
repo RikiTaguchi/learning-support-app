@@ -8,6 +8,8 @@ include('./source_book.php');
 $account_type = ['h'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
 $book_id = $_POST['book_id'];
 $book_name = $_POST['book_name'];
 $start = $_POST['start'];
@@ -115,7 +117,7 @@ try {
     <script src = "../common/js/toggle-panel.js?v=1.0.0"></script>
     <script src = "../common/js/slide-panel.js?v=1.0.0"></script>
     <script src = "../common/js/change-question.js?v=1.0.0"></script>
-    <script src = "../common/js/set-banner.js?v=1.0.0"></script>
+    <script src = "../common/js/set-banner.js?v=1.0.1"></script>
 </head>
 <body>
     <header class = "header">

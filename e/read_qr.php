@@ -6,6 +6,8 @@ include('../common/banner.php');
 
 $account_type = ['e', 'j', 'h'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
+
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
 ?>
 
 <!DOCTYPE html>

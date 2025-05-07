@@ -7,6 +7,8 @@ include('../common/banner.php');
 $account_type = ['j'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
 include('./math_function.php');
 include('./math_info1.php');
 include('./math_info2.php');
@@ -42,6 +44,11 @@ $answer_text = $info[4];
 if (strval($question_number) < 1 || strval($question_number) > 100) {
     header('Location: form10.php?banner=20', true, 307);
     exit;
+}
+
+// ログを更新
+if ((int)$question_count === 1) {
+    set_log($login_id, 3, $type, date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
 }
 
 $question_text = $question;
@@ -81,7 +88,7 @@ $feedback_text = $question_text . 'E' . $answer_text . 'E' . $question_count;
         <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
         <script src = "../common/js/set-input.js?v=1.0.0"></script>
         <script src = "../common/js/count-time.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.0"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.1"></script>
     </head>
     <body>
         <header class = "header">

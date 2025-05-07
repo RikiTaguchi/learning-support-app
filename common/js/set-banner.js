@@ -17,8 +17,9 @@ window.addEventListener('load', () => {
         // バナー通知の表示
         bannerArea.animate(displayBanner, options);
 
-        // パラメータの削除
-        const url = window.location.origin + window.location.pathname;
-        history.replaceState(null, '', url);
+        // banner通知用パラメータの削除
+        const url = new URL(window.location.href);
+        url.searchParams.delete('banner');
+        window.history.replaceState({}, '', url);
     }
 });
