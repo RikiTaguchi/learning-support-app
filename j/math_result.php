@@ -7,6 +7,8 @@ include('../common/banner.php');
 $account_type = ['j'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
 $type = $_POST['type'];
 $level = $_POST['level'];
 $question_number = $_POST['question_number'];
@@ -65,7 +67,7 @@ $finish_time_s = $_POST['finish_time_s'];
 		<meta name="theme-color" content="#ffffff">
         <script type = "text/javascript" asyncsrc = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=MML_SVG"></script>
         <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.0"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.1"></script>
     </head>
     <body>
         <header class = "header">

@@ -8,6 +8,8 @@ include('./source_book.php');
 $account_type = ['d'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
 $new_book_name = $_POST['new_book_name'];
 $book_id = $_POST['book_id'];
 $state = $_POST['state'];
@@ -73,6 +75,10 @@ if ($state === 'new') {
         $stmt->execute();
 
         $dbh = null;
+
+        // ログを更新
+        set_log($login_id, 5, 'set', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+
     } catch (PDOException $e) {
         header('Location: login.php?banner=9', true, 307);
         exit;
@@ -102,7 +108,7 @@ if ($state === 'new') {
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.0"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.1"></script>
     </head>
     <body>
         <header class = "header">

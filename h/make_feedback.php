@@ -7,6 +7,8 @@ include('../common/banner.php');
 $account_type = ['h'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
 $book_id = $_POST['book_id'];
 $n = (int)$_POST['next_number'];
 $questions_num = $_POST['questions_num'];
@@ -49,6 +51,10 @@ try {
         $stmt->execute();
     }
     $dbh = null;
+
+    // ログを更新
+    set_log($login_id, 9, 'add', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+
 } catch (PDOException $e) {
     header('Location: login.php?banner=9', true, 307);
     exit;

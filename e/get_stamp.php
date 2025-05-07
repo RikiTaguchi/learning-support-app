@@ -141,6 +141,9 @@ if (($date_limit - $date_today) / (60 * 60 * 24) >= 0) {
 
         $dbh = null;
 
+        // ログを更新
+        set_log($login_id, 7, 'get', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+
         header('Location: detail_stamp.php?banner=15', true, 307);
         exit;
     } catch (PDOException $e) {

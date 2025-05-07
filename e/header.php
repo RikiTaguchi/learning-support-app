@@ -19,7 +19,7 @@
             <li><?php make_link('ホーム', 'index.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('スタンプカード', 'detail_stamp.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('アカウント情報', 'info_account.php', [$user_name, $login_id, $user_pass]) ?></li>
-            <li><?php make_link('ログアウト', 'login.php?banner=1', ['', '', '']) ?></li>
+            <li><?php make_link('ログアウト', 'logout.php', [$user_name, $login_id, $user_pass]) ?></li>
         </ul>
     </div>
 </div>

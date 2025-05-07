@@ -9,6 +9,8 @@ include('./source_book.php');
 $account_type = ['h'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
 $start = $_POST['start'];
 $end = $_POST['end'];
 $questions_num = $_POST['questions_num'];
@@ -27,6 +29,9 @@ if (check_form($_POST['book_id'], $start, $end, $questions_num, $limit) == 1) {
     header('Location: form2.php?banner=20', true, 307);
     exit;
 }
+
+// ログを更新
+set_log($login_id, 2, $book_id, date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
 
 $number = [];
 if ($order == 1) {
@@ -150,7 +155,7 @@ try {
     <script src = "../common/js/toggle-panel.js?v=1.0.0"></script>
     <script src = "../common/js/slide-panel.js?v=1.0.0"></script>
     <script src = "../common/js/change-question.js?v=1.0.0"></script>
-    <script src = "../common/js/set-banner.js?v=1.0.0"></script>
+    <script src = "../common/js/set-banner.js?v=1.0.1"></script>
 <body>
     <header class = "header">
         <?php include('./header.php'); ?>

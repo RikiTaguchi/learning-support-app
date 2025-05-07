@@ -8,6 +8,8 @@ include('../common/parser/parse-activator/autoload.php'); // 構文解析器の�
 $account_type = ['h'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
 // 特に加工処理をしないタグ
 $tags = [
     // 1. 名詞カテゴリー
@@ -199,7 +201,7 @@ try {
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
         <script src = "../common/js/toggle-structure.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.0"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.1"></script>
     </head>
     <body>
         <header class = "header">

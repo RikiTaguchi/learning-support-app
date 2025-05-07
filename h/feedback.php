@@ -9,10 +9,15 @@ include('./source_book.php');
 $account_type = ['h'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
 if ($_POST['book_id'] == '' || $_POST['book_id'] == 'n') {
     header('Location: login.php?banner=9', true, 307);
     exit;
 }
+
+// ログを更新
+set_log($login_id, 4, $book_id, date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
 
 $number = [];
 if ($_POST['questions_num'] == '') {
@@ -172,7 +177,7 @@ try {
     <script src = "../common/js/toggle-panel.js?v=1.0.0"></script>
     <script src = "../common/js/slide-panel.js?v=1.0.0"></script>
     <script src = "../common/js/change-question.js?v=1.0.0"></script>
-    <script src = "../common/js/set-banner.js?v=1.0.0"></script>
+    <script src = "../common/js/set-banner.js?v=1.0.1"></script>
 </head>
 <body>
     <header class = "header">

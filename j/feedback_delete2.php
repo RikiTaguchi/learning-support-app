@@ -7,6 +7,8 @@ include('../common/banner.php');
 $account_type = ['j'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
 
+$login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
+
 $book_name = $_POST['book_name'];
 $book_id = $_POST['book_id'];
 $delete_all = $_POST['delete_all'];
@@ -38,12 +40,22 @@ try {
         $stmt->bindParam(':book_id', $book_id, PDO::PARAM_STR);
         $stmt->bindParam(':question_number', $number[$n], PDO::PARAM_INT);
         $stmt->execute();
+        $dbh = null;
+
+        // ログを更新
+        set_log($login_id, 9, 'remove', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+
     } else {
         $sql = 'DELETE FROM info_feedback WHERE table_id = :table_id AND book_id = :book_id';
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':table_id', $table_id, PDO::PARAM_INT);
         $stmt->bindParam(':book_id', $book_id, PDO::PARAM_STR);
         $stmt->execute();
+        $dbh = null;
+
+        // ログを更新
+        set_log($login_id, 9, 'delete', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+
     }
     
     $dbh = null;

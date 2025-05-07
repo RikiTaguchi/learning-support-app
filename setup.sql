@@ -61,6 +61,13 @@ CREATE TABLE info_stamp (
     get_date DATE
 );
 
+CREATE TABLE info_analysis {
+    table_id INTEGER,
+    log_code INTEGER,
+    log_detail VARCHAR(255),
+    log_date DATE
+};
+
 CREATE TABLE target_1400 {
     id INTEGER,
     word VARCHAR(255),
