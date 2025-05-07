@@ -17,7 +17,9 @@ if ($_POST['book_id'] == '' || $_POST['book_id'] == 'n') {
 }
 
 // ログを更新
-set_log($login_id, 4, $book_id, date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+if (!isset($_GET['status']) || $_GET['status'] !== 'off') {
+    set_log($login_id, 4, $book_id, date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+}
 
 $number = [];
 if ($_POST['questions_num'] == '') {
@@ -177,7 +179,14 @@ try {
     <script src = "../common/js/toggle-panel.js?v=1.0.0"></script>
     <script src = "../common/js/slide-panel.js?v=1.0.0"></script>
     <script src = "../common/js/change-question.js?v=1.0.0"></script>
-    <script src = "../common/js/set-banner.js?v=1.0.1"></script>
+    <script src = "../common/js/set-banner.js?v=1.0.2"></script>
+    <script>
+        window.addEventListener('load', () => {
+            const url = new URL(window.location.href);
+            url.searchParams.delete('status');
+            window.history.replaceState({}, '', url);
+        });
+    </script>
 </head>
 <body>
     <header class = "header">
@@ -214,7 +223,7 @@ try {
                     echo '<p class = "main-inner-answer-menu-choices-order">';
                         echo $x[0];
                     echo '</p>';
-                    echo '<form class = "main-inner-submit-order" method = "post" action = "feedback.php">';
+                    echo '<form class = "main-inner-submit-order" method = "post" action = "feedback.php?status=off">';
                         echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                         echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                         echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';

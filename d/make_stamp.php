@@ -185,7 +185,7 @@ if ($page_count == 0) {
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.1"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.2"></script>
     </head>
     <body>
         <header class = "header">

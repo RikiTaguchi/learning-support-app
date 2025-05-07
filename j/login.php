@@ -24,7 +24,7 @@ include('../common/banner.php');
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/set-cookie.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.1"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.2"></script>
     </head>
     <body>
         <div class = "main-banner">

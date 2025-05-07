@@ -114,7 +114,7 @@ try {
     <script src = "../common/js/toggle-panel.js?v=1.0.0"></script>
     <script src = "../common/js/slide-panel.js?v=1.0.0"></script>
     <script src = "../common/js/change-question.js?v=1.0.0"></script>
-    <script src = "../common/js/set-banner.js?v=1.0.1"></script>
+    <script src = "../common/js/set-banner.js?v=1.0.2"></script>
 </head>
 <body>
     <header class = "header">

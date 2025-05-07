@@ -93,7 +93,7 @@ if ($stamp_page_position == $stamp_page_max) {
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
         <script src = "../common/js/check-submit.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.1"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.2"></script>
         <?php if ($banner === '15') { ?>
             <script src = "../common/js/get-stamp.js?v=1.0.0"></script>
         <?php } ?>

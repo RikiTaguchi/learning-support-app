@@ -88,7 +88,7 @@ $feedback_text = $question_text . 'E' . $answer_text . 'E' . $question_count;
         <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
         <script src = "../common/js/set-input.js?v=1.0.0"></script>
         <script src = "../common/js/count-time.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.1"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.2"></script>
     </head>
     <body>
         <header class = "header">

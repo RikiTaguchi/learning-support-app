@@ -124,7 +124,7 @@ try {
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
         <script src = "../common/js/toggle-notice.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.1"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.2"></script>
         <script src = "../common/js/check-submit.js?v=1.0.0"></script>
     </head>
     <body>
