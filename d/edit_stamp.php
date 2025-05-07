@@ -11,6 +11,16 @@ $img_title_new = $_POST['stamp_title'];
 $date_limit_new = $_POST['date_limit'];
 $stamp_number = (int)$_POST['page_count'];
 
+// 有効期限が過去の日付の場合
+$date_target = DateTime::createFromFormat('Y-m-d', $date_limit_new);
+$date_today = new DateTime();
+$date_target->setTime(0, 0, 0);
+$date_today->setTime(0, 0, 0);
+if ($date_target < $date_today) {
+    header('Location: form8.php?banner=24', true, 307);
+    exit;
+}
+
 if ($stamp_number === 0) {
     try {
         $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);

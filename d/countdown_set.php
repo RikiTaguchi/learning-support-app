@@ -68,11 +68,11 @@ try {
                     ?>
                     <div class = "form-content-3">
                         <span>タイトル</span>
-                        <input type = "text" name = "user_title" value = "<?php echo $user_countdown_title ?>">
+                        <input type = "text" name = "user_title" value = "<?php echo $user_countdown_title ?>" required>
                     </div>
                     <div class = "form-content-3">
                         <span>日程</span>
-                        <input type = "date" name = "user_date" value = "<?php echo date('Y-m-d', $user_countdown_date) ?>">
+                        <input type = "date" name = "user_date" <?php if ($user_countdown_date != 0) { echo 'value = "' . date('Y-m-d', $user_countdown_date) . '"'; } ?> required>
                     </div>
                     <div class = "form-content">
                         <div class = "form-content-submit"><button type = "submit" name = "edit_type" value = "edit">更新</button></div>

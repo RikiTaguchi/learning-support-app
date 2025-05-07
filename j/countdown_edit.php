@@ -40,14 +40,24 @@ if ($edit_type == 'reset') {
 } else {
     try {
         if (!isset($_POST['user_title']) || empty($_POST['user_title'])) {
-            $new_title = '';
+            header('Location: countdown_set.php?banner=9', true, 307);
+            exit;
         } else {
             $new_title = $_POST['user_title'];
         }
         if (!isset($_POST['user_date']) || empty($_POST['user_date'])) {
-            $new_date = '0000-00-00';
+            header('Location: countdown_set.php?banner=9', true, 307);
+            exit;
         } else {
             $new_date = $_POST['user_date'];
+            $date_target = DateTime::createFromFormat('Y-m-d', $new_date);
+            $date_today = new DateTime();
+            $date_target->setTime(0, 0, 0);
+            $date_today->setTime(0, 0, 0);
+            if ($date_target < $date_today) {
+                header('Location: countdown_set.php?banner=24', true, 307);
+                exit;
+            }
         }
         $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

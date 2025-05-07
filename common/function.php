@@ -38,10 +38,12 @@ function check_account_type($login_id, $account_type, $db_host, $db_name, $db_us
 function check_form($book, $start, $end, $number, $limit) {
     if ($book == '' || $book == 'n') {
         return 1;
-    } else if (($start >= 1 && $end <= $limit && ($end - $start + 1) >= $number && $number > 0) == false) {
+    } else if (!($start >= 1 && $end <= $limit && ($end - $start + 1) >= $number && $number > 0 && $number < 101)) {
         return 2;
-    } else {
+    } else if ($number > 100) {
         return 3;
+    } else {
+        return 4;
     }
 }
 

@@ -20,6 +20,9 @@ if (check_form($_POST['book_id'], $start, $end, $questions_num, $limit) == 1) {
 } else if (check_form($_POST['book_id'], $start, $end, $questions_num, $limit) == 2) {
     header('Location: form.php?banner=22', true, 307);
     exit;
+} else if (check_form($_POST['book_id'], $start, $end, $questions_num, $limit) == 3) {
+    header('Location: form.php?banner=20', true, 307);
+    exit;
 }
 
 $number = [];
