@@ -41,7 +41,7 @@ try {
         <title>単語システム</title>
         <meta name = "description" content = "管理者ログイン">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/header.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/body.css?v=1.0.0" rel = "stylesheet">
         <link href = "../common/css/info_stamp.css?v=1.0.0" rel = "stylesheet">
         <link href = "../common/css/info_stamp_print.css?v=1.0.0" rel = "stylesheet" media = "print">

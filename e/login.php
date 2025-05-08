@@ -12,7 +12,7 @@ include('../common/banner.php');
         <title>スタンプカード</title>
         <meta name = "description" content = "単語システムログインページ">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/header.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/body.css?v=1.0.0" rel = "stylesheet">
         <link href = "../common/css/form.css?v=1.0.0" rel = "stylesheet">
         <link href = "../common/css/login.css?v=1.0.0" rel = "stylesheet">

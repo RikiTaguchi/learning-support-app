@@ -97,7 +97,7 @@ if ($state === 'new') {
         <meta name = "description" content = "My単語帳作成フォーム">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/form.css?v=1.0.0" rel = "stylesheet">
-        <link href = "../common/css/header.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/body.css?v=1.0.0" rel = "stylesheet">
         <link href = "../common/css/make_my_book.css?v=1.0.0" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">

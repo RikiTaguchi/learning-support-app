@@ -12,7 +12,7 @@ include('../common/banner.php');
         <title>単語システム</title>
         <meta name = "description" content = "単語システムアカウント作成ページ">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/header.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/body.css?v=1.0.0" rel = "stylesheet">
         <link href = "../common/css/form.css?v=1.0.0" rel = "stylesheet">
         <link href = "../common/css/login.css?v=1.0.0" rel = "stylesheet">
