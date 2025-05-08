@@ -82,6 +82,19 @@
     font-size: 20px;
 }
 
+.header-right-area {
+    display: flex;
+    align-items: center;
+}
+
+.header-right-area div,
+.header-right-area button {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 18px;
+    color: black;
+}
+
 .info_account {
     display: none;
 }
@@ -191,6 +204,13 @@
     
     .header-site-menu ul li form button{
         font-size: 13px;
+    }
+
+    .header-right-area div,
+    .header-right-area button {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 15px;
     }
 
     .main-notice-feedback {
