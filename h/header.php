@@ -10,9 +10,14 @@
             <p>高校生版</p>
         </button>
     </form>
-    <button class = "header-menu-button">
-        <img src = "../common/images/menu.svg" alt = "メニューボタン">
-    </button>
+    <div class="header-right-area">
+        <div>
+            <?php echo $login_streak; ?> 📚
+        </div>
+        <button class = "header-menu-button">
+            <img src = "../common/images/menu.svg" alt = "メニューボタン">
+        </button>
+    </div>
     <p class = "header-menu-info" style = "display: none;">closed</p>
     <div class = "header-site-menu">
         <ul>
