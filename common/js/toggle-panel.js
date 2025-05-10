@@ -1,4 +1,4 @@
-window.addEventListener ('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const panel = document.querySelector('.main-inner-toggle-button');
     const question = document.querySelector('.main-inner-word');
     const answer = document.querySelector('.main-inner-answer');

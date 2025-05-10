@@ -1,4 +1,4 @@
-window.onload = () => { 
+document.addEventListener('DOMContentLoaded', () => {
     const select = document.querySelector('select.form-select');
     const list = document.querySelector('ul.index-list-ul');
     const listItems = list.children;
@@ -17,4 +17,4 @@ window.onload = () => {
     select.addEventListener('change', ()=>{
         toggle(event.target.value, listItems);
     }, false);
-};
+});

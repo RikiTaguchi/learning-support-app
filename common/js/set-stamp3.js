@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const detailButton = Array.from(document.getElementsByClassName('stamp-button-detail'));
     const stampBlock = Array.from(document.getElementsByClassName('stamp-block'));
     const qrOpenButton = Array.from(document.getElementsByClassName('stamp-button-qr'));
@@ -26,7 +26,14 @@ window.addEventListener('load', () => {
         // 詳細の表示・非表示切替
         detailButton[i].addEventListener('click', () => {
             if (stampBlock[i].style.display === 'none') {
+                // 表示
                 stampBlock[i].style.display = 'flex';
+
+                // 画像の読み込み
+                const stampImageList = Array.from(stampImage[i].getElementsByTagName('img'));
+                for (let j = 0; j < stampImageList.length; j++) {
+                    stampImageList[j].src = stampImageList[j].dataset.src;
+                }
             } else {
                 stampBlock[i].style.display = 'none';
             }
@@ -34,8 +41,15 @@ window.addEventListener('load', () => {
 
         // QRコードの表示
         qrOpenButton[i].addEventListener('click', () => {
+            // 表示
             qrBlock[i].style.display = 'flex';
             qrBlock[i].animate(openDetail, options);
+
+            // 画像の読み込み
+            const qrImageList = Array.from(qrBlock[i].getElementsByTagName('img'));
+            for (let j = 0; j < qrImageList.length; j++) {
+                qrImageList[j].src = qrImageList[j].dataset.src;
+            }
         });
 
         // QRコードの非表示

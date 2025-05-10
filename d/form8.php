@@ -68,9 +68,9 @@ try {
 		<link rel = "icon" type = "image/png" sizes = "32x32" href = "../common/icons/favicon-32x32.png">
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
-        <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
-        <script src = "../common/js/set-stamp2.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.2"></script>
+        <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
+        <script src = "../common/js/set-stamp2.js?v=1.0.1"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.3"></script>
     </head>
     <body>
         <header class = "header">
@@ -79,7 +79,7 @@ try {
         <main class = "main">
             <div class = "main-block">
                 <p class = "main-block-title">スタンプ編集</p>
-                <form class = "form" method = "POST" enctype = "multipart/form-data" action = "edit_stamp.php">
+                <form class = "form" method = "POST" enctype = "multipart/form-data" action = "edit_stamp.php" autocomplete="off">
                     <input type = "text" name = "login_id" style = "display: none;" value = "<?php echo $login_id ?>">
                     <input type = "text" name = "user_pass" style = "display: none;" value = "<?php echo $user_pass ?>">
                     <input type = "text" name = "user_name" style = "display: none;" value = "<?php echo $user_name ?>">

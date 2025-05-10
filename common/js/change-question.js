@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const panel = document.querySelector('.main-block');
     const bookName = document.querySelector('.info-bookname').textContent;
     const slideType = document.querySelector('.info-submit');
