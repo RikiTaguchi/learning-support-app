@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.form');
     const randomArea = Array.from(document.getElementsByClassName('random-area'));
     const randomBack = document.querySelector('.random-panel-back');

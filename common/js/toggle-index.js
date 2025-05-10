@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const button1 = document.querySelector('.index-button-1');
     const button2 = document.querySelector('.index-button-2');
     const index = document.querySelector('.index-list');

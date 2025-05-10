@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.querySelector('.header-menu-button');
     const menu = document.querySelector('.header-site-menu');
     const menuInfo = document.querySelector('.header-menu-info');

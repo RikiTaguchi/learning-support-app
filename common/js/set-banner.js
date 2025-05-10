@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const bannerArea = document.querySelector('.main-banner');
     const bannerMessage = document.querySelector('.main-banner-text');
 

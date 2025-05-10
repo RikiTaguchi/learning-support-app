@@ -52,10 +52,10 @@ try {
 		<link rel = "icon" type = "image/png" sizes = "32x32" href = "../common/icons/favicon-32x32.png">
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
-        <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.2"></script>
-        <script src = "../common/js/set-stamp3.js?v=1.0.0"></script>
-        <script src = "../common/js/print-stamp.js?v=1.0.0"></script>
+        <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.3"></script>
+        <script src = "../common/js/set-stamp3.js?v=1.0.1"></script>
+        <script src = "../common/js/print-stamp.js?v=1.0.1"></script>
         <script src = "../common/js/check-submit.js?v=1.0.0"></script>
     </head>
     <body>
@@ -80,7 +80,7 @@ try {
                         echo '<div class = "stamp-block" style = "display: none;">';
                             echo '<p class = "stamp-block-limit">有効期限：' . $img_list[$i]['date_limit'] . '</p>';
                             $img_path = '../common/stamp/' . $img_list[$i]['table_id'] . '_' . $img_list[$i]['img_id'] . '.' . $img_list[$i]['img_extention'] . '?version=' . uniqid();
-                            echo '<div class = "stamp-block-img"><img src = "' . $img_path . '"></div>';
+                            echo '<div class = "stamp-block-img"><img data-src = "' . $img_path . '"></div>';
                             echo '<button class = "stamp-button-qr" type = "button">QRコード</button>';
                             echo '<form class = "stamp-block-form" method = "post" action = "form8.php">';
                                 echo '<input type = "text" name = "img_id" value = "' . $img_list[$i]['img_id'] . '" style = "display: none;">';
@@ -124,13 +124,13 @@ try {
                                         $img_path = '../common/stamp/' . $stamp_data[0] . '_' . $stamp_data[1] . '_' . $stamp_data[2] . '.' . $stamp_data[4] . '?version=' . uniqid();
                                         if ($j === 0) {
                                             echo '<div class = "stamp-panel" style = "display: flex;">';
-                                                echo '<img src = "' . $img_path . '">';
-                                                echo '<p>確率：' . $stamp_data[3] . '</p>';
+                                                echo '<img data-src = "' . $img_path . '">';
+                                                echo '<p>確率：' . $stamp_data[3] . '%</p>';
                                             echo '</div>';
                                         } else {
                                             echo '<div class = "stamp-panel" style = "display: none;">';
-                                                echo '<img src = "' . $img_path . '">';
-                                                echo '<p>確率：' . $stamp_data[3] . '</p>';
+                                                echo '<img data-src = "' . $img_path . '">';
+                                                echo '<p>確率：' . $stamp_data[3] . '%</p>';
                                             echo '</div>';
                                         }
                                     }
@@ -172,8 +172,8 @@ try {
                         echo '<div class = "qr-block" style = "display: none;">';
                             $img_path = "../common/stamp/" . $img_list[$i]['table_id'] . '_' . $img_list[$i]['img_id'] . '.' . $img_list[$i]['img_extention'] . '?version=' . uniqid();
                             echo '<div class = "qr-back">';
-                                echo '<img class = "qr-img" src = "' . $qr_path . '">';
-                                echo '<div class = "qr-icon"><img src = "' . $img_path . '"></div>';
+                                echo '<img class = "qr-img" data-src = "' . $qr_path . '">';
+                                echo '<div class = "qr-icon"><img data-src = "' . $img_path . '"></div>';
                             echo '</div>';
                             echo '<button class = "qr-print" type = "button">印刷</button>';
                             echo '<a class = "qr-download" href = "' . $qr_path . '" download = "qr_' . $img_list[$i]['table_id'] . $img_list[$i]['img_id'] . '.png">保存</a>';
@@ -186,8 +186,8 @@ try {
                         // QRコード
                         echo '<div class = "qr-block" style = "display: none;">';
                             echo '<div class = "qr-back">';
-                                echo '<img class = "qr-img" src = "' . $qr_path . '">';
-                                echo '<div class = "qr-icon"><img src = "../common/images/qr-back.png"></div>';
+                                echo '<img class = "qr-img" data-src = "' . $qr_path . '">';
+                                echo '<div class = "qr-icon"><img data-src = "../common/images/qr-back.png"></div>';
                             echo '</div>';
                             echo '<button class = "qr-print" type = "button">印刷</button>';
                             echo '<a class = "qr-download" href = "' . $qr_path . '" download = "qr_' . $img_list[$i]['table_id'] . $img_list[$i]['img_id'] . '.png">保存</a>';
@@ -206,13 +206,13 @@ try {
 
                         // 印刷ページ
                         echo '<div class = "print-area">';
-                            echo '<img class = "print-logo" src = "../common/images/stamp-logo.png">';
+                            echo '<img class = "print-logo" data-src = "../common/images/stamp-logo.png">';
                             echo '<p class = "print-title">' . $img_list[$i]['img_title'] . '</p>';
                             echo '<p class = "print-limit">有効期限：' . $img_list[$i]['date_limit'] . '</p>';
                             $img_path = "../common/stamp/" . $img_list[$i]['table_id'] . '_' . $img_list[$i]['img_id'] . '.' . $img_list[$i]['img_extention'] . '?version=' . uniqid();
                             echo '<div class = "print-back">';
-                                echo '<img class = "print-img" src = "' . $qr_path . '">';
-                                echo '<div class = "print-icon"><img src = "' . $img_path . '"></div>';
+                                echo '<img class = "print-img" data-src = "' . $qr_path . '">';
+                                echo '<div class = "print-icon"><img data-src = "' . $img_path . '"></div>';
                             echo '</div>';
                         echo '</div>';
                     } else if (in_array($img_list[$i]['img_id'], $stamp_random_id) == false) { // ランダム
@@ -221,12 +221,12 @@ try {
                         
                         // 印刷ページ
                         echo '<div class = "print-area">';
-                            echo '<img class = "print-logo" src = "../common/images/stamp-logo.png">';
+                            echo '<img class = "print-logo" data-src = "../common/images/stamp-logo.png">';
                             echo '<p class = "print-title">' . $img_list[$i]['img_title'] . '</p>';
                             echo '<p class = "print-limit">有効期限：' . $img_list[$i]['date_limit'] . '</p>';
                             echo '<div class = "print-back">';
-                                echo '<img class = "print-img" src = "' . $qr_path . '">';
-                                echo '<div class = "print-icon"><img src = "../common/images/qr-back.png"></div>';
+                                echo '<img class = "print-img" data-src = "' . $qr_path . '">';
+                                echo '<div class = "print-icon"><img data-src = "../common/images/qr-back.png"></div>';
                             echo '</div>';
                         echo '</div>';
                     }

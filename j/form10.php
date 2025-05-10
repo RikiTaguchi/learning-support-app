@@ -27,8 +27,8 @@ $login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
 		<link rel = "icon" type = "image/png" sizes = "32x32" href = "../common/icons/favicon-32x32.png">
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
-        <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.2"></script>
+        <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.3"></script>
     </head>
     <body>
         <header class = "header">
@@ -37,7 +37,7 @@ $login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
         <main class = "main">
             <div class = "main-block">
                 <p class = "main-block-title">計算トレーニング</p>
-                <form class = "form" method = "post" action = "math_question.php">
+                <form class = "form" method = "post" action = "math_question.php" autocomplete="off">
                     <input type = "number" name = "question_count" value = 1 style = "display: none;">
                     <input type = "number" name = "question_correct" value = 0 style = "display: none;">
                     <input type = "text" name = "login_id" value = "<?php echo $login_id; ?>" style = "display: none;">

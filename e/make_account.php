@@ -23,7 +23,7 @@ include('../common/banner.php');
 		<link rel = "icon" type = "image/png" sizes = "32x32" href = "../common/icons/favicon-32x32.png">
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
-        <script src = "../common/js/set-banner.js?v=1.0.2"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.3"></script>
     </head>
     <body>
         <div class = "main-banner">
@@ -36,7 +36,7 @@ include('../common/banner.php');
             </div>
             <div class = "main-block">
                 <p class = "main-block-title">新規登録</p>
-                <form class = "form" method = "post" action = "make_account_check.php">
+                <form class = "form" method = "post" action = "make_account_check.php" autocomplete="off">
                     <div class = "form-content-3">
                         <span>ユーザーネーム</span>
                         <input class = "form-user" type = "text" name = "user_name" required>

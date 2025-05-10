@@ -52,8 +52,8 @@ try {
 		<link rel = "icon" type = "image/png" sizes = "32x32" href = "../common/icons/favicon-32x32.png">
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
-        <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.2"></script>
+        <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.3"></script>
     </head>
     <body>
         <header class = "header">
@@ -62,7 +62,7 @@ try {
         <main class = "main">
             <div class = "main-block">
                 <p class = "main-block-title">カウントダウン</p>
-                <form class = "form" method = "post" action = "countdown_edit.php">
+                <form class = "form" method = "post" action = "countdown_edit.php" autocomplete="off">
                     <?php
                     echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                     echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';

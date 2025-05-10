@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const howtoButton = document.querySelector('.button-howto');
     const howtoList = document.querySelector('.block-howto');
     howtoButton.addEventListener('click', () => {

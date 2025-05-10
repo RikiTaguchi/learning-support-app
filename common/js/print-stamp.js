@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const printButton = Array.from(document.getElementsByClassName('qr-print'));
     const printArea = Array.from(document.getElementsByClassName('print-area'));
 
@@ -6,9 +6,17 @@ window.addEventListener('load', () => {
         printButton[i].addEventListener('click', () => {
             for (let j = 0; j < printButton.length; j++) {
                 if (i !== j) {
+                    // 非表示
                     printArea[j].classList.remove('print-target');
                 } else {
+                    // 表示
                     printArea[j].classList.add('print-target');
+
+                    // 画像の読み込み
+                    const printImageList = Array.from(printArea[i].getElementsByTagName('img'));
+                    for (let k = 0; k < printImageList.length; k++) {
+                        printImageList[k].src = printImageList[k].dataset.src;
+                    }
                 }
             }
             window.print();

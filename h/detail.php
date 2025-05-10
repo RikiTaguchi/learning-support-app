@@ -65,8 +65,8 @@ try {
 		<link rel = "icon" type = "image/png" sizes = "32x32" href = "../common/icons/favicon-32x32.png">
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
-        <script src = "../common/js/toggle-menu.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.2"></script>
+        <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.3"></script>
         <script src = "../common/js/check-submit.js?v=1.0.0"></script>
     </head>
     <body>
@@ -77,7 +77,7 @@ try {
             <div class = "main-block">
                 <?php
                 echo '<div class = "detail-form">';
-                    echo '<form method = "post" action = "detail_set3.php">';
+                    echo '<form method = "post" action = "detail_set3.php" autocomplete="off">';
                         echo '<p class = "detail-form-title">単語帳名</p>';
                         echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                         echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
@@ -92,7 +92,7 @@ try {
                     echo '</form>';
                 echo '</div>';
                 echo '<div class = "detail-form">';
-                    echo '<form method = "post" action = "detail_set2.php">';
+                    echo '<form method = "post" action = "detail_set2.php" autocomplete="off">';
                         echo '<p class = "detail-form-title">目次</p>';
                         echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                         echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
@@ -116,7 +116,7 @@ try {
                                 echo '<th></th>';
                             echo '</tr>';
                             echo '<tr>';
-                                echo '<form method = "post" action = "detail_set.php">';
+                                echo '<form method = "post" action = "detail_set.php" autocomplete="off">';
                                     echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                                     echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                                     echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
@@ -135,7 +135,7 @@ try {
                             foreach ($result as $row) {
                                 echo '<tr>';
                                     $text_form = '
-                                        <form method = "post" action = "detail_set.php">
+                                        <form method = "post" action = "detail_set.php" autocomplete="off">
                                             <input class = "info_account" type = "text" name = "table_id" value = "' . $table_id . '">
                                             <input class = "info_account" type = "text" name = "book_name" value = "' . $book_name . '">
                                             <input class = "info_account" type = "text" name = "book_id" value = "' . $book_id . '">
@@ -170,7 +170,7 @@ try {
                 echo '</div>';
                 echo '<div class = "detail-form">';
                     $text_form = '
-                        <form class = "form-delete" method = "post" action = "detail_set.php" onSubmit = "return checkSubmit()">
+                        <form class = "form-delete" method = "post" action = "detail_set.php" onSubmit = "return checkSubmit()" autocomplete="off">
                             <input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">
                             <input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">
                             <input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">

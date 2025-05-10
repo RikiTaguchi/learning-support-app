@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const noticeButton = Array.from(document.getElementsByClassName('notice-button'));
     const noticeDetail = Array.from(document.getElementsByClassName('notice-detail'));
 

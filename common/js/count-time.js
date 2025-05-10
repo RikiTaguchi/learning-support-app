@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const infoStartTime = Number(document.querySelector('.info_start_time').textContent) * 1000;
     const infoPassedTime = document.querySelector('.info_passed_time');
     const infoPassedTimeH = document.querySelector('.info_passed_time_h');

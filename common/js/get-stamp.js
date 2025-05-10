@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const stampArea = document.querySelector('.main-stamp-area');
     stampArea.scrollTop = stampArea.scrollHeight;
 

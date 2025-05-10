@@ -23,8 +23,8 @@ include('../common/banner.php');
 		<link rel = "icon" type = "image/png" sizes = "32x32" href = "../common/icons/favicon-32x32.png">
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
-        <script src = "../common/js/set-cookie.js?v=1.0.0"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.2"></script>
+        <script src = "../common/js/set-cookie.js?v=1.0.1"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.3"></script>
     </head>
     <body>
         <div class = "main-banner">
@@ -37,7 +37,7 @@ include('../common/banner.php');
             </div>
             <div class = "main-block">
                 <p class = "main-block-title">ログイン</p>
-                <form class = "form" method = "post" action = "login_check.php">
+                <form class = "form" method = "post" action = "login_check.php" autocomplete="off">
                     <div class = "form-content-3">
                         <span>ログインID</span>
                         <input class = "form-login" type = "text" name = "login_id" required>

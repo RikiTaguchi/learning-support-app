@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.form');
     const formNormal = document.querySelector('.form-normal');
     const formRandom = document.querySelector('.form-random');

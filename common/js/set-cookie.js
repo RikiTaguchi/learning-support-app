@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const loginId = document.querySelector('.form-login');
     const userPass = document.querySelector('.form-pass');
 
