@@ -15,7 +15,7 @@ $date_limit = $_POST['date_limit'];
 
 // 有効期限が過去の日付の場合
 $date_target = DateTime::createFromFormat('Y-m-d', $date_limit);
-$date_today = new DateTime();
+$date_today = new DateTime('now', new DateTimeZone('Asia/Tokyo'));
 $date_target->setTime(0, 0, 0);
 $date_today->setTime(0, 0, 0);
 if ($date_target < $date_today) {

@@ -57,7 +57,7 @@ if ($edit_type == 'reset') {
         } else {
             $new_date = $_POST['user_date'];
             $date_target = DateTime::createFromFormat('Y-m-d', $new_date);
-            $date_today = new DateTime();
+            $date_today = new DateTime('now', new DateTimeZone('Asia/Tokyo'));
             $date_target->setTime(0, 0, 0);
             $date_today->setTime(0, 0, 0);
             if ($date_target < $date_today) {
