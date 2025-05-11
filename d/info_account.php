@@ -61,7 +61,7 @@ try {
                     echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
                     ?>
                     <div class = "form-content-3">
-                        <span>ユーザーネーム</span>
+                        <span>教室名</span>
                         <input type = "text" name = "new_user_name" value ="<?php echo $user_name ?>">
                     </div>
                     <div class = "form-content-3">

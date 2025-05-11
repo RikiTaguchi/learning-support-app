@@ -38,7 +38,7 @@ include('../common/banner.php');
                 <p class = "main-block-title">新規登録</p>
                 <form class = "form" method = "post" action = "make_account_check.php" autocomplete="off">
                     <div class = "form-content-3">
-                        <span>ユーザーネーム</span>
+                        <span>教室名</span>
                         <input class = "form-user" type = "text" name = "user_name" required>
                     </div>
                     <div class = "form-content-3">

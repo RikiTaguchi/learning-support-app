@@ -12,6 +12,7 @@ $login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
     $sql = 'SELECT * FROM info_account WHERE login_id = :login_id';
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':login_id', $login_id, PDO::PARAM_STR);
@@ -20,6 +21,18 @@ try {
     $login_id = $result['login_id'];
     $user_pass = $result['user_pass'];
     $user_name = $result['user_name'];
+    $class_id = (int)$result['class_id'];
+
+    if ($class_id != 0) {
+        $sql = 'SELECT * FROM info_account WHERE table_id = :class_table_id';
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':class_table_id', $class_id, PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $class_name = $result['user_name'];
+    }
+
+    $dbh = null;
 } catch (PDOException $e) {
     header('Location: login.php?banner=9', true, 307);
     exit;
@@ -62,15 +75,27 @@ try {
                     ?>
                     <div class = "form-content-3">
                         <span>ユーザーネーム</span>
-                        <input type = "text" name = "new_user_name" value ="<?php echo $user_name ?>">
+                        <?php if ($class_id == 0) { ?>
+                            <input type = "text" name = "new_user_name" value ="<?php echo $user_name ?>" required>
+                        <?php } else { ?>
+                            <input type = "text" name = "new_user_name" value ="<?php echo $user_name ?>" style = "background-color: #eee; color: #555; pointer-events: none;" readonly required>
+                        <?php } ?>
+                    </div>
+                    <div class = "form-content-3">
+                        <span>所属教室</span>
+                        <?php if ($class_id == 0) { ?>
+                            <input type = "text" name = "class_id" value ="なし" style = "background-color: #eee; color: #555; pointer-events: none;" disabled>
+                        <?php } else { ?>
+                            <input type = "text" name = "class_id" value ="<?php echo $class_name ?>" style = "background-color: #eee; color: #555; pointer-events: none;" disabled>
+                        <?php } ?>
                     </div>
                     <div class = "form-content-3">
                         <span>ログインID</span>
-                        <input type = "text" name = "new_login_id" value ="<?php echo $login_id ?>">
+                        <input type = "text" name = "new_login_id" value ="<?php echo $login_id ?>" required>
                     </div>
                     <div class = "form-content-3">
                         <span>パスワード</span>
-                        <input type = "text" name = "new_user_pass" value ="<?php echo $user_pass ?>">
+                        <input type = "text" name = "new_user_pass" value ="<?php echo $user_pass ?>" required>
                     </div>
                     <div class = "form-content">
                         <div class = "form-content-submit"><button type = "submit">更新</button></div>
@@ -83,7 +108,15 @@ try {
                     echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
                     ?>
                     <div class = "form-content">
-                        <div class = "form-content-submit"><button type = "submit">削除</button></div>
+                        <div class = "form-content-submit">
+                            <?php
+                            if ($class_id == 0) {
+                                echo '<button type = "submit">削除</button>';
+                            } else {
+                                echo '<button type = "submit" style = "background-color: #ccc; color: #888; border: 1px solid #aaa; opacity: 0.7;" disabled>削除</button>';
+                            }
+                            ?>
+                        </div>
                     </div>
                 </form>
                 <?php make_link2('ホームに戻る', 'index.php', [$user_name, $login_id, $user_pass]) ?>
