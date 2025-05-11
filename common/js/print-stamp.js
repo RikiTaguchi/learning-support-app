@@ -17,9 +17,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     for (let k = 0; k < printImageList.length; k++) {
                         printImageList[k].src = printImageList[k].dataset.src;
                     }
+
+                    // 印刷
+                    let loadedCount = 0;
+                    for (let k = 0; k < printImageList.length; k++) {
+                        if (printImageList[k].complete) {
+                            loadedCount += 1;
+                        } else {
+                            printImageList[k].addEventListener('load', () => {
+                                loadedCount++;
+                                if (loadedCount === printImageList.length) {
+                                    window.print();
+                                }
+                            });
+                        }
+                    }
+                    if (loadedCount === printImageList.length) {
+                        window.print();
+                    }
                 }
             }
-            window.print();
         });
     }
 });

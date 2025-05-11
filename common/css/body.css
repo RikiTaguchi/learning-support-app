@@ -109,6 +109,22 @@ main {
     line-height: 1.5;
 }
 
+.main-block-back-button {
+    font-size: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.main-block-back-button button {
+    border-top: none;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+    border-color: blue;
+    color: blue;
+}
+
 .info_account {
     display: none;
 }
@@ -154,5 +170,11 @@ main {
 
     .main-block-msg {
         font-size: 12px;
+    }
+
+    .main-block-back-button {
+        font-size: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 }

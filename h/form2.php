@@ -44,7 +44,7 @@ try {
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/form.css?v=1.0.0" rel = "stylesheet">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/body.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -102,6 +102,7 @@ try {
                         <div class = "form-content-submit"><button type = "submit">開始</button></div>
                     </div>
                 </form>
+                <?php make_link2('ホームに戻る', 'index.php', [$user_name, $login_id, $user_pass]) ?>
             </div>
 
             <div style="margin-top: 20px;">

@@ -1,8 +1,23 @@
 <?php
-// リンクを作成する関数
+// リンクを作成する関数（メニューバー用）
 function make_link($title, $url, $info) {
     $text_form = '
         <form method = "post" action = "' . $url .'">
+            <input class = "info_account" type = "text" name = "user_name" value = "' . $info[0] . '">
+            <input class = "info_account" type = "text" name = "login_id" value = "' . $info[1] . '">
+            <input class = "info_account" type = "text" name = "user_pass" value = "' . $info[2] . '">
+            <button class = "make-link-button" type = "submit">
+                <p>' . $title . '</p>
+            </button>
+        </form>
+    ';
+    echo $text_form;
+}
+
+// リンクを作成する関数（画面内用）
+function make_link2($title, $url, $info) {
+    $text_form = '
+        <form class = "main-block-back-button" method = "post" action = "' . $url .'">
             <input class = "info_account" type = "text" name = "user_name" value = "' . $info[0] . '">
             <input class = "info_account" type = "text" name = "login_id" value = "' . $info[1] . '">
             <input class = "info_account" type = "text" name = "user_pass" value = "' . $info[2] . '">

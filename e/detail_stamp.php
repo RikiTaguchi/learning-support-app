@@ -85,7 +85,7 @@ $stamp_last_src = '../common/stamp/' . $stamp_list[count($stamp_list) - 1][0] . 
         <meta name = "description" content = "スタンプカード">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/body.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/detail_stamp.css?v=1.0.0" rel = "stylesheet">
         <?php if ($banner === '15') { ?>
             <link rel = "preload" as = "image" href = "<?php echo $stamp_last_src; ?>">
@@ -272,6 +272,8 @@ $stamp_last_src = '../common/stamp/' . $stamp_list[count($stamp_list) - 1][0] . 
                     ?>
                     <button class = "main-form-qr-button" type = "submit"><p>スタンプを取得する</p></button>
                 </form>
+
+                <?php make_link2('ホームに戻る', 'index.php', [$user_name, $login_id, $user_pass]) ?>
             </div>
 
             <div style="margin-top: 20px;">

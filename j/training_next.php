@@ -104,7 +104,7 @@ try {
     <meta name = "description" content = "トレーニング">
     <meta name = "viewport" content = "width=device-width">
     <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-    <link href = "../common/css/body.css?v=1.0.0" rel = "stylesheet">
+    <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
     <link href = "../common/css/training.css?v=1.0.0" rel = "stylesheet">
     <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
     <link rel = "manifest" href = "../common/icons/manifest.json">
@@ -367,6 +367,7 @@ try {
             <?php
             echo '<p class = "info-submit" style = "display: none;">' . $_POST['submit'] . '</p>';
             ?>
+            <?php make_link2('入力フォームに戻る', 'form2.php', [$user_name, $login_id, $user_pass]) ?>
         </div>
 
         <div style="margin-top: 20px;">

@@ -75,7 +75,7 @@ $feedback_text = $question_text . 'E' . $answer_text . 'E' . $question_count;
         <meta name = "description" content = "計算トレーニング">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/body.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/math_question.css?v=1.0.0" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
@@ -218,12 +218,7 @@ $feedback_text = $question_text . 'E' . $answer_text . 'E' . $question_count;
                     </form>
                 </div>
 
-                <form class = "back_area" method = "post" action = "index.php">
-                    <input type = "text" name = "login_id" value = "<?php echo $login_id; ?>" style = "display: none;">
-                    <input type = "text" name = "user_pass" value = "<?php echo $user_pass; ?>" style = "display: none;">
-                    <input type = "text" name = "user_name" value = "<?php echo $user_name; ?>" style = "display: none;">
-                    <button class = "back_button" type = "submit">ホームに戻る</button>
-                </form>
+                <?php make_link2('入力フォームに戻る', 'form10.php', [$user_name, $login_id, $user_pass]) ?>
             </div>
 
             <div style="margin-top: 20px;">

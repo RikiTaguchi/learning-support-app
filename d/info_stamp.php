@@ -42,9 +42,9 @@ try {
         <meta name = "description" content = "管理者ログイン">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/body.css?v=1.0.0" rel = "stylesheet">
-        <link href = "../common/css/info_stamp.css?v=1.0.0" rel = "stylesheet">
-        <link href = "../common/css/info_stamp_print.css?v=1.0.0" rel = "stylesheet" media = "print">
+        <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
+        <link href = "../common/css/info_stamp.css?v=1.0.1" rel = "stylesheet">
+        <link href = "../common/css/info_stamp_print.css?v=1.0.1" rel = "stylesheet" media = "print">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -55,7 +55,7 @@ try {
         <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
         <script src = "../common/js/set-banner.js?v=1.0.3"></script>
         <script src = "../common/js/set-stamp3.js?v=1.0.1"></script>
-        <script src = "../common/js/print-stamp.js?v=1.0.1"></script>
+        <script src = "../common/js/print-stamp.js?v=1.0.2"></script>
         <script src = "../common/js/check-submit.js?v=1.0.0"></script>
     </head>
     <body>
@@ -196,6 +196,7 @@ try {
                     }
                 }
                 ?>
+                <?php make_link2('ホームに戻る', 'index.php', [$user_name, $login_id, $user_pass]) ?>
             </div>
             <div class = "print-block">
                 <?php
@@ -234,7 +235,7 @@ try {
                 ?>
             </div>
 
-            <div style="margin-top: 20px;">
+            <div class = "ads-area" style="margin-top: 20px;">
                 <!-- for SP -->
                 <script src="https://adm.shinobi.jp/s/b48d915b597d17a79d6d43b4b7c4b69c"></script>
             </div>
