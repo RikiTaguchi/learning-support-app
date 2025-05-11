@@ -21,3 +21,11 @@ function checkSubmit3() {
         return false;
     }
 }
+
+function checkSubmit4() {
+    if (confirm('この生徒アカウントを、管理者アカウントの管轄から外します。本当によろしいですか？')) {
+        return true;
+    } else {
+        return false;
+    }
+}

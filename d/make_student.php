@@ -3,6 +3,7 @@ include('../common/db_info.php');
 include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
+include('./source_book.php');
 
 $account_type = ['d'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
@@ -17,9 +18,8 @@ try {
     $stmt->bindParam(':login_id', $login_id, PDO::PARAM_STR);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    $login_id = $result['login_id'];
-    $user_pass = $result['user_pass'];
-    $user_name = $result['user_name'];
+    $table_id = $result['table_id'];
+    $dbh = null;
 } catch (PDOException $e) {
     header('Location: login.php?banner=9', true, 307);
     exit;
@@ -27,15 +27,16 @@ try {
 ?>
 
 <!DOCTYPE html>
-<html>
-    <head lang = "ja">
+<html lang = "ja">
+    <head>
         <meta charset = "UTF-8">
         <title>単語システム</title>
-        <meta name = "description" content = "単語システムアカウント情報">
+        <meta name = "description" content = "生徒登録">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/form.css?v=1.0.0" rel = "stylesheet">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
+        <link href = "../common/css/make_student.css?v=1.0.0" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -45,7 +46,6 @@ try {
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
         <script src = "../common/js/set-banner.js?v=1.0.3"></script>
-        <script src = "../common/js/check-submit.js?v=1.0.1"></script>
     </head>
     <body>
         <header class = "header">
@@ -53,40 +53,40 @@ try {
         </header>
         <main class = "main">
             <div class = "main-block">
-                <p class = "main-block-title">アカウント情報</p>
-                <form class = "form" method = "post" action = "edit_account.php" autocomplete="off">
-                    <?php
-                    echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
-                    echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
-                    echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
-                    ?>
+                <p class = "main-block-title">生徒登録</p>
+
+                <form class = "form" method = "POST" action = "make_student_check.php" autocomplete="off">
+                    <input type = "text" name = "login_id" style = "display: none;" value = "<?php echo $login_id; ?>">
+                    <input type = "text" name = "user_pass" style = "display: none;" value = "<?php echo $user_pass; ?>">
+                    <input type = "text" name = "user_name" style = "display: none;" value = "<?php echo $user_name; ?>">
                     <div class = "form-content-3">
-                        <span>教室名</span>
-                        <input type = "text" name = "new_user_name" value ="<?php echo $user_name ?>">
+                        <span>氏名</span>
+                        <input class = "form-user" type = "text" name = "student_user_name" required>
+                    </div>
+                    <div class = "form-content-2">
+                        <span>区分</span>
+                        <div>
+                            <p><input type = "radio" name = "student_account_type" value = "e" checked>小学生</p>
+                            <p><input type = "radio" name = "student_account_type" value = "j">中学生</p>
+                            <p><input type = "radio" name = "student_account_type" value = "h">高校生</p>
+                        </div>
                     </div>
                     <div class = "form-content-3">
                         <span>ログインID</span>
-                        <input type = "text" name = "new_login_id" value ="<?php echo $login_id ?>">
+                        <input class = "form-login" type = "text" name = "student_login_id" required>
                     </div>
                     <div class = "form-content-3">
                         <span>パスワード</span>
-                        <input type = "text" name = "new_user_pass" value ="<?php echo $user_pass ?>">
+                        <input class = "form-pass" type = "text" name = "student_user_pass" required>
                     </div>
                     <div class = "form-content">
-                        <div class = "form-content-submit"><button type = "submit">更新</button></div>
+                        <div class = "form-content-submit">
+                            <button type = "submit" name = "submit">登録</button>
+                        </div>
                     </div>
                 </form>
-                <form class = "form form-last" method = "post" action = "delete_account.php" onSubmit = "return checkSubmit()">
-                    <?php
-                    echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
-                    echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
-                    echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
-                    ?>
-                    <div class = "form-content">
-                        <div class = "form-content-submit"><button type = "submit">削除</button></div>
-                    </div>
-                </form>
-                <?php make_link2('ホームに戻る', 'index.php', [$user_name, $login_id, $user_pass]) ?>
+                
+                <?php make_link2('戻る', 'info_student.php', [$user_name, $login_id, $user_pass]) ?>
             </div>
 
             <div style="margin-top: 20px;">
