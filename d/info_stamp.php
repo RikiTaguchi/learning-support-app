@@ -56,7 +56,7 @@ try {
         <script src = "../common/js/set-banner.js?v=1.0.3"></script>
         <script src = "../common/js/set-stamp3.js?v=1.0.1"></script>
         <script src = "../common/js/print-stamp.js?v=1.0.2"></script>
-        <script src = "../common/js/check-submit.js?v=1.0.0"></script>
+        <script src = "../common/js/check-submit.js?v=1.0.1"></script>
     </head>
     <body>
         <header class = "header">
