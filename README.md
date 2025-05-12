@@ -164,6 +164,7 @@
   - user_pass(varchar): パスワード
   - table_id(int): ユーザー識別番号
   - account_type(varchar): アカウントタイプ
+  - class_id(int): 所属教室（管理者カウント）のテーブルID
 #### info_countdown: カウントダウン情報
   - table_id(int): テーブルID
   - title(varchar): タイトル

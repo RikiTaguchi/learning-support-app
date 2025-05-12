@@ -68,6 +68,13 @@ try {
         <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
         <script src = "../common/js/set-banner.js?v=1.0.3"></script>
         <script src = "../common/js/check-submit.js?v=1.0.2"></script>
+        <?php if (isset($_GET['book_id'])) { ?>
+            <script>
+                const url_sub = new URL(window.location.href);
+                url_sub.searchParams.delete('book_id');
+                window.history.replaceState({}, '', url_sub);
+            </script>
+        <?php } ?>
     </head>
     <body>
         <header class = "header">
