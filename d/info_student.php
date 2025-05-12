@@ -58,48 +58,68 @@ try {
     // レポート情報の取得
     $info_student_list = [];
     foreach ($result as $row) {
+        // 格納配列（２次元）
         $info_student = [];
-        
-        // 最終ログイン
+
+        // ログイン履歴（info_analysis）
         $sql = 'SELECT * FROM info_analysis WHERE table_id = :table_id AND log_code = 0 AND log_detail = \'login\' ORDER BY log_date ASC';
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':table_id', $row['table_id'], PDO::PARAM_STR);
         $stmt->execute();
-        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        if (empty($r)) {
-            $info_student[] = '未ログイン';
-        } else {
-            $info_student[] = $r[count($r) - 1]['log_date'];
-        }
+        $r_login = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // 総ログイン
-        $info_student[] = (string)count($r);
-
-        // 月ログイン
-        $info_student[] = '準備中';
-
-        // 週ログイン
-        $info_student[] = '準備中';
-
-        // 連続ログイン
-        $info_student[] = '準備中';
-
-        // 取得スタンプ
+        // スタンプ取得履歴（info_stamp）
         $sql = 'SELECT * FROM info_stamp WHERE user_table_id = :user_table_id ORDER BY get_date ASC';
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':user_table_id', $row['table_id'], PDO::PARAM_STR);
         $stmt->execute();
-        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $info_student[] = (string)count($r);
+        $r_stamp_1 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // 最終スタンプ取得
-        if (empty($r)) {
-            $info_student[] = '未取得';
+        // スタンプ取得履歴（info_analysis）
+        $sql = 'SELECT * FROM info_analysis WHERE table_id = :table_id AND log_code = 7 AND log_detail = \'get\' ORDER BY log_date ASC';
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':table_id', $row['table_id'], PDO::PARAM_STR);
+        $stmt->execute();
+        $r_stamp_2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        // データ抽出（最終ログイン日時）
+        if (empty($r_login)) {
+            if (empty($r_stamp_1)) {
+                $info_student[] = '未ログイン';
+            } else {
+                $info_student[] = $r_stamp_1[count($r_stamp_1) - 1]['get_date'];
+            }
         } else {
-            $info_student[] = $r[count($r) - 1]['get_date'];
+            $info_student[] = $r_login[count($r_login) - 1]['log_date'];
         }
 
-        // リストに格納
+        // データ抽出（総ログイン）
+        $info_student[] = (string)count($r_login);
+
+        // データ抽出（月ログイン）
+        $info_student[] = '準備中';
+
+        // データ抽出（週ログイン）
+        $info_student[] = '準備中';
+
+        // データ抽出（連続ログイン）
+        $info_student[] = '準備中';
+
+        // データ抽出（取得スタンプ数）
+        $info_student[] = (string)count($r_stamp_1);
+
+        // データ抽出（最終スタンプ取得日時）
+        if (empty($r_stamp_2)) {
+            if (empty($r_stamp_1)) {
+                $info_student[] = '未取得';
+            } else {
+                $info_student[] = $r_stamp_1[count($r_stamp_1) - 1]['get_date'];
+            }
+        } else {
+            $info_student[] = $r_stamp_2[count($r_stamp_2) - 1]['log_date'];
+        }
+
+        // 結果を格納
         $info_student_list[] = $info_student;
     }
 
@@ -125,7 +145,7 @@ $grade_list = [
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/info_student.css?v=1.0.1" rel = "stylesheet">
+        <link href = "../common/css/info_student.css?v=1.0.2" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -183,7 +203,7 @@ $grade_list = [
                         echo '</tr>';
 
                         // 詳細
-                        echo '<tr class = "info-detail"><td colspan="2"><table class = "sub-table">';
+                        echo '<tr class = "info-detail" style = "display: none;"><td colspan="2"><table class = "sub-table">';
                             echo '<tr class = "tr-sub">';
                                 echo '<td class = "td-sub-title">区分</td>';
                                 echo '<td class = "td-sub-data">' . $grade_list[$row['account_type']] . '</td>';
@@ -219,7 +239,7 @@ $grade_list = [
                         echo '</table></td></tr>';
 
                         // ボタン
-                        echo '<tr class = "info-button"><td colspan="2"><table class = "button-table">';
+                        echo '<tr class = "info-button" style = "display: none;"><td colspan="2"><table class = "button-table">';
                             echo '<tr class = "tr-button">';
                                 echo '<td class = "td-button"><button class = "print-button" type = "button">配布用資料を印刷</button></td>';
                             echo '</tr>';

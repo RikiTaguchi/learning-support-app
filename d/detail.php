@@ -10,7 +10,10 @@ check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_p
 $login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
 
 try {
-    $book_id = $_POST['book_id'];
+    $book_id = $_POST['book_id'] ?? null;
+    if ($book_id == null) {
+        $book_id = $_GET['book_id'];
+    }
 
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -68,6 +71,13 @@ try {
         <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
         <script src = "../common/js/set-banner.js?v=1.0.3"></script>
         <script src = "../common/js/check-submit.js?v=1.0.2"></script>
+        <?php if (isset($_GET['book_id'])) { ?>
+            <script>
+                const url_sub = new URL(window.location.href);
+                url_sub.searchParams.delete('book_id');
+                window.history.replaceState({}, '', url_sub);
+            </script>
+        <?php } ?>
     </head>
     <body>
         <header class = "header">
