@@ -89,13 +89,16 @@ try {
         $stmt->bindParam(':table_id', $row['table_id'], PDO::PARAM_STR);
         $stmt->execute();
         $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $info_student[] = (string)count($r);
+        // $info_student[] = (string)count($r);
+        $info_student[] = '準備中';
 
         // 最終スタンプ取得
         if (empty($r)) {
-            $info_student[] = '未取得';
+            // $info_student[] = '未取得';
+            $info_student[] = '準備中';
         } else {
-            $info_student[] = $r[count($r) - 1]['log_date'];
+            // $info_student[] = $r[count($r) - 1]['log_date'];
+            $info_student[] = '準備中';
         }
 
         // リストに格納
