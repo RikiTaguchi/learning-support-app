@@ -11,6 +11,9 @@ $login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
 
 try {
     $book_id = $_POST['book_id'];
+    if ($book_id == null) {
+        $book_id = $_GET['book_id'];
+    }
 
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
