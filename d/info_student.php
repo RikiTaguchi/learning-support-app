@@ -59,6 +59,7 @@ try {
     $info_student_list = [];
     foreach ($result as $row) {
         $info_student = [];
+        
         // 最終ログイン
         $sql = 'SELECT * FROM info_analysis WHERE table_id = :table_id AND log_code = 0 AND log_detail = \'login\' ORDER BY log_date ASC';
         $stmt = $dbh->prepare($sql);
@@ -84,21 +85,18 @@ try {
         $info_student[] = '準備中';
 
         // 取得スタンプ
-        $sql = 'SELECT * FROM info_analysis WHERE table_id = :table_id AND log_code = 7 AND log_detail = \'get\' ORDER BY log_date ASC';
+        $sql = 'SELECT * FROM info_stamp WHERE user_table_id = :user_table_id ORDER BY get_date ASC';
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':table_id', $row['table_id'], PDO::PARAM_STR);
+        $stmt->bindParam(':user_table_id', $row['table_id'], PDO::PARAM_STR);
         $stmt->execute();
         $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        // $info_student[] = (string)count($r);
-        $info_student[] = '準備中';
+        $info_student[] = (string)count($r);
 
         // 最終スタンプ取得
         if (empty($r)) {
-            // $info_student[] = '未取得';
-            $info_student[] = '準備中';
+            $info_student[] = '未取得';
         } else {
-            // $info_student[] = $r[count($r) - 1]['log_date'];
-            $info_student[] = '準備中';
+            $info_student[] = $r[count($r) - 1]['get_date'];
         }
 
         // リストに格納
