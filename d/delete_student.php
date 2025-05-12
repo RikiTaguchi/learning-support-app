@@ -34,7 +34,7 @@ try {
     $dbh = null;
 
     // ログを更新
-    set_log($login_id, 8, 'delete', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+    set_log($login_id, 10, 'release', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
 
     // リダイレクト
     header('Location: info_student.php?banner=7', true, 307);

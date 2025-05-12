@@ -91,11 +91,11 @@ try {
                     </div>
                     <div class = "form-content-3">
                         <span>ログインID</span>
-                        <input class = "form-login" type = "text" name = "student_login_id" value = "<?php echo $student_login_id ?>" required>
+                        <input class = "form-login" type = "text" name = "student_login_id" value = "<?php echo $student_login_id ?>" style = "background-color: #eee; color: #555; pointer-events: none;" readonly required>
                     </div>
                     <div class = "form-content-3">
                         <span>パスワード</span>
-                        <input class = "form-pass" type = "text" name = "student_user_pass" value = "<?php echo $student_user_pass ?>" required>
+                        <input class = "form-pass" type = "text" name = "student_user_pass" value = "<?php echo $student_user_pass ?>" style = "background-color: #eee; color: #555; pointer-events: none;" readonly required>
                     </div>
                     <div class = "form-content">
                         <div class = "form-content-submit">

@@ -23,7 +23,7 @@ function checkSubmit3() {
 }
 
 function checkSubmit4() {
-    if (confirm('この生徒アカウントを、管理者アカウントの管轄から外します。本当によろしいですか？')) {
+    if (confirm('この生徒アカウントを、管理者アカウントの管轄から外します。本当によろしいですか？この操作は取り消せません。')) {
         return true;
     } else {
         return false;

@@ -13,79 +13,125 @@
 }
 
 .info-table {
-    width: 80%;
-    margin-top: 20px;
+    width: 60%;
+    margin-top: 30px;
     border-collapse: collapse;
-}
-
-.info-table tr {
-    width: 100%;
-    height: 50px;
     border-bottom: 1px solid #ccc;
 }
 
-.info-table tr th,
-.info-table tr td {
+.tr-main {
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #ccc;
+}
+
+.tr-main td {
     text-align: center;
 }
 
-.th-name,
 .td-name {
-    width: 30%;
-}
-
-.th-grade,
-.td-grade {
-    width: 20%;
-}
-
-.th-edit,
-.td-edit {
-    width: 10%;
-}
-
-.th-delete,
-.td-delete {
-    width: 10%;
-}
-
-.th-print,
-.td-print {
-    width: 30%;
-}
-
-.th-name,
-.th-grade {
+    width: 60%;
     font-size: 18px;
-    color: rgb(0, 149, 224);
+    color: black;
 }
 
-.td-name,
-.td-grade {
-    font-size: 18px;
+.td-detail {
+    width: 40%;
 }
 
-.td-edit form button,
-.td-delete form button {
+.td-detail button {
     background-color: rgb(0, 149, 224);
     color: white;
     font-size: 12px;
     border: none;
     border-radius: 5px;
-    width: 85%;
+    width: 60%;
     padding: 5px;
 }
 
-.td-print button {
+.info-detail {
+    display: none;
+}
+
+.sub-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.tr-sub {
+    width: 100%;
+    height: 35px;
+}
+
+.tr-sub td {
+    text-align: center;
+}
+
+.td-sub-title {
+    width: 40%;
+    font-size: 15px;
+    color: black;
+}
+
+.td-sub-data {
+    width: 60%;
+    font-size: 15px;
+    color: black;
+}
+
+.info-button {
+    display: none;
+}
+
+.button-table {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.tr-button {
+    width: 100%;
+    height: 35px;
+}
+
+.tr-button td {
+    text-align: center;
+}
+
+.td-button {
+    width: 100%;
+}
+
+.print-button {
+    /* 仮 */
     background-color: #eee;
     color: #ccc;
-    font-size: 12px;
     border: solid;
+    border-color: #eee;
     border-width: 1px;
-    border-color: #ccc;
+    pointer-events: none;
+
+    /* background-color: rgb(0, 149, 224);
+    color: white; */
+    font-size: 12px;
+    /* border: none; */
     border-radius: 5px;
-    width: 90%;
+    width: 40%;
     padding: 5px;
+    margin-top: 5px;
+}
+
+.td-button form button {
+    background-color: rgb(0, 149, 224);
+    color: white;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    width: 40%;
+    padding: 5px;
+    margin-top: 15px;
 }
 
 /* mobile */
@@ -102,29 +148,58 @@
     }
 
     .info-table {
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .tr-main {
+        height: 40px;
+    }
+
+    .td-name {
+        font-size: 15px;
+    }
+
+    .td-detail button {
+        font-size: 10px;
+    }
+
+    .sub-table {
+        margin-top: 5px;
+    }
+
+    .tr-sub {
+        height: 30px;
+    }
+
+    .td-sub-title {
+        width: 40%;
+        font-size: 10px;
+    }
+
+    .td-sub-data {
+        width: 60%;
+        font-size: 10px;
+    }
+
+    .button-table {
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .tr-button {
+        height: 30px;
+    }
+
+    .print-button {
+        font-size: 10px;
+        width: 70%;
+        margin-top: 5px;
+    }
+
+    .td-button form button {
+        font-size: 10px;
+        width: 70%;
         margin-top: 10px;
-    }
-
-    .info-table tr {
-        height: 50px;
-    }
-
-    .th-name,
-    .th-grade {
-        font-size: 12px;
-    }
-
-    .td-name,
-    .td-grade {
-        font-size: 12px;
-    }
-
-    .td-edit form button,
-    .td-delete form button {
-        font-size: 10px;
-    }
-
-    .td-print button {
-        font-size: 10px;
     }
 }

@@ -14,6 +14,7 @@ try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    // 管理者テーブルIDの取得
     $sql = 'SELECT * FROM info_account WHERE login_id = :login_id';
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':login_id', $login_id, PDO::PARAM_STR);
@@ -21,24 +22,86 @@ try {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     $table_id = $result['table_id'];
     
+    // 小学生アカウントの取得
     $sql = 'SELECT * FROM info_account WHERE class_id = :class_id AND account_type = \'e\'';
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':class_id', $table_id, PDO::PARAM_STR);
     $stmt->execute();
     $result_e = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    // 中学生アカウントの取得
     $sql = 'SELECT * FROM info_account WHERE class_id = :class_id AND account_type = \'j\'';
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':class_id', $table_id, PDO::PARAM_STR);
     $stmt->execute();
     $result_j = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    // 高校生アカウントの取得
     $sql = 'SELECT * FROM info_account WHERE class_id = :class_id AND account_type = \'h\'';
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':class_id', $table_id, PDO::PARAM_STR);
     $stmt->execute();
     $result_h = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
+
+    // 生徒アカウント情報の結合
+    $result = [];
+    foreach ($result_e as $row) {
+        $result[] = $row;
+    }
+    foreach ($result_j as $row) {
+        $result[] = $row;
+    }
+    foreach ($result_h as $row) {
+        $result[] = $row;
+    }
+
+    // レポート情報の取得
+    $info_student_list = [];
+    foreach ($result as $row) {
+        $info_student = [];
+        // 最終ログイン
+        $sql = 'SELECT * FROM info_analysis WHERE table_id = :table_id AND log_code = 0 AND log_detail = \'login\' ORDER BY log_date ASC';
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':table_id', $row['table_id'], PDO::PARAM_STR);
+        $stmt->execute();
+        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (empty($r)) {
+            $info_student[] = '未ログイン';
+        } else {
+            $info_student[] = $r[count($r) - 1]['log_date'];
+        }
+
+        // 総ログイン
+        $info_student[] = (string)count($r);
+
+        // 月ログイン
+        $info_student[] = '準備中';
+
+        // 週ログイン
+        $info_student[] = '準備中';
+
+        // 連続ログイン
+        $info_student[] = '準備中';
+
+        // 取得スタンプ
+        $sql = 'SELECT * FROM info_analysis WHERE table_id = :table_id AND log_code = 7 AND log_detail = \'get\' ORDER BY log_date ASC';
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':table_id', $row['table_id'], PDO::PARAM_STR);
+        $stmt->execute();
+        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $info_student[] = (string)count($r);
+
+        // 最終スタンプ取得
+        if (empty($r)) {
+            $info_student[] = '未取得';
+        } else {
+            $info_student[] = $r[count($r) - 1]['log_date'];
+        }
+
+        // リストに格納
+        $info_student_list[] = $info_student;
+    }
+
     $dbh = null;
 } catch (PDOException $e) {
     header('Location: login.php?banner=9', true, 307);
@@ -61,7 +124,7 @@ $grade_list = [
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/info_student.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/info_student.css?v=1.0.1" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -71,7 +134,8 @@ $grade_list = [
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
         <script src = "../common/js/set-banner.js?v=1.0.3"></script>
-        <script src = "../common/js/check-submit.js?v=1.0.1"></script>
+        <script src = "../common/js/check-submit.js?v=1.0.2"></script>
+        <script src = "../common/js/set-student.js?v=1.0.0"></script>
     </head>
     <body>
         <header class = "header">
@@ -89,94 +153,82 @@ $grade_list = [
                 </form>
 
                 <table class = "info-table">
-                    <tr>
-                        <th class = "th-name">氏名</th>
-                        <th class = "th-grade">区分</th>
-                        <th class = "th-edit"></th>
-                        <th class = "th-delete"></th>
-                        <th class = "th-print"></th>
-                    </tr>
                     <?php
-                    foreach ($result_e as $row) {
+                    foreach ($result as $i => $row) {
+                        // ボタン（form）
                         $form_edit = '
-                            <form class = "form-edit" method = "POST" action = "edit_student.php">
+                            <form method = "POST" action = "edit_student.php">
                                 <input type = "text" name = "login_id" style = "display: none;" value = "' . $login_id . '">
                                 <input type = "text" name = "user_pass" style = "display: none;" value = "' . $user_pass . '">
                                 <input type = "text" name = "user_name" style = "display: none;" value = "' . $user_name . '">
                                 <input type = "number" name = "student_table_id" style = "display: none;" value = "' . $row['table_id'] . '">
-                                <button type = "submit">更新</button>
+                                <button type = "submit">アカウント情報を更新</button>
                             </form>
                         ';
                         $form_delete = '
-                            <form class = "form-delete" method = "POST" action = "delete_student.php" onSubmit = "return checkSubmit4();">
+                            <form method = "POST" action = "delete_student.php" onSubmit = "return checkSubmit4();">
                                 <input type = "text" name = "login_id" style = "display: none;" value = "' . $login_id . '">
                                 <input type = "text" name = "user_pass" style = "display: none;" value = "' . $user_pass . '">
                                 <input type = "text" name = "user_name" style = "display: none;" value = "' . $user_name . '">
                                 <input type = "number" name = "student_table_id" style = "display: none;" value = "' . $row['table_id'] . '">
-                                <button type = "submit">削除</button>
+                                <button type = "submit">管理対象から外す</button>
                             </form>
                         ';
-                        echo '<tr>';
+
+                        // メイン
+                        echo '<tr class = "tr-main">';
                             echo '<td class = "td-name">' . $row['user_name'] . '</td>';
-                            echo '<td class = "td-grade">' . $grade_list[$row['account_type']] . '</td>';
-                            echo '<td class = "td-edit">' . $form_edit . '</td>';
-                            echo '<td class = "td-delete">' . $form_delete . '</td>';
-                            echo '<td class = "td-print"><button type = "button">配布資料を印刷</button></td>';
+                            echo '<td class = "td-detail"><button class = "detail-button" type = "button">詳細</button></td>';
                         echo '</tr>';
-                    }
-                    foreach ($result_j as $row) {
-                        $form_edit = '
-                            <form class = "form-edit" method = "POST" action = "edit_student.php">
-                                <input type = "text" name = "login_id" style = "display: none;" value = "' . $login_id . '">
-                                <input type = "text" name = "user_pass" style = "display: none;" value = "' . $user_pass . '">
-                                <input type = "text" name = "user_name" style = "display: none;" value = "' . $user_name . '">
-                                <input type = "number" name = "student_table_id" style = "display: none;" value = "' . $row['table_id'] . '">
-                                <button type = "submit">更新</button>
-                            </form>
-                        ';
-                        $form_delete = '
-                            <form class = "form-delete" method = "POST" action = "delete_student.php" onSubmit = "return checkSubmit4();">
-                                <input type = "text" name = "login_id" style = "display: none;" value = "' . $login_id . '">
-                                <input type = "text" name = "user_pass" style = "display: none;" value = "' . $user_pass . '">
-                                <input type = "text" name = "user_name" style = "display: none;" value = "' . $user_name . '">
-                                <input type = "number" name = "student_table_id" style = "display: none;" value = "' . $row['table_id'] . '">
-                                <button type = "submit">削除</button>
-                            </form>
-                        ';
-                        echo '<tr>';
-                            echo '<td class = "td-name">' . $row['user_name'] . '</td>';
-                            echo '<td class = "td-grade">' . $grade_list[$row['account_type']] . '</td>';
-                            echo '<td class = "td-edit">' . $form_edit . '</td>';
-                            echo '<td class = "td-delete">' . $form_delete . '</td>';
-                            echo '<td class = "td-print"><button type = "button">配布資料を印刷</button></td>';
-                        echo '</tr>';
-                    }
-                    foreach ($result_h as $row) {
-                        $form_edit = '
-                            <form class = "form-edit" method = "POST" action = "edit_student.php">
-                                <input type = "text" name = "login_id" style = "display: none;" value = "' . $login_id . '">
-                                <input type = "text" name = "user_pass" style = "display: none;" value = "' . $user_pass . '">
-                                <input type = "text" name = "user_name" style = "display: none;" value = "' . $user_name . '">
-                                <input type = "number" name = "student_table_id" style = "display: none;" value = "' . $row['table_id'] . '">
-                                <button type = "submit">更新</button>
-                            </form>
-                        ';
-                        $form_delete = '
-                            <form class = "form-delete" method = "POST" action = "delete_student.php" onSubmit = "return checkSubmit4();">
-                                <input type = "text" name = "login_id" style = "display: none;" value = "' . $login_id . '">
-                                <input type = "text" name = "user_pass" style = "display: none;" value = "' . $user_pass . '">
-                                <input type = "text" name = "user_name" style = "display: none;" value = "' . $user_name . '">
-                                <input type = "number" name = "student_table_id" style = "display: none;" value = "' . $row['table_id'] . '">
-                                <button type = "submit">削除</button>
-                            </form>
-                        ';
-                        echo '<tr>';
-                            echo '<td class = "td-name">' . $row['user_name'] . '</td>';
-                            echo '<td class = "td-grade">' . $grade_list[$row['account_type']] . '</td>';
-                            echo '<td class = "td-edit">' . $form_edit . '</td>';
-                            echo '<td class = "td-delete">' . $form_delete . '</td>';
-                            echo '<td class = "td-print"><button type = "button">配布資料を印刷</button></td>';
-                        echo '</tr>';
+
+                        // 詳細
+                        echo '<tr class = "info-detail"><td colspan="2"><table class = "sub-table">';
+                            echo '<tr class = "tr-sub">';
+                                echo '<td class = "td-sub-title">区分</td>';
+                                echo '<td class = "td-sub-data">' . $grade_list[$row['account_type']] . '</td>';
+                            echo '</tr>';
+                            echo '<tr class = "tr-sub">';
+                                echo '<td class = "td-sub-title">最終ログイン</td>';
+                                echo '<td class = "td-sub-data">' . $info_student_list[$i][0] . '</td>';
+                            echo '</tr>';
+                            echo '<tr class = "tr-sub">';
+                                echo '<td class = "td-sub-title">総ログイン</td>';
+                                echo '<td class = "td-sub-data">' . $info_student_list[$i][1] . '</td>';
+                            echo '</tr>';
+                            echo '<tr class = "tr-sub">';
+                                echo '<td class = "td-sub-title">月ログイン</td>';
+                                echo '<td class = "td-sub-data">' . $info_student_list[$i][2] . '</td>';
+                            echo '</tr>';
+                            echo '<tr class = "tr-sub">';
+                                echo '<td class = "td-sub-title">週ログイン</td>';
+                                echo '<td class = "td-sub-data">' . $info_student_list[$i][3] . '</td>';
+                            echo '</tr>';
+                            echo '<tr class = "tr-sub">';
+                                echo '<td class = "td-sub-title">連続ログイン</td>';
+                                echo '<td class = "td-sub-data">' . $info_student_list[$i][4] . '</td>';
+                            echo '</tr>';
+                            echo '<tr class = "tr-sub">';
+                                echo '<td class = "td-sub-title">取得スタンプ</td>';
+                                echo '<td class = "td-sub-data">' . $info_student_list[$i][5] . '</td>';
+                            echo '</tr>';
+                            echo '<tr class = "tr-sub">';
+                                echo '<td class = "td-sub-title">最終スタンプ取得</td>';
+                                echo '<td class = "td-sub-data">' . $info_student_list[$i][6] . '</td>';
+                            echo '</tr>';
+                        echo '</table></td></tr>';
+
+                        // ボタン
+                        echo '<tr class = "info-button"><td colspan="2"><table class = "button-table">';
+                            echo '<tr class = "tr-button">';
+                                echo '<td class = "td-button"><button class = "print-button" type = "button">配布用資料を印刷</button></td>';
+                            echo '</tr>';
+                            echo '<tr class = "tr-button">';
+                                echo '<td class = "td-button">' . $form_edit . '</td>';
+                            echo '</tr>';
+                            echo '<tr class = "tr-button">';
+                                echo '<td class = "td-button">' . $form_delete . '</td>';
+                            echo '</tr>';
+                        echo '</table></td></tr>';
                     }
                     ?>
                 </table>

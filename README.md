@@ -66,6 +66,7 @@
   - 7: スタンプ（get, set, edit, delete）
   - 8: アカウント情報（set, edit, delete）
   - 9: 復習リスト（add, remove, delete）
+  - 10: 生徒管理（set, edit, release）
 
 ## URL(ローカル)
   #### 管理者版
@@ -203,6 +204,11 @@
   - img_id(int): スタンプの識別番号
   - stamp_id(varchar): スタンプ画像の識別番号
   - get_date(date): スタンプ獲得日時(yyyy-MM-dd)
+#### info_analysis: ログの集積
+  - table_id(int): ユーザー識別番号
+  - log_code(int): ログコード
+  - log_detail(varchar): アクションの詳細
+  - log_date(datetime): 日時
 #### 単語帳データ(パターン1)
   - id(int): 通し番号
   - word(varchar): 問題

@@ -57,7 +57,7 @@ try {
     $dbh = null;
 
     // ログを更新
-    set_log($student_login_id, 8, 'edit', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+    set_log($student_login_id, 10, 'edit', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
 
     header('Location: info_student.php?banner=8', true, 307);
 
