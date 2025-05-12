@@ -3,7 +3,8 @@ CREATE TABLE info_account (
     login_id VARCHAR(255),
     user_pass VARCHAR(255),
     table_id INTEGER,
-    account_type VARCHAR(255)
+    account_type VARCHAR(255),
+    class_id INTEGER
 );
 
 CREATE TABLE info_countdown (
