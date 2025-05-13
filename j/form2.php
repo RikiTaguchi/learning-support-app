@@ -3,7 +3,7 @@ include('../common/db_info.php');
 include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
-include('./source_book.php');
+include('../common/source_book.php');
 
 $account_type = ['j'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);
@@ -64,7 +64,7 @@ try {
         <main class = "main">
             <div class = "main-block">
                 <p class = "main-block-title">暗記トレーニング</p>
-                <?php include('./index_menu.php'); ?>
+                <?php include('../common/index_menu.php'); ?>
                 <form  class = "form" method = "post" action = "training.php" autocomplete="off">
                     <?php
                     echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';

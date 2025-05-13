@@ -23,11 +23,11 @@
         <ul>
             <li><?php echo $user_name; ?></li>
             <li><?php make_link('ホーム', 'index.php', [$user_name, $login_id, $user_pass]) ?></li>
-            <li><?php make_link('テスト作成', 'form.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('暗記トレーニング', 'form2.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('計算トレーニング', 'form10.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('復習モード', 'form3.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('My単語帳作成', 'form4.php', [$user_name, $login_id, $user_pass]) ?></li>
+            <li><?php make_link('テスト作成', 'form.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('アカウント情報', 'info_account.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('ログアウト', 'logout.php', [$user_name, $login_id, $user_pass]) ?></li>
         </ul>

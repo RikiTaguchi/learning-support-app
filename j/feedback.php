@@ -3,8 +3,8 @@ include('../common/db_info.php');
 include('../common/get_info.php');
 include('../common/function.php');
 include('../common/banner.php');
-include('./set_book.php');
-include('./source_book.php');
+include('../common/set_book.php');
+include('../common/source_book.php');
 
 $account_type = ['j'];
 check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass);

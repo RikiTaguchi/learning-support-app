@@ -24,9 +24,9 @@
             <li><?php echo $user_name; ?></li>
             <li><?php make_link('ホーム', 'index.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('テスト作成', 'form.php', [$user_name, $login_id, $user_pass]) ?></li>
-            <li><?php make_link('My単語帳作成', 'form4.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('スタンプ作成', 'form7.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('スタンプ一覧', 'info_stamp.php', [$user_name, $login_id, $user_pass]) ?></li>
+            <li><?php make_link('My単語帳作成', 'form4.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('生徒管理', 'info_student.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('アカウント情報', 'info_account.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('ログアウト', 'logout.php', [$user_name, $login_id, $user_pass]) ?></li>
