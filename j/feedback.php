@@ -179,7 +179,7 @@ try {
     <meta name = "viewport" content = "width=device-width">
     <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
     <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
-    <link href = "../common/css/training.css?v=1.0.2" rel = "stylesheet">
+    <link href = "../common/css/training.css?v=1.0.3" rel = "stylesheet">
     <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
     <link rel = "manifest" href = "../common/icons/manifest.json">
     <link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -253,7 +253,7 @@ try {
                         for ($c = 0; $c < count($choices); $c += 1) {
                             if (count($x) == 1) {
                                 $str_start = $choices[$c];
-                                if (substr($word, 0, 1) == '(') {
+                                if (substr($word, 0, 1) == '(' || $book_id == 'meiko_original_2') {
                                     $str_start = strtoupper(substr($str_start, 0, 1)) . substr($str_start, 1, (strlen($str_start) - 1));
                                 }
                                 $selected = $str_start . '+' . $choices[$c];
