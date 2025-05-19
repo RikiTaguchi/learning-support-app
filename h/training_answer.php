@@ -160,9 +160,9 @@ try {
                     } else {
                         $answer_formatted_before = $select4;
                     }
-                    $answer_formatted_after = '<span style="color: rgb(0, 149, 224)">' . explode(' → ', $answer)[1] . '</span>';
+                    $answer_formatted_after = '<span style="color: rgb(0, 149, 224); font-weight: bold;">' . explode(' → ', $answer)[1] . '</span>';
                     $answer_formatted_full = str_replace($answer_formatted_before, $answer_formatted_after, str_replace('<br><br>', '<br>', $word));
-                    echo '<p class = "main-inner-word-select">' . $answer_formatted_full . '</p>' . PHP_EOL;
+                    echo '<p class = "main-inner-word-select"><span>' . $answer_formatted_full . '</span></p>' . PHP_EOL;
                 }
                 echo '<div class = "main-inner-answer-menu">';
                 if ($type == 0) {
