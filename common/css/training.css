@@ -193,7 +193,9 @@ input {
 }
 
 .main-inner-word-select {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 20px;
     color: black;
     margin-top: 10px;
