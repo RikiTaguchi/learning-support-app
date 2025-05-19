@@ -85,8 +85,8 @@ $stamp_last_src = '../common/stamp/' . $stamp_list[count($stamp_list) - 1][0] . 
         <meta name = "description" content = "スタンプカード">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/detail_stamp.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/detail_stamp.css?v=1.0.1" rel = "stylesheet">
         <?php if ($banner === '15') { ?>
             <link rel = "preload" as = "image" href = "<?php echo $stamp_last_src; ?>">
         <?php } ?>
@@ -98,8 +98,9 @@ $stamp_last_src = '../common/stamp/' . $stamp_list[count($stamp_list) - 1][0] . 
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
-        <script src = "../common/js/check-submit.js?v=1.0.2"></script>
+        <script src = "../common/js/check-submit.js?v=1.0.3"></script>
         <script src = "../common/js/set-banner.js?v=1.0.3"></script>
+        <script src = "../common/js/disable-form.js?v=1.0.0"></script>
         <?php if ($banner === '15') { ?>
             <script src = "../common/js/get-stamp.js?v=1.0.1"></script>
         <?php } ?>
@@ -235,36 +236,36 @@ $stamp_last_src = '../common/stamp/' . $stamp_list[count($stamp_list) - 1][0] . 
                 </div>
 
                 <div class = "main-stamp-slide">
-                    <form class = "main-stamp-slide-left" method = "POST" action = "./detail_stamp.php">
+                    <form class = "main-stamp-slide-left form2" method = "POST" action = "./detail_stamp.php">
                         <input type = "text" name = "user_name"  style = "display: none;" value = "<?php echo $user_name; ?>">
                         <input type = "text" name = "login_id"  style = "display: none;" value = "<?php echo $login_id; ?>">
                         <input type = "text" name = "user_pass"  style = "display: none;" value = "<?php echo $user_pass; ?>">
                         <input type = "number" name = "stamp-page-position" style = "display: none;" value = "<?php echo (string)($stamp_page_position - 1); ?>">
                         <?php
                         if ($stamp_page_position == 0) {
-                            echo '<button class = "slide-button-left" style = "pointer-events: none;"><p>←</p></button>';
+                            echo '<button class = "slide-button-left" type = "button"><p>←</p></button>';
                         } else {
-                            echo '<button class = "slide-button-left"><p>←</p></button>';
+                            echo '<button class = "slide-button-left" type = "submit"><p>←</p></button>';
                         }
                         ?>
                     </form>
 
-                    <form class = "main-stamp-slide-right" method = "POST" action = "./detail_stamp.php">
+                    <form class = "main-stamp-slide-right form2" method = "POST" action = "./detail_stamp.php">
                         <input type = "text" name = "user_name"  style = "display: none;" value = "<?php echo $user_name; ?>">
                         <input type = "text" name = "login_id"  style = "display: none;" value = "<?php echo $login_id; ?>">
                         <input type = "text" name = "user_pass"  style = "display: none;" value = "<?php echo $user_pass; ?>">
                         <input type = "number" name = "stamp-page-position" style = "display: none;" value = "<?php echo (string)($stamp_page_position + 1); ?>">
                         <?php
                         if ($stamp_page_position == $stamp_page_max) {
-                            echo '<button class = "slide-button-right" style = "pointer-events: none;"><p>→</p></button>';
+                            echo '<button class = "slide-button-right" type = "button"><p>→</p></button>';
                         } else {
-                            echo '<button class = "slide-button-right"><p>→</p></button>';
+                            echo '<button class = "slide-button-right" type = "submit"><p>→</p></button>';
                         }
                         ?>
                     </form>
                 </div>
 
-                <form class = "main-form-qr" method = "post" action = "read_qr.php">
+                <form class = "main-form-qr form2" method = "post" action = "read_qr.php">
                     <?php
                     echo '<input type = "text" name = "user_name" style = "display: none;" value = "' . $user_name . '">';
                     echo '<input type = "text" name = "login_id" style = "display: none;" value = "' . $login_id . '">';

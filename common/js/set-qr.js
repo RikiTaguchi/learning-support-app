@@ -132,6 +132,7 @@ const checkImage = () => {
 
          // 取得ボタンを有効にする
          previewButton.disabled = false;
+         isSubmitting = false;
       }
       setTimeout(()=>{ setDisplay() }, 500);
    });

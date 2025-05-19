@@ -233,7 +233,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const allFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
         if (count === 0) {
             if (allFilled) {
-                form.submit();
+                submitButton.disabled = true; // ボタンの無効化
+                submitButton.style.color = '#ccc'; // スタイルの変更
+                submitButton.style.backgroundColor = 'rgb(0, 134, 202)'; // スタイルの変更
+                form.submit(); // 送信
             } else {
                 alert('未入力の項目があります。');
             }
@@ -249,7 +252,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
                 if (probSum === 100) {
-                    form.submit();
+                    submitButton.disabled = true; // ボタンの無効化
+                    submitButton.style.color = '#ccc'; // スタイルの変更
+                    submitButton.style.backgroundColor = 'rgb(0, 134, 202)'; // スタイルの変更
+                    form.submit(); // 送信
                 } else {
                     alert('確率は整数値で、合計が100になるように設定してください。');
                 }

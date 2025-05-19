@@ -42,9 +42,9 @@ try {
         <title>スタンプカード</title>
         <meta name = "description" content = "カウントダウン更新">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/form.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/form.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest2.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -54,6 +54,7 @@ try {
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
         <script src = "../common/js/set-banner.js?v=1.0.3"></script>
+        <script src = "../common/js/disable-form.js?v=1.0.0"></script>
     </head>
     <body>
         <header class = "header">
@@ -67,6 +68,7 @@ try {
                     echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                     echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                     echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
+                    echo '<input class = "info_account" type = "text" name = "edit_mode" value = "edit">';
                     ?>
                     <div class = "form-content-3">
                         <span>タイトル</span>
@@ -85,6 +87,7 @@ try {
                     echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                     echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                     echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
+                    echo '<input class = "info_account" type = "text" name = "edit_mode" value = "reset">';
                     ?>
                     <div class = "form-content">
                         <div class = "form-content-submit"><button type = "submit" name = "edit_type" value = "reset">リセット</button></div>

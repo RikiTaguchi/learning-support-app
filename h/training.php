@@ -15,7 +15,19 @@ $start = $_POST['start'];
 $end = $_POST['end'];
 $questions_num = $_POST['questions_num'];
 $order = $_POST['order'];
-$key_submit = explode('(and)',$_POST['submit_order']);
+
+if ($_POST['submit'] == '') {
+    $submit = $_GET['submit'];
+} else {
+    $submit = $_POST['submit'];
+}
+if ($_POST['submit_order'] == '') {
+    $submit_order = $_GET['submit_order'];
+} else {
+    $submit_order = $_POST['submit_order'];
+}
+
+$key_submit = explode('(and)',$submit_order);
 $selected = $key_submit[0];
 $selected_id = $key_submit[1];
 
@@ -123,7 +135,7 @@ try {
     }
     $word = $result['word'];
     $answer = $result['answer'];
-    if ($book_id == 'Vintage') {
+    if (in_array($book_id, $book_grammar_id_list)) {
         $select1 = $result['select1'];
         $select2 = $result['select2'];
         $select3 = $result['select3'];
@@ -144,8 +156,8 @@ try {
     <meta name = "description" content = "トレーニング">
     <meta name = "viewport" content = "width=device-width">
     <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-    <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
-    <link href = "../common/css/training.css?v=1.0.0" rel = "stylesheet">
+    <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
+    <link href = "../common/css/training.css?v=1.0.1" rel = "stylesheet">
     <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
     <link rel = "manifest" href = "../common/icons/manifest.json">
     <link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -158,6 +170,9 @@ try {
     <script src = "../common/js/slide-panel.js?v=1.0.1"></script>
     <script src = "../common/js/change-question.js?v=1.0.1"></script>
     <script src = "../common/js/set-banner.js?v=1.0.3"></script>
+    <script src = "../common/js/disable-form.js?v=1.0.0"></script>
+    <script src = "../common/js/disable-form2.js?v=1.0.0"></script>
+    <script src = "../common/js/disable-form3.js?v=1.0.0"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const url = new URL(window.location.href);
@@ -176,9 +191,9 @@ try {
             echo '<p class = "main-block-subtitle">' . (string)(((int)$n) + 1) . ' / ' . $questions_num . '</p>';
             echo '<p class = "info-bookname" style = "display: none;">' . $book_name . '</p>';
             echo '<p class = "info-type" style = "display: none;">' . $type . '</p>';
-            if ($book_id == 'Vintage') {
+            if (in_array($book_id, $book_grammar_id_list)) {
                 echo '<div class = "main-inner-selectmenu">';
-                if ($book_id == 'Vintage') {
+                if (in_array($book_id, $book_grammar_id_list)) {
                     if ($type == 0) {
                         echo '<p class = "main-inner-type">Select the correct word</p>';
                     } else if ($type == 1) {
@@ -200,7 +215,7 @@ try {
                     echo '<p class = "main-inner-answer-menu-choices-order">';
                         echo $x[0];
                     echo '</p>';
-                    echo '<form class = "main-inner-submit-order" method = "post" action = "training.php?status=off">';
+                    echo '<form class = "main-inner-submit-order form4" method = "post" action = "training.php?status=off">';
                         echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                         echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                         echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
@@ -222,26 +237,26 @@ try {
                                 }
                                 $selected = $str_start . '+' . $choices[$c];
                                 $selected_id = '(' . $c . ')';
-                                echo '<button class = "main-inner-answer-menu-choice is-show" type = "submit" name = "submit_order" value = "' . $selected . '(and)' . $selected_id . '">' . $choices[$c] . '</button>';
+                                echo '<button class = "main-inner-answer-menu-choice is-show form-button-set" type = "submit" name = "submit_order" value = "' . $selected . '(and)' . $selected_id . '">' . $choices[$c] . '</button>';
                             } else {
                                 $selected = $x[0] . ' ' . $choices[$c] . '+' . $choices[$c];
                                 $selected_id = $y . '+(' . $c . ')';
                                 if (preg_match('/' . $choices[$c] . '/', $x[0]) || preg_match('/' . strtoupper(substr($choices[$c], 0, 1)) . substr($choices[$c], 1, (strlen($choices[$c]) - 1)) . '/', $x[0])) {
                                     if (preg_match('/(' . $c . ')/', $y)) {
-                                        echo '<button class = "main-inner-answer-menu-choice" type = "submit" name = "submit_order" value = "' . $selected . '(and)' . $selected_id . '">' . $choices[$c] . '</button>';
+                                        echo '<button class = "main-inner-answer-menu-choice form-button-set" type = "submit" name = "submit_order" value = "' . $selected . '(and)' . $selected_id . '">' . $choices[$c] . '</button>';
                                     } else {
-                                        echo '<button class = "main-inner-answer-menu-choice is-show" type = "submit" name = "submit_order" value = "' . $selected . '(and)' . $selected_id . '">' . $choices[$c] . '</button>';
+                                        echo '<button class = "main-inner-answer-menu-choice is-show form-button-set" type = "submit" name = "submit_order" value = "' . $selected . '(and)' . $selected_id . '">' . $choices[$c] . '</button>';
                                     }
                                 } else {
-                                    echo '<button class = "main-inner-answer-menu-choice is-show" type = "submit" name = "submit_order" value = "' . $selected . '(and)' . $selected_id . '">' . $choices[$c] . '</button>';
+                                    echo '<button class = "main-inner-answer-menu-choice is-show form-button-set" type = "submit" name = "submit_order" value = "' . $selected . '(and)' . $selected_id . '">' . $choices[$c] . '</button>';
                                 }
                             }
                         }
                         echo '</div>';
-                        echo '<button class = "main-inner-answer-menu-choice0" type = "submit" name = "submit_order" value = "">Clear</button>';
+                        echo '<button class = "main-inner-answer-menu-choice0 form-button-set" type = "submit" name = "submit_order" value = "">Clear</button>';
                     echo '</form>';
                 }
-                echo '<form class = "main-inner-select" method = "post" action = "training_answer.php">';
+                echo '<form class = "main-inner-select form3" method = "post" action = "training_answer.php">';
                     echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                     echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                     echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
@@ -256,16 +271,16 @@ try {
                     }
                     echo '<input type = "number" name = "next_number" value = "' . (int)$n . '">';
                     if ($type == 0 or $type == 1) {
-                        echo '<p><button class = "main-inner-answer-menu-select1" type = "submit" name = "submit" value = "1">' . $select1 . '</button></p>';
-                        echo '<p><button class = "main-inner-answer-menu-select2" type = "submit" name = "submit" value = "2">' . $select2 . '</button></p>';
-                        echo '<p><button class = "main-inner-answer-menu-select3" type = "submit" name = "submit" value = "3">' . $select3 . '</button></p>';
-                        echo '<p><button class = "main-inner-answer-menu-select4" type = "submit" name = "submit" value = "4">' . $select4 . '</button></p>';
+                        echo '<p><button class = "main-inner-answer-menu-select1 form-button-set" type = "submit" name = "submit" value = "1">' . $select1 . '</button></p>';
+                        echo '<p><button class = "main-inner-answer-menu-select2 form-button-set" type = "submit" name = "submit" value = "2">' . $select2 . '</button></p>';
+                        echo '<p><button class = "main-inner-answer-menu-select3 form-button-set" type = "submit" name = "submit" value = "3">' . $select3 . '</button></p>';
+                        echo '<p><button class = "main-inner-answer-menu-select4 form-button-set" type = "submit" name = "submit" value = "4">' . $select4 . '</button></p>';
                     } else if ($type == 2) {
                         echo '<input class = "main-inner-answer-menu-order" type = "text" name = "input-text" value = "' . $x[0] . '">';
-                        echo '<div><button class = "main-inner-answer-menu-nonselect" type = "submit" name = "submit" value = "0">Check the answer</button></div>';
+                        echo '<div><button class = "main-inner-answer-menu-nonselect form-button-set" type = "submit" name = "submit" value = "0">Check the answer</button></div>';
                     } else {
                         echo '<input class = "main-inner-answer-menu-input" type = "text" name = "input-text">';
-                        echo '<div><button class = "main-inner-answer-menu-nonselect" type = "submit" name = "submit" value = "0">Check the answer</button></div>';
+                        echo '<div><button class = "main-inner-answer-menu-nonselect form-button-set" type = "submit" name = "submit" value = "0">Check the answer</button></div>';
                     }
                 echo '</form>';
                 echo '</div>';
@@ -281,9 +296,9 @@ try {
                     echo '</button>';
                 echo '</div>';
             }
-            if ($book_id != 'Vintage') {
+            if (!in_array($book_id, $book_grammar_id_list)) {
                 if ($check_feedback == false) {
-                    echo '<form class = "feedback-list" method = "post" action = "make_feedback.php">';
+                    echo '<form class = "feedback-list form2" method = "post" action = "make_feedback.php">';
                         echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                         echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                         echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
@@ -300,7 +315,7 @@ try {
                         if ($type == 2) {
                             echo '<input class = "main-inner-answer-menu-order" type = "text" name = "input-text" value = "' . $x[0] . '">';
                         }
-                        echo '<input type = "text" name = "submit_order" value = "' . $_POST['submit_order'] . '">';
+                        echo '<input type = "text" name = "submit_order" value = "' . $submit_order . '">';
                         echo '<input type = "text" name = "qanda" value = "q">';
 
                         echo '<input type = "text" name = "info-feedback" value = "feedback" style = "display: none;">';
@@ -309,7 +324,7 @@ try {
                         echo '<button class = "btn-feedback" type = "submit">復習リストに追加</button>';
                     echo '</form>';
                 } else {
-                    echo '<form class = "feedback-list" method = "post" action = "feedback_delete2.php">';
+                    echo '<form class = "feedback-list form2" method = "post" action = "feedback_delete2.php">';
                         echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                         echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                         echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
@@ -326,7 +341,7 @@ try {
                         if ($type == 2) {
                             echo '<input class = "main-inner-answer-menu-order" type = "text" name = "input-text" value = "' . $x[0] . '">';
                         }
-                        echo '<input type = "text" name = "submit_order" value = "' . $_POST['submit_order'] . '">';
+                        echo '<input type = "text" name = "submit_order" value = "' . $submit_order . '">';
                         echo '<input type = "text" name = "qanda" value = "q">';
 
                         echo '<input type = "text" name = "info-feedback" value = "feedback" style = "display: none;">';
@@ -337,7 +352,7 @@ try {
                 }
             } else {
                 if ($check_feedback == false) {
-                    echo '<form class = "feedback-list2" method = "post" action = "make_feedback.php">';
+                    echo '<form class = "feedback-list2 form2" method = "post" action = "make_feedback.php">';
                         echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                         echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                         echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
@@ -354,7 +369,7 @@ try {
                         if ($type == 2) {
                             echo '<input class = "main-inner-answer-menu-order" type = "text" name = "input-text" value = "' . $x[0] . '">';
                         }
-                        echo '<input type = "text" name = "submit_order" value = "' . $_POST['submit_order'] . '">';
+                        echo '<input type = "text" name = "submit_order" value = "' . $submit_order . '">';
                         echo '<input type = "text" name = "qanda" value = "q">';
 
                         echo '<input type = "text" name = "info-feedback" value = "feedback" style = "display: none;">';
@@ -363,7 +378,7 @@ try {
                         echo '<button class = "btn-feedback" type = "submit">復習リストに追加</button>';
                     echo '</form>';
                 } else {
-                    echo '<form class = "feedback-list2" method = "post" action = "feedback_delete2.php">';
+                    echo '<form class = "feedback-list2 form2" method = "post" action = "feedback_delete2.php">';
                         echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                         echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                         echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
@@ -380,7 +395,7 @@ try {
                         if ($type == 2) {
                             echo '<input class = "main-inner-answer-menu-order" type = "text" name = "input-text" value = "' . $x[0] . '">';
                         }
-                        echo '<input type = "text" name = "submit_order" value = "' . $_POST['submit_order'] . '">';
+                        echo '<input type = "text" name = "submit_order" value = "' . $submit_order . '">';
                         echo '<input type = "text" name = "qanda" value = "q">';
 
                         echo '<input type = "text" name = "info-feedback" value = "feedback" style = "display: none;">';
@@ -392,7 +407,7 @@ try {
             }
             ?>
             <?php
-            echo '<form class = "next-word" method = "post" action = "training_next.php">';
+            echo '<form class = "next-word form3" method = "post" action = "training_next.php">';
                 echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                 echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                 echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
@@ -408,18 +423,18 @@ try {
                 echo '<input type = "number" name = "next_number" value = "' . (int)$n . '">';
                 echo '<div class = "main-inner-change">';
                     if ($n > 0) {
-                        echo '<p><input class = "main-inner-submit-back" type = "submit" name = "submit" value = "Back"></p>';
+                        echo '<p><input class = "main-inner-submit-back form-button-set" type = "submit" name = "submit" value = "Back"></p>';
                     } else {
-                        echo '<p><input class = "main-inner-submit-back main-inner-submit-disabled" type = "submit" name = "submit" value = "Back" disabled></p>';
+                        echo '<p><input class = "main-inner-submit-back main-inner-submit-disabled form-button-set" type = "submit" name = "submit" value = "Back" disabled></p>';
                     }
                     if ($n < (int)$questions_num - 1) {
-                        echo '<p><input class = "main-inner-submit-next" type = "submit" name = "submit" value = "Next"></p>';
+                        echo '<p><input class = "main-inner-submit-next form-button-set" type = "submit" name = "submit" value = "Next"></p>';
                     } else {
-                        echo '<p><input class = "main-inner-submit-next main-inner-submit-disabled" type = "submit" name = "submit" value = "Next" disabled></p>';
+                        echo '<p><input class = "main-inner-submit-next main-inner-submit-disabled form-button-set" type = "submit" name = "submit" value = "Next" disabled></p>';
                     }
                 echo '</div>';
             echo '</form>';
-            echo '<p class = "info-submit" style = "display: none;">' . $_POST['submit'] . '</p>';
+            echo '<p class = "info-submit" style = "display: none;">' . $submit . '</p>';
             ?>
             <?php make_link2('入力フォームに戻る', 'form2.php', [$user_name, $login_id, $user_pass]) ?>
         </div>

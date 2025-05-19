@@ -27,6 +27,13 @@ input {
     color: white;
     width: 200px;
     height: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.feedback-list button:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .feedback-list2 button {
@@ -37,6 +44,13 @@ input {
     color: white;
     width: 200px;
     height: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.feedback-list2 button:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 /* type: panel */
@@ -133,6 +147,13 @@ input {
     border: none;
     border-radius: 5px;
     color: white;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.main-inner-submit-back:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .main-inner-submit-next {
@@ -143,6 +164,13 @@ input {
     border: none;
     border-radius: 5px;
     color: white;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.main-inner-submit-next:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .main-inner-submit-disabled {
@@ -188,6 +216,13 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.main-inner-answer-menu p button:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .main-inner-select {
@@ -254,6 +289,13 @@ input {
     border: none;
     min-width: 23%;
     height: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.main-inner-answer-menu-choice.is-show:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .main-inner-answer-menu-nonselect {
@@ -265,6 +307,13 @@ input {
     border: none;
     border-radius: 5px;
     color: white;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.main-inner-answer-menu-nonselect:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .main-inner-answer-menu-choice0 {
@@ -276,6 +325,13 @@ input {
     background-color: rgb(0, 149, 224);
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.main-inner-answer-menu-choice0:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 /* type: input */

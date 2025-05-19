@@ -96,9 +96,9 @@ try {
         <title>単語システム</title>
         <meta name = "description" content = "単語システムトップページ">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/index.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/index.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -109,7 +109,8 @@ try {
         <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
         <script src = "../common/js/toggle-notice.js?v=1.0.1"></script>
         <script src = "../common/js/set-banner.js?v=1.0.3"></script>
-        <script src = "../common/js/check-submit.js?v=1.0.2"></script>
+        <script src = "../common/js/check-submit.js?v=1.0.3"></script>
+        <script src = "../common/js/disable-form.js?v=1.0.0"></script>
     </head>
     <body>
         <header class = "header">
@@ -134,7 +135,7 @@ try {
                 }
                 ?>
                 <div class = "main-block-button">
-                    <form method = "post" action = "countdown_set.php">
+                    <form class = "form2" method = "post" action = "countdown_set.php">
                         <div>
                             <?php
                             echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
@@ -190,7 +191,7 @@ try {
                             echo '<th>' . $book_name_list[$i] . '</th>';
                             $text_form = '
                                 <td>
-                                <form method = "post" action = "detail.php">
+                                <form class = "form2" method = "post" action = "detail.php">
                                     <input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">
                                     <input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">
                                     <input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">
@@ -209,7 +210,7 @@ try {
                 } else {
                     echo '<p class = "main-block-announce">My単語帳が登録されていません。</p>';
                     echo '<div class = "main-block-button">';
-                        echo '<form method = "post" action = "form4.php">';
+                        echo '<form class = "form2" method = "post" action = "form4.php">';
                             echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                             echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                             echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';

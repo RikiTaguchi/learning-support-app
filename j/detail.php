@@ -59,8 +59,8 @@ try {
         <meta name = "description" content = "My単語帳編集ページ">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/detail.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/detail.css?v=1.0.1" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -70,7 +70,9 @@ try {
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
         <script src = "../common/js/set-banner.js?v=1.0.3"></script>
-        <script src = "../common/js/check-submit.js?v=1.0.2"></script>
+        <script src = "../common/js/check-submit.js?v=1.0.3"></script>
+        <script src = "../common/js/disable-form.js?v=1.0.0"></script>
+        <script src = "../common/js/disable-form2.js?v=1.0.0"></script>
         <?php if (isset($_GET['book_id'])) { ?>
             <script>
                 const url_sub = new URL(window.location.href);
@@ -87,7 +89,7 @@ try {
             <div class = "main-block">
                 <?php
                 echo '<div class = "detail-form">';
-                    echo '<form method = "post" action = "detail_set3.php" autocomplete="off">';
+                    echo '<form class = "form2" method = "post" action = "detail_set3.php" autocomplete="off">';
                         echo '<p class = "detail-form-title">単語帳名</p>';
                         echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                         echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
@@ -102,7 +104,7 @@ try {
                     echo '</form>';
                 echo '</div>';
                 echo '<div class = "detail-form">';
-                    echo '<form method = "post" action = "detail_set2.php" autocomplete="off">';
+                    echo '<form class = "form2" method = "post" action = "detail_set2.php" autocomplete="off">';
                         echo '<p class = "detail-form-title">目次</p>';
                         echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                         echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
@@ -126,7 +128,7 @@ try {
                                 echo '<th></th>';
                             echo '</tr>';
                             echo '<tr>';
-                                echo '<form method = "post" action = "detail_set.php" autocomplete="off">';
+                                echo '<form class = "form3" method = "post" action = "detail_set.php" autocomplete="off">';
                                     echo '<input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">';
                                     echo '<input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">';
                                     echo '<input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">';
@@ -138,14 +140,14 @@ try {
                                     echo '<td class = "form-td-element"><input type = "text" name = "new_word" required></td>';
                                     echo '<td class = "form-td-element"><input type = "text" name = "new_answer" required></td>';
                                     echo '<td class = "form-td-last">';
-                                        echo '<button class = "form-button-add" type = "submit" name = "submit" value = "add"><p>追加</p></button>';
+                                        echo '<button class = "form-button-add form-button-set" type = "submit" name = "submit" value = "add"><p>追加</p></button>';
                                     echo '</td>';
                                 echo '</form>';
                             echo '</tr>';
                             foreach ($result as $row) {
                                 echo '<tr>';
                                     $text_form = '
-                                        <form method = "post" action = "detail_set.php" autocomplete="off">
+                                        <form class = "form3" method = "post" action = "detail_set.php" autocomplete="off">
                                             <input class = "info_account" type = "text" name = "table_id" value = "' . $table_id . '">
                                             <input class = "info_account" type = "text" name = "book_name" value = "' . $book_name . '">
                                             <input class = "info_account" type = "text" name = "book_id" value = "' . $book_id . '">
@@ -163,10 +165,10 @@ try {
                                                 <input type = "text" name = "new_answer" value = "' . $row['answer'] . '" required>
                                             </td>
                                             <td class = "form-td-last">
-                                                <button class = "form-button-change" type = "submit" name = "submit" value = "change">
+                                                <button class = "form-button-change form-button-set" type = "submit" name = "submit" value = "change">
                                                     <p>更新</p>
                                                 </button>
-                                                <button class = "form-button-delete" type = "submit" name = "submit" value = "delete">
+                                                <button class = "form-button-delete form-button-set" type = "submit" name = "submit" value = "delete">
                                                     <p>削除</p>
                                                 </button>
                                             </td>
@@ -180,7 +182,7 @@ try {
                 echo '</div>';
                 echo '<div class = "detail-form">';
                     $text_form = '
-                        <form class = "form-delete" method = "post" action = "detail_set.php" onSubmit = "return checkSubmit()" autocomplete="off">
+                        <form class = "form-delete" method = "post" action = "detail_set.php?submit=delete_all" onSubmit = "return checkSubmit()" autocomplete="off">
                             <input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">
                             <input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">
                             <input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">

@@ -100,6 +100,14 @@
     background-color: rgb(0, 149, 224);
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.slide-button-left:active,
+.slide-button-right:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .main-form-qr {
@@ -117,6 +125,13 @@
     background-color: rgb(0, 149, 224);
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.main-form-qr-button:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .main-stamp-info {
@@ -166,6 +181,13 @@
     font-size: 15px;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.main-stamp-delete-button:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .main-stamp-info-button {
@@ -178,6 +200,13 @@
     font-size: 15px;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.main-stamp-info-button:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 @media (max-width: 767px) {

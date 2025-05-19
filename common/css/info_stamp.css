@@ -23,6 +23,13 @@
     border: none;
     border-radius: 5px;
     padding: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.stamp-button-detail:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .stamp-block {
@@ -78,6 +85,13 @@
     color: white;
     font-size: 12px;
     margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.stamp-button-qr:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .stamp-block-form {
@@ -95,6 +109,13 @@
     background-color: rgb(0, 149, 224);
     color: white;
     font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.stamp-button-edit:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .stamp-button-delete {
@@ -106,6 +127,13 @@
     background-color: rgb(0, 149, 224);
     color: white;
     font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.stamp-button-delete:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .stamp-line {
@@ -213,6 +241,13 @@
     border-radius: 5px;
     margin-top: 15px;
     text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.qr-download:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .qr-close {
@@ -228,6 +263,13 @@
     border-radius: 5px;
     margin-top: 15px;
     margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.qr-close:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .qr-print {
@@ -242,6 +284,13 @@
     border: none;
     border-radius: 5px;
     margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.qr-print:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .print-block {

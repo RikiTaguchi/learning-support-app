@@ -9,7 +9,7 @@ check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_p
 
 $login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
 
-$edit_type = $_POST['edit_type'];
+$edit_mode = $_POST['edit_mode'];
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -25,7 +25,7 @@ try {
     exit;
 }
 
-if ($edit_type == 'reset') {
+if ($edit_mode == 'reset') {
     try {
         $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

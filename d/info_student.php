@@ -144,8 +144,8 @@ $grade_list = [
         <meta name = "description" content = "生徒管理">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/info_student.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/info_student.css?v=1.0.3" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -155,8 +155,9 @@ $grade_list = [
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
         <script src = "../common/js/set-banner.js?v=1.0.3"></script>
-        <script src = "../common/js/check-submit.js?v=1.0.2"></script>
+        <script src = "../common/js/check-submit.js?v=1.0.3"></script>
         <script src = "../common/js/set-student.js?v=1.0.0"></script>
+        <script src = "../common/js/disable-form.js?v=1.0.0"></script>
     </head>
     <body>
         <header class = "header">
@@ -166,7 +167,7 @@ $grade_list = [
             <div class = "main-block">
                 <p class = "main-block-title">生徒管理</p>
 
-                <form class = "form-add" method = "POST" action = "make_student.php">
+                <form class = "form-add form2" method = "POST" action = "make_student.php">
                     <input type = "text" name = "login_id" style = "display: none;" value = "<?php echo $login_id; ?>">
                     <input type = "text" name = "user_pass" style = "display: none;" value = "<?php echo $user_pass; ?>">
                     <input type = "text" name = "user_name" style = "display: none;" value = "<?php echo $user_name; ?>">
@@ -178,7 +179,7 @@ $grade_list = [
                     foreach ($result as $i => $row) {
                         // ボタン（form）
                         $form_edit = '
-                            <form method = "POST" action = "edit_student.php">
+                            <form class = "form2" method = "POST" action = "edit_student.php">
                                 <input type = "text" name = "login_id" style = "display: none;" value = "' . $login_id . '">
                                 <input type = "text" name = "user_pass" style = "display: none;" value = "' . $user_pass . '">
                                 <input type = "text" name = "user_name" style = "display: none;" value = "' . $user_name . '">

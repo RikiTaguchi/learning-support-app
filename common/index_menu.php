@@ -1,8 +1,5 @@
 <!-- 目次のhtml -->
-<button class = "index-button-1">
-    目次
-</button>
-<button class = "index-button-2">
+<button class = "index-button">
     目次
 </button>
 

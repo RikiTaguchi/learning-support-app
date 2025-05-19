@@ -56,8 +56,8 @@ $finish_time_s = $_POST['finish_time_s'];
         <meta name = "description" content = "計算トレーニング">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/math_result.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/math_result.css?v=1.0.1" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -68,6 +68,7 @@ $finish_time_s = $_POST['finish_time_s'];
         <script type = "text/javascript" asyncsrc = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=MML_SVG"></script>
         <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
         <script src = "../common/js/set-banner.js?v=1.0.3"></script>
+        <script src = "../common/js/disable-form.js?v=1.0.0"></script>
     </head>
     <body>
         <header class = "header">
@@ -98,7 +99,7 @@ $finish_time_s = $_POST['finish_time_s'];
                 }
                 ?>
 
-                <form class = "back-area" method = "post" action = "index.php">
+                <form class = "back-area form2" method = "post" action = "index.php">
                     <input type = "text" name = "login_id" value = "<?php echo $login_id; ?>" style = "display: none;">
                     <input type = "text" name = "user_pass" value = "<?php echo $user_pass; ?>" style = "display: none;">
                     <input type = "text" name = "user_name" value = "<?php echo $user_name; ?>" style = "display: none;">

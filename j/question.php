@@ -78,7 +78,7 @@ try {
     <title>単語システム</title>
     <meta name = "description" content = "テスト(問題)">
     <meta name = "viewport" content = "width=device-width">
-    <link href = "../common/css/set.css?v=1.0.0" rel = "stylesheet">
+    <link href = "../common/css/set.css?v=1.0.1" rel = "stylesheet">
     <link href = "../common/css/set_print.css?v=1.0.0" rel = "stylesheet" media = "print">
     <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
     <link rel = "manifest" href = "../common/icons/manifest.json">
@@ -87,6 +87,7 @@ try {
     <link rel = "icon" type = "image/png" sizes = "32x32" href = "../common/icons/favicon-32x32.png">
     <link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
     <meta name="theme-color" content="#ffffff">
+    <script src = "../common/js/disable-form.js?v=1.0.0"></script>
 </head>
 <body>
     <header class = "header">
@@ -102,7 +103,7 @@ try {
         echo '<div class = "header-inner-menu">' . PHP_EOL;
             echo '<p class = "header-inner-menu-title">' . $book_name . ' / #' . $start . '~' . $end . ' / ' . $questions_num . '題</p>'. PHP_EOL;
             echo '<div class = "header-inner-menu-button">';
-            echo '<form method = "post" action = "answer.php?book_name=' . $book_name . '&book_id=' . $book_id . '&start=' . $start . '&end=' . $end . '&questions_num=' . $questions_num . '&';
+            echo '<form class = "form2" method = "post" action = "answer.php?book_name=' . $book_name . '&book_id=' . $book_id . '&start=' . $start . '&end=' . $end . '&questions_num=' . $questions_num . '&';
             for ($i = 1; $i <= $questions_num; $i++) {
                 echo 'data' . $i . '=' . $number[$i - 1];
                 if ($i < $questions_num) {
@@ -124,7 +125,17 @@ try {
                     echo '<p>印刷</p>';
                 echo '</button>';
             echo '</form>';
-            make_link('戻る', 'form.php', [$user_name, $login_id, $user_pass]);
+            $back_form = '
+                <form class = "form2" method = "post" action = "form.php">
+                    <input class = "info_account" type = "text" name = "user_name" value = "' . $user_name . '">
+                    <input class = "info_account" type = "text" name = "login_id" value = "' . $login_id . '">
+                    <input class = "info_account" type = "text" name = "user_pass" value = "' . $user_pass . '">
+                    <button class = "make-link-button" type = "submit">
+                        <p>戻る</p>
+                    </button>
+                </form>
+            ';
+            echo $back_form;
             echo '</div>';
         echo '</div>';
         ?>

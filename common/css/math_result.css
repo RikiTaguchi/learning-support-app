@@ -80,6 +80,13 @@
     border: none;
     border-radius: 5px;
     background-color: rgb(0, 149, 224);
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.back-button:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 /* mobile */

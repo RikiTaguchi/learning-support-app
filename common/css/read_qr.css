@@ -89,6 +89,12 @@ main {
     background-color: rgba(128, 128, 128, 0.25);
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.main-form-back-button:active {
+    transform: translateY(2px);
 }
 
 .main-form-back-button p {
@@ -150,6 +156,13 @@ main {
     color: white;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.main-form-qr-button:active {
+    background-color: rgb(242, 242, 242);
+    transform: translateY(2px);
 }
 
 .main-form-qr-button p {
@@ -168,6 +181,12 @@ main {
     color: white;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, transform 0.1s linear;
+}
+
+.main-form-qr-button-back:active {
+    transform: translateY(2px);
 }
 
 .main-form-qr-button-back p {

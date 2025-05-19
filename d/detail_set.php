@@ -17,7 +17,7 @@ $new_word = $_POST['new_word'];
 $new_answer = $_POST['new_answer'];
 $word = $_POST['word'];
 $answer = $_POST['answer'];
-$set_type = $_POST['submit'];
+$set_type = $_GET['submit'];
 
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
@@ -98,6 +98,7 @@ try {
     } else { // エラー
         $dbh = null;
         header('Location: index.php?banner=9', true, 307);
+        exit;
     }
 
     // インデックスの修正

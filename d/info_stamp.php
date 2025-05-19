@@ -42,8 +42,8 @@ try {
         <meta name = "description" content = "管理者ログイン">
         <meta name = "viewport" content = "width=device-width">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/info_stamp.css?v=1.0.1" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/info_stamp.css?v=1.0.2" rel = "stylesheet">
         <link href = "../common/css/info_stamp_print.css?v=1.0.1" rel = "stylesheet" media = "print">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
@@ -56,7 +56,8 @@ try {
         <script src = "../common/js/set-banner.js?v=1.0.3"></script>
         <script src = "../common/js/set-stamp3.js?v=1.0.1"></script>
         <script src = "../common/js/print-stamp.js?v=1.0.2"></script>
-        <script src = "../common/js/check-submit.js?v=1.0.2"></script>
+        <script src = "../common/js/check-submit.js?v=1.0.3"></script>
+        <script src = "../common/js/disable-form.js?v=1.0.0"></script>
     </head>
     <body>
         <header class = "header">
@@ -82,7 +83,7 @@ try {
                             $img_path = '../common/stamp/' . $img_list[$i]['table_id'] . '_' . $img_list[$i]['img_id'] . '.' . $img_list[$i]['img_extention'] . '?version=' . uniqid();
                             echo '<div class = "stamp-block-img"><img data-src = "' . $img_path . '"></div>';
                             echo '<button class = "stamp-button-qr" type = "button">QRコード</button>';
-                            echo '<form class = "stamp-block-form" method = "post" action = "form8.php">';
+                            echo '<form class = "stamp-block-form form2" method = "post" action = "form8.php">';
                                 echo '<input type = "text" name = "img_id" value = "' . $img_list[$i]['img_id'] . '" style = "display: none;">';
                                 echo '<input type = "text" name = "login_id" value = "' . $login_id . '" style = "display: none;">';
                                 echo '<input type = "text" name = "user_pass" value = "' . $user_pass . '" style = "display: none;">';

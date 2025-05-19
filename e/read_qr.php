@@ -17,8 +17,8 @@ $login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
         <title>スタンプカード</title>
         <meta name = "description" content = "QRコード読取">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/read_qr.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/read_qr.css?v=1.0.1" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest2.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -26,6 +26,7 @@ $login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
 		<link rel = "icon" type = "image/png" sizes = "32x32" href = "../common/icons/favicon-32x32.png">
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
+        <script src = "../common/js/disable-form.js?v=1.0.0"></script>
     </head>
     <body>
         <main class = "main">
@@ -34,7 +35,7 @@ $login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
                 <video id = "video" autoplay muted playsinline></video>
                 <canvas id = "camera-canvas"></canvas>
                 <canvas id = "rect-canvas"></canvas>
-                <form class = "main-form-back" method = "post" action = "detail_stamp.php">
+                <form class = "main-form-back form2" method = "post" action = "detail_stamp.php">
                     <?php
                     echo '<input type = "text" name = "user_name" style = "display: none;" value = "' . $user_name . '">';
                     echo '<input type = "text" name = "login_id" style = "display: none;" value = "' . $login_id . '">';
@@ -61,7 +62,7 @@ $login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
                 </form>
             </div>
             <script src = "../common/js/jsQR.js?v=1.0.0"></script>
-            <script src = "../common/js/set-qr.js?v=1.0.4"></script>
+            <script src = "../common/js/set-qr.js?v=1.0.5"></script>
         </main>
     </body>
 </html>

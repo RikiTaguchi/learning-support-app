@@ -42,9 +42,9 @@ try {
         <title>単語システム</title>
         <meta name = "description" content = "トレーニング入力フォーム">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/form.css?v=1.0.0" rel = "stylesheet">
+        <link href = "../common/css/form.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/body.css?v=1.0.1" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -53,9 +53,10 @@ try {
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
-        <script src = "../common/js/toggle-index.js?v=1.0.1"></script>
+        <script src = "../common/js/toggle-index.js?v=1.0.2"></script>
         <script src = "../common/js/toggle-index-change.js?v=1.0.1"></script>
         <script src = "../common/js/set-banner.js?v=1.0.3"></script>
+        <script src = "../common/js/disable-form.js?v=1.0.0"></script>
     </head>
     <body>
         <header class = "header">
