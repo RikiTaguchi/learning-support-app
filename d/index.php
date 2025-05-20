@@ -127,7 +127,7 @@ try {
 
         // ランキングの算出
         for ($i = 0; $i < count($stamp_info) - 1; $i++) {
-            for ($j = 0; $j < count($stamp_info) - 1 - $i; $i++) {
+            for ($j = 0; $j < count($stamp_info) - 1 - $i; $j++) {
                 if ($stamp_info[$j][2] < $stamp_info[$j + 1][2]) {
                     $temp = $stamp_info[$j + 1];
                     $stamp_info[$j + 1] = $stamp_info[$j];
@@ -264,7 +264,7 @@ try {
                 <?php
                 echo '<table class = "ranking-table">';
                 for ($i = 0; $i < count($stamp_ranking); $i++) {
-                    echo '<tr><td>' . $stamp_ranking[$i][0] . '位</td><th>' . $stamp_info[$i][1] . '</th><td>' . $stamp_info[$i][2] . '個</td></tr>';
+                    echo '<tr><td>' . $stamp_ranking[$i][0] . '位</td><th>' . $stamp_ranking[$i][1] . '</th><td>' . $stamp_ranking[$i][2] . '個</td></tr>';
                 }
                 echo '</table>';
                 ?>
