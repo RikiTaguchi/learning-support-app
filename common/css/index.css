@@ -82,7 +82,7 @@
     width: 61.25%;
     margin-left: 1.25%;
     margin-right: 2.5%;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .notice-date {
@@ -343,7 +343,7 @@
     .notice-subtitle {
         width: 62.5%;
         margin-left: 2.5%;
-        font-size: 15px;
+        font-size: 12px;
     }
     
     .notice-date {
