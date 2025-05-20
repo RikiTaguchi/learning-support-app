@@ -23,6 +23,7 @@ try {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     $user_name = $result['user_name'];
     $table_id = $result['table_id'];
+    $class_id = $result['class_id'];
     $dbh = null;
 } catch (PDOException $e) {
     header('Location: login.php?banner=9', true, 307);
@@ -103,6 +104,81 @@ try {
     header('Location: login.php?banner=9', true, 307);
     exit;
 }
+
+// スタンプ取得数ランキングの作成
+try {
+    if ($class_id != '0') {
+        // データを格納する配列
+        $stamp_info = [];
+        $stamp_ranking = [];
+
+        // DB接続
+        $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // 管理者名の取得
+        $sql = 'SELECT * FROM info_account WHERE table_id = :table_id';
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':table_id', $class_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $class_name = $result['user_name'];
+
+        // 生徒情報の取得
+        $sql = 'SELECT * FROM info_account WHERE class_id = :class_id';
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':class_id', $class_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // スタンプ取得情報の取得
+        for ($i = 0; $i < count($result); $i++) {
+            $sql = 'SELECT * FROM info_stamp WHERE user_table_id = :user_table_id';
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(':user_table_id', $result[$i]['table_id'], PDO::PARAM_INT);
+            $stmt->execute();
+            $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $stamp_info[] = [$result[$i]['table_id'], $result[$i]['user_name'], count($r)];
+        }
+
+        // ランキングの算出
+        for ($i = 0; $i < count($stamp_info) - 1; $i++) {
+            for ($j = 0; $j < count($stamp_info) - 1 - $i; $i++) {
+                if ($stamp_info[$j][2] < $stamp_info[$j + 1][2]) {
+                    $temp = $stamp_info[$j + 1];
+                    $stamp_info[$j + 1] = $stamp_info[$j];
+                    $stamp_info[$j] = $temp;
+                }
+            }
+        }
+
+        // ランキング１〜５位を格納
+        $rank_data = $stamp_info[0][2];
+        $rank_count = 1;
+        if ($rank_data > 0) {
+            for ($i = 0; $i < count($stamp_info) - 1; $i++) {
+                if ($stamp_info[$i][2] == $rank_data) {
+                    $stamp_ranking[] = [$rank_count, $stamp_info[$i][1], $stamp_info[$i][2]];
+                } else if ($rank_count < 5) {
+                    if ($stamp_info[$i][2] > 0) {
+                        $rank_count += 1;
+                        $stamp_ranking[] = [$rank_count, $stamp_info[$i][1], $stamp_info[$i][2]];
+                    } else {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+            }
+        }
+
+        // DBとの接続を解除
+        $dbh = null;
+    }
+} catch (PDOException $e) {
+    header('Location: login.php?banner=9', true, 307);
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -112,7 +188,7 @@ try {
         <title>単語システム</title>
         <meta name = "description" content = "単語システムトップページ">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/index.css?v=1.0.1" rel = "stylesheet">
+        <link href = "../common/css/index.css?v=1.0.2" rel = "stylesheet">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
@@ -188,7 +264,7 @@ try {
                                     echo '<p class = "notice-date">' . $notice[$i]['date'] . '</p>';
                                     echo '<button class = "notice-button"><p>詳細</p></button>';
                                 echo '</div>';
-                                echo '<div class = "notice-detail"><p>' . $notice[$i]['detail'] . '</p></div>';
+                                echo '<div class = "notice-detail" style = "display: none;"><p>' . $notice[$i]['detail'] . '</p></div>';
                             echo '</div>';
                             echo '<hr class = "notice-line">';
                         }
@@ -196,6 +272,21 @@ try {
                 }
                 ?>
             </div>
+            
+            <?php if ($class_id != '0' && count($stamp_ranking) > 0) { ?>
+            <div class = "main-block">
+                <p class = "main-block-title">ランキング</p>
+                <p class = "ranking-title">スタンプ取得数</p>
+                <?php
+                echo '<table class = "ranking-table">';
+                for ($i = 0; $i < count($stamp_ranking); $i++) {
+                    echo '<tr><td>' . $stamp_ranking[$i][0] . '位</td><th>' . $stamp_info[$i][1] . '</th><td>' . $stamp_info[$i][2] . '個</td></tr>';
+                }
+                echo '</table>';
+                ?>
+                <p class = "ranking-class-name">対象：<?php echo $class_name; ?></p>
+            </div>
+            <?php } ?>
 
             <div class = "main-block">
                 <p class = "main-block-title">復習リスト</p>

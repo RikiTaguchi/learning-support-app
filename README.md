@@ -63,7 +63,7 @@
   - 4: 復習モード（book_idを記録）
   - 5: My単語帳（set, edit, delete）
   - 6: カウントダウン（set, reset）
-  - 7: スタンプ（get, set, edit, delete）
+  - 7: スタンプ（get, set, edit, delete, reset）
   - 8: アカウント情報（set, edit, delete）
   - 9: 復習リスト（add, remove, delete）
   - 10: 生徒管理（set, edit, release）

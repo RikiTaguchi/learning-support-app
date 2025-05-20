@@ -23,6 +23,7 @@
             <li><?php echo $user_name; ?></li>
             <li><?php make_link('ホーム', 'index.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('スタンプカード', 'detail_stamp.php', [$user_name, $login_id, $user_pass]) ?></li>
+            <li><?php make_link('使用レポート', 'report.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('アカウント情報', 'info_account.php', [$user_name, $login_id, $user_pass]) ?></li>
             <li><?php make_link('ログアウト', 'logout.php', [$user_name, $login_id, $user_pass]) ?></li>
         </ul>

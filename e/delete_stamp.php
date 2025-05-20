@@ -65,6 +65,9 @@ try {
         $stmt->execute();
     }
 
+    // ログを更新
+    set_log($login_id, 7, 'reset', date('Y-m-d H:i:s'), $db_host, $db_name, $db_user, $db_pass);
+
     $dbh = null;
     header('Location: detail_stamp.php?banner=7', true, 307);
     exit;
