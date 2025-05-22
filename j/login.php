@@ -57,11 +57,6 @@ include('../common/banner.php');
                     <a href = "make_account.php">新規登録</a>
                 </p>
             </div>
-
-            <div style="margin-top: 20px;">
-                <!-- for SP -->
-                <script src="https://adm.shinobi.jp/s/b48d915b597d17a79d6d43b4b7c4b69c"></script>
-            </div>
         </main>
     </body>
 </html>

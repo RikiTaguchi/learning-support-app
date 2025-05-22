@@ -438,11 +438,6 @@ try {
             ?>
             <?php make_link2('入力フォームに戻る', 'form2.php', [$user_name, $login_id, $user_pass]) ?>
         </div>
-
-        <div style="margin-top: 20px;">
-            <!-- for SP -->
-            <script src="https://adm.shinobi.jp/s/b48d915b597d17a79d6d43b4b7c4b69c"></script>
-        </div>
     </main>
 </body>
 </html>
