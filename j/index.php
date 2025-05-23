@@ -164,6 +164,7 @@ try {
                 } else if ($rank_count < 5) {
                     if ($stamp_info[$i][2] > 0) {
                         $rank_count += 1;
+                        $rank_data = $stamp_info[$i][2];
                         $stamp_ranking[] = [$rank_count, $stamp_info[$i][1], $stamp_info[$i][2]];
                     } else {
                         break;
