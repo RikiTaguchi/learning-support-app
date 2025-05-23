@@ -26,7 +26,7 @@ try {
     $table_id = $result['table_id'];
 
     // レコードを更新
-    $sql = 'UPDATE info_account SET class_id = 0 WHERE table_id = :table_id';
+    $sql = 'UPDATE info_account SET class_id = 0, account_status = \'open\' WHERE table_id = :table_id';
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':table_id', $student_table_id, PDO::PARAM_INT);
     $stmt->execute();
