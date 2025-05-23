@@ -12,6 +12,7 @@ $login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
 $new_login_id = $_POST['new_login_id'];
 $new_user_name = $_POST['new_user_name'];
 $new_user_pass = $_POST['new_user_pass'];
+$new_account_status = $_POST['new_account_status'];
 
 try {
     $dbh = new PDO('mysql:host=' . $db_host  . ';dbname=' . $db_name . ';charset=utf8', $db_user, $db_pass);
@@ -30,11 +31,12 @@ try {
         }
     }
 
-    $sql = 'UPDATE info_account SET user_name = :user_name, login_id = :login_id_new, user_pass = :user_pass WHERE login_id = :login_id_pre';
+    $sql = 'UPDATE info_account SET user_name = :user_name, login_id = :login_id_new, user_pass = :user_pass, account_status = :account_status WHERE login_id = :login_id_pre';
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':user_name', $new_user_name, PDO::PARAM_STR);
     $stmt->bindParam(':user_pass', $new_user_pass, PDO::PARAM_STR);
     $stmt->bindParam(':login_id_new', $new_login_id, PDO::PARAM_STR);
+    $stmt->bindParam(':account_status', $new_account_status, PDO::PARAM_STR);
     $stmt->bindParam(':login_id_pre', $login_id, PDO::PARAM_STR);
     $stmt->execute();
     $dbh = null;

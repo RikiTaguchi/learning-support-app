@@ -133,6 +133,11 @@ $grade_list = [
     'h' => '高校生',
     'j' => '中学生',
     'e' => '小学生'
+];
+
+$status_list = [
+    'open' => '公開',
+    'close' => '非公開'
 ]
 ?>
 
@@ -208,6 +213,10 @@ $grade_list = [
                             echo '<tr class = "tr-sub">';
                                 echo '<td class = "td-sub-title">区分</td>';
                                 echo '<td class = "td-sub-data">' . $grade_list[$row['account_type']] . '</td>';
+                            echo '</tr>';
+                            echo '<tr class = "tr-sub">';
+                                echo '<td class = "td-sub-title">ステータス</td>';
+                                echo '<td class = "td-sub-data">' . $status_list[$row['account_status']] . '</td>';
                             echo '</tr>';
                             echo '<tr class = "tr-sub">';
                                 echo '<td class = "td-sub-title">最終ログイン</td>';

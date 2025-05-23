@@ -35,6 +35,7 @@ try {
     $student_login_id = $result['login_id'];
     $student_user_pass = $result['user_pass'];
     $student_account_type = $result['account_type'];
+    $student_account_status = $result['account_status'];
 
     $dbh = null;
 } catch (PDOException $e) {
@@ -88,6 +89,13 @@ try {
                             <p><input type = "radio" name = "student_account_type" value = "e" <?php if ($student_account_type == 'e') { echo 'checked'; } ?>>小学生</p>
                             <p><input type = "radio" name = "student_account_type" value = "j" <?php if ($student_account_type == 'j') { echo 'checked'; } ?>>中学生</p>
                             <p><input type = "radio" name = "student_account_type" value = "h" <?php if ($student_account_type == 'h') { echo 'checked'; } ?>>高校生</p>
+                        </div>
+                    </div>
+                    <div class = "form-content-2">
+                        <span>ステータス</span>
+                        <div>
+                            <p><input type = "radio" name = "student_account_status" value = "open" <?php if ($student_account_status == 'open') { echo 'checked'; } ?>>公開</p>
+                            <p><input type = "radio" name = "student_account_status" value = "close" <?php if ($student_account_status == 'close') { echo 'checked'; } ?>>非公開</p>
                         </div>
                     </div>
                     <div class = "form-content-3">

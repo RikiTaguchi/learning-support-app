@@ -22,6 +22,7 @@ try {
     $user_pass = $result['user_pass'];
     $user_name = $result['user_name'];
     $class_id = (int)$result['class_id'];
+    $account_status = $result['account_status'];
 
     if ($class_id != 0) {
         $sql = 'SELECT * FROM info_account WHERE table_id = :class_table_id';
@@ -49,6 +50,7 @@ try {
         <link href = "../common/css/form.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
         <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/info_account.css?v=1.0.0" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest2.json">
 		<link rel = "icon" href = "../common/icons/favicon.ico" type = "image/x-icon">
@@ -89,6 +91,13 @@ try {
                         <?php } else { ?>
                             <input type = "text" name = "class_id" value ="<?php echo $class_name ?>" style = "background-color: #eee; color: #555; pointer-events: none;" disabled>
                         <?php } ?>
+                    </div>
+                    <div class = "form-content-2" <?php if ($class_id == 0) { echo 'style = "display: none;"'; } ?>>
+                        <span>ステータス</span>
+                        <div>
+                            <p><input type = "radio" name = "new_account_status" value = "open" <?php if ($account_status == 'open') { echo 'checked'; } ?>>公開</p>
+                            <p><input type = "radio" name = "new_account_status" value = "close" <?php if ($account_status == 'close') { echo 'checked'; } ?>>非公開</p>
+                        </div>
                     </div>
                     <div class = "form-content-3">
                         <span>ログインID</span>

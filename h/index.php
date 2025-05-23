@@ -133,12 +133,14 @@ try {
 
         // スタンプ取得情報の取得
         for ($i = 0; $i < count($result); $i++) {
-            $sql = 'SELECT * FROM info_stamp WHERE user_table_id = :user_table_id';
-            $stmt = $dbh->prepare($sql);
-            $stmt->bindParam(':user_table_id', $result[$i]['table_id'], PDO::PARAM_INT);
-            $stmt->execute();
-            $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $stamp_info[] = [$result[$i]['table_id'], $result[$i]['user_name'], count($r)];
+            if ($result[$i]['account_status'] == 'open') {
+                $sql = 'SELECT * FROM info_stamp WHERE user_table_id = :user_table_id';
+                $stmt = $dbh->prepare($sql);
+                $stmt->bindParam(':user_table_id', $result[$i]['table_id'], PDO::PARAM_INT);
+                $stmt->execute();
+                $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $stamp_info[] = [$result[$i]['table_id'], $result[$i]['user_name'], count($r)];
+            }
         }
 
         // ランキングの算出

@@ -42,7 +42,7 @@ try {
     }
 
     // アカウントの追加
-    $sql = 'INSERT INTO info_account VALUES(:user_name, :login_id, :user_pass, :table_id, :account_type, 0)';
+    $sql = 'INSERT INTO info_account VALUES(:user_name, :login_id, :user_pass, :table_id, :account_type, 0, \'open\')';
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':user_name', $user_name, PDO::PARAM_STR);
     $stmt->bindParam(':login_id', $login_id, PDO::PARAM_STR);
