@@ -58,7 +58,7 @@ main {
 }
 
 .main-block:last-child {
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .main-block-title {
@@ -132,6 +132,10 @@ main {
     color: blue;
 }
 
+.main-block-back-button button:active {
+    background-color: lightblue;
+}
+
 .info_account {
     display: none;
 }
@@ -150,7 +154,7 @@ main {
     }
 
     .main-block:last-child {
-        margin-bottom: 10px;
+        margin-bottom: 40px;
     }
 
     .main-block-title {

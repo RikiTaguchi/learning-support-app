@@ -84,8 +84,8 @@ $stamp_last_src = '../common/stamp/' . $stamp_list[count($stamp_list) - 1][0] . 
         <title>スタンプカード</title>
         <meta name = "description" content = "スタンプカード">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/header.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.3" rel = "stylesheet">
         <link href = "../common/css/detail_stamp.css?v=1.0.1" rel = "stylesheet">
         <?php if ($banner === '15') { ?>
             <link rel = "preload" as = "image" href = "<?php echo $stamp_last_src; ?>">
@@ -97,9 +97,9 @@ $stamp_last_src = '../common/stamp/' . $stamp_list[count($stamp_list) - 1][0] . 
 		<link rel = "icon" type = "image/png" sizes = "32x32" href = "../common/icons/favicon-32x32.png">
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
-        <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
+        <script src = "../common/js/toggle-menu.js?v=1.0.2"></script>
         <script src = "../common/js/check-submit.js?v=1.0.3"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.3"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.4"></script>
         <script src = "../common/js/disable-form.js?v=1.0.0"></script>
         <?php if ($banner === '15') { ?>
             <script src = "../common/js/get-stamp.js?v=1.0.1"></script>

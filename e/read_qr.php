@@ -17,7 +17,7 @@ $login_streak = get_streak($login_id, $db_host, $db_name, $db_user, $db_pass);
         <title>スタンプカード</title>
         <meta name = "description" content = "QRコード読取">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.3" rel = "stylesheet">
         <link href = "../common/css/read_qr.css?v=1.0.1" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest2.json">

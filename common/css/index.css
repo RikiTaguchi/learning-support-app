@@ -130,8 +130,8 @@
     height: 90px;
     font-size: 15px;
     border-radius: 5px;
-    box-shadow: 1px 1px 5px rgb(76, 76, 78);
-    background-color: rgb(240, 240, 240);
+    box-shadow: 1px 1px 3px rgb(76, 76, 78);
+    background-color: rgb(250, 250, 250);
     overflow: scroll;
     display: none;
 }

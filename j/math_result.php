@@ -55,8 +55,8 @@ $finish_time_s = $_POST['finish_time_s'];
         <title>単語システム</title>
         <meta name = "description" content = "計算トレーニング">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/header.css?v=1.0.1" rel = "stylesheet">
-        <link href = "../common/css/body.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/header.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/body.css?v=1.0.3" rel = "stylesheet">
         <link href = "../common/css/math_result.css?v=1.0.1" rel = "stylesheet">
         <link rel = "apple-touch-icon" sizes = "180x180" href = "../common/icons/apple-touch-icon.png">
 		<link rel = "manifest" href = "../common/icons/manifest.json">
@@ -66,8 +66,8 @@ $finish_time_s = $_POST['finish_time_s'];
 		<link rel = "icon" type = "image/png" sizes = "48x48" href = "../common/icons/favicon-48x48.png">
 		<meta name="theme-color" content="#ffffff">
         <script type = "text/javascript" asyncsrc = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=MML_SVG"></script>
-        <script src = "../common/js/toggle-menu.js?v=1.0.1"></script>
-        <script src = "../common/js/set-banner.js?v=1.0.3"></script>
+        <script src = "../common/js/toggle-menu.js?v=1.0.2"></script>
+        <script src = "../common/js/set-banner.js?v=1.0.4"></script>
         <script src = "../common/js/disable-form.js?v=1.0.0"></script>
     </head>
     <body>
