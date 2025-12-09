@@ -33,7 +33,7 @@ try {
         <title>単語システム</title>
         <meta name = "description" content = "単語システムアカウント情報">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/form.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/form.css?v=1.0.3" rel = "stylesheet">
         <link href = "../common/css/header.css?v=1.0.2" rel = "stylesheet">
         <link href = "../common/css/body.css?v=1.0.3" rel = "stylesheet">
         <link href = "../common/css/info_account.css?v=1.0.0" rel = "stylesheet">
@@ -46,7 +46,7 @@ try {
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.2"></script>
         <script src = "../common/js/set-banner.js?v=1.0.4"></script>
-        <script src = "../common/js/check-submit.js?v=1.0.3"></script>
+        <script src = "../common/js/check-submit.js?v=1.0.4"></script>
         <script src = "../common/js/disable-form.js?v=1.0.0"></script>
     </head>
     <body>

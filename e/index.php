@@ -163,7 +163,7 @@ try {
         <script src = "../common/js/toggle-menu.js?v=1.0.2"></script>
         <script src = "../common/js/toggle-notice.js?v=1.0.2"></script>
         <script src = "../common/js/set-banner.js?v=1.0.4"></script>
-        <script src = "../common/js/check-submit.js?v=1.0.3"></script>
+        <script src = "../common/js/check-submit.js?v=1.0.4"></script>
         <script src = "../common/js/disable-form.js?v=1.0.0"></script>
     </head>
     <body>

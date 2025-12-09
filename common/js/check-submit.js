@@ -30,6 +30,14 @@ function checkSubmit4() {
     }
 }
 
+function checkSubmit5() {
+    if (confirm('この成績情報を削除します。本当によろしいですか？この操作は取り消せません。')) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function checkClick() {
     if (confirm('本当に削除しますか？')) {
         return true;
