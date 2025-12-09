@@ -29,6 +29,22 @@ function make_link2($title, $url, $info) {
     echo $text_form;
 }
 
+// リンクを作成する関数（生徒情報保持）
+function make_link3($title, $url, $info) {
+    $text_form = '
+        <form class = "main-block-back-button" method = "post" action = "' . $url .'">
+            <input class = "info_account" type = "text" name = "user_name" value = "' . $info[0] . '">
+            <input class = "info_account" type = "text" name = "login_id" value = "' . $info[1] . '">
+            <input class = "info_account" type = "text" name = "user_pass" value = "' . $info[2] . '">
+            <input class = "info_account" type = "text" name = "student_table_id" value = "' . $info[3] . '">
+            <button class = "make-link-button" type = "submit">
+                <p>' . $title . '</p>
+            </button>
+        </form>
+    ';
+    echo $text_form;
+}
+
 // アカウントのタイプをチェックする関数
 function check_account_type($login_id, $account_type, $db_host, $db_name, $db_user, $db_pass) {
     try {

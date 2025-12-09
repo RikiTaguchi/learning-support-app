@@ -70,7 +70,7 @@ try {
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.2"></script>
         <script src = "../common/js/set-banner.js?v=1.0.4"></script>
-        <script src = "../common/js/check-submit.js?v=1.0.3"></script>
+        <script src = "../common/js/check-submit.js?v=1.0.4"></script>
         <script src = "../common/js/disable-form.js?v=1.0.0"></script>
         <script src = "../common/js/disable-form2.js?v=1.0.0"></script>
         <?php if (isset($_GET['book_id'])) { ?>

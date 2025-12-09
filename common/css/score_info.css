@@ -1,0 +1,27 @@
+.sub-table {
+    margin-bottom: 30px;
+}
+
+.td-sub-score {
+    width: 16%;
+    font-size: 15px;
+}
+
+.td-sub-score form button {
+    font-size: 15px;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .sub-table {
+        margin-bottom: 20px;
+    }
+
+    .td-sub-score {
+        font-size: 10px;
+    }
+
+    .td-sub-score form button {
+        font-size: 10px;
+    }
+}

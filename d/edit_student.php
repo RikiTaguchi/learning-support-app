@@ -51,7 +51,7 @@ try {
         <title>単語システム</title>
         <meta name = "description" content = "生徒情報更新">
         <meta name = "viewport" content = "width=device-width">
-        <link href = "../common/css/form.css?v=1.0.2" rel = "stylesheet">
+        <link href = "../common/css/form.css?v=1.0.3" rel = "stylesheet">
         <link href = "../common/css/header.css?v=1.0.2" rel = "stylesheet">
         <link href = "../common/css/body.css?v=1.0.3" rel = "stylesheet">
         <link href = "../common/css/edit_student.css?v=1.0.0" rel = "stylesheet">

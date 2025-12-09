@@ -160,7 +160,7 @@ $status_list = [
 		<meta name="theme-color" content="#ffffff">
         <script src = "../common/js/toggle-menu.js?v=1.0.2"></script>
         <script src = "../common/js/set-banner.js?v=1.0.4"></script>
-        <script src = "../common/js/check-submit.js?v=1.0.3"></script>
+        <script src = "../common/js/check-submit.js?v=1.0.4"></script>
         <script src = "../common/js/set-student.js?v=1.0.0"></script>
         <script src = "../common/js/disable-form.js?v=1.0.0"></script>
     </head>
@@ -199,6 +199,15 @@ $status_list = [
                                 <input type = "text" name = "user_name" style = "display: none;" value = "' . $user_name . '">
                                 <input type = "number" name = "student_table_id" style = "display: none;" value = "' . $row['table_id'] . '">
                                 <button type = "submit">管理対象から外す</button>
+                            </form>
+                        ';
+                        $form_score = '
+                            <form class = "form2" method = "POST" action = "score_info.php">
+                                <input type = "text" name = "login_id" style = "display: none;" value = "' . $login_id . '">
+                                <input type = "text" name = "user_pass" style = "display: none;" value = "' . $user_pass . '">
+                                <input type = "text" name = "user_name" style = "display: none;" value = "' . $user_name . '">
+                                <input type = "number" name = "student_table_id" style = "display: none;" value = "' . $row['table_id'] . '">
+                                <button type = "submit">成績確認</button>
                             </form>
                         ';
 
@@ -252,6 +261,9 @@ $status_list = [
                         echo '<tr class = "info-button" style = "display: none;"><td colspan="2"><table class = "button-table">';
                             echo '<tr class = "tr-button">';
                                 echo '<td class = "td-button"><button class = "print-button" type = "button">配布用資料を印刷</button></td>';
+                            echo '</tr>';
+                            echo '<tr class = "tr-button">';
+                                echo '<td class = "td-button">' . $form_score . '</td>';
                             echo '</tr>';
                             echo '<tr class = "tr-button">';
                                 echo '<td class = "td-button">' . $form_edit . '</td>';
